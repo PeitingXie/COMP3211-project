@@ -1,0 +1,17 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+F:/COMP3211/lab03/single_cycle_core/single_cycle_core/VHDL/adder_16b.vhd,1648286269,vhdl,,,,adder_16b,,,,,,,,
+F:/COMP3211/lab03/single_cycle_core/single_cycle_core/VHDL/adder_4b.vhd,1648286269,vhdl,,,,adder_4b,,,,,,,,
+F:/COMP3211/lab03/single_cycle_core/single_cycle_core/VHDL/control_unit.vhd,1648286269,vhdl,,,,control_unit,,,,,,,,
+F:/COMP3211/lab03/single_cycle_core/single_cycle_core/VHDL/data_memory.vhd,1648292372,vhdl,,,,data_memory,,,,,,,,
+F:/COMP3211/lab03/single_cycle_core/single_cycle_core/VHDL/instruction_memory.vhd,1648619788,vhdl,,,,instruction_memory,,,,,,,,
+F:/COMP3211/lab03/single_cycle_core/single_cycle_core/VHDL/mux_2to1_16b.vhd,1648286269,vhdl,,,,mux_2to1_16b,,,,,,,,
+F:/COMP3211/lab03/single_cycle_core/single_cycle_core/VHDL/mux_2to1_1b.vhd,1648286269,vhdl,,,,mux_2to1_1b,,,,,,,,
+F:/COMP3211/lab03/single_cycle_core/single_cycle_core/VHDL/mux_2to1_4b.vhd,1648286269,vhdl,,,,mux_2to1_4b,,,,,,,,
+F:/COMP3211/lab03/single_cycle_core/single_cycle_core/VHDL/program_counter.vhd,1648286269,vhdl,,,,program_counter,,,,,,,,
+F:/COMP3211/lab03/single_cycle_core/single_cycle_core/VHDL/register_file.vhd,1648286269,vhdl,,,,register_file,,,,,,,,
+F:/COMP3211/lab03/single_cycle_core/single_cycle_core/VHDL/sign_extend_4to16.vhd,1648286269,vhdl,,,,sign_extend_4to16,,,,,,,,
+F:/COMP3211/lab03/single_cycle_core/single_cycle_core/VHDL/single_cycle_core.vhd,1648609757,vhdl,,,,single_cycle_core,,,,,,,,
+F:/COMP3211/lab03/single_cycle_core/single_cycle_core/VHDL/single_cycle_core_TB_VHDL.vhd,1648286269,vhdl,,,,single_cycle_core_tb_vhdl,,,,,,,,
