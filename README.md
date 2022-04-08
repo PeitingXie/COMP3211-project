@@ -13,3 +13,5 @@ Instruction memory(tag gen)
 Testbench:
 Textfile containing pairs of tags and records
 Create VHDL file to read the text line by line
+
+test

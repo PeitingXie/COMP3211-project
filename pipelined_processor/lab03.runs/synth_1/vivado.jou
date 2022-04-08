@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Apr  8 23:07:11 2022
+# Process ID: 83148
+# Current directory: C:/Users/Katelyn/OneDrive - UNSW/22T1/COMP3211/Labs/Lab03/lab03/lab03.runs/synth_1
+# Command line: vivado.exe -log Single_cycle_core_TB_VHDL.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Single_cycle_core_TB_VHDL.tcl
+# Log file: C:/Users/Katelyn/OneDrive - UNSW/22T1/COMP3211/Labs/Lab03/lab03/lab03.runs/synth_1/Single_cycle_core_TB_VHDL.vds
+# Journal file: C:/Users/Katelyn/OneDrive - UNSW/22T1/COMP3211/Labs/Lab03/lab03/lab03.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Single_cycle_core_TB_VHDL.tcl -notrace
