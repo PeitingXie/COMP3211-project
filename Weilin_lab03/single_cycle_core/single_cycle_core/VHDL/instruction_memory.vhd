@@ -54,15 +54,15 @@ begin
             --  insn_5 : store $4, $0, 3   - store data $4 into 3($0)
             --  insn_6 - insn_15 : noop    - end of program
 
-            var_insn_mem(0)  := X"1010"; -- load 5 into $1
-            var_insn_mem(1)  := X"1021"; -- load 8 into $2
-            --var_insn_mem(2)  := X"8000"; -- no-op
-            --var_insn_mem(3)  := X"8000"; -- no-op
-            --var_insn_mem(4)  := X"8000"; -- no-op
-            --ar_insn_mem(5)  := X"8123"; -- and $3, $1, $2
-            --var_insn_mem(6)  := X"8314"; -- add $4, $3, $1
-            --var_insn_mem(7)  := X"8325"; -- add $5, $3, $2
-            --var_insn_mem(8)  := X"8426"; -- add $6, $4, $2
+            var_insn_mem(0)  := X"1010"; -- load 15 into $1
+            var_insn_mem(1)  := X"1021"; -- load 11 into $2
+            var_insn_mem(2)  := X"8000"; -- no-op
+            var_insn_mem(3)  := X"8000"; -- no-op
+            var_insn_mem(4)  := X"8000"; -- no-op
+            var_insn_mem(5)  := X"9123"; -- and $3, $1, $2 --11
+            var_insn_mem(6)  := X"9364"; -- and $4, $3, $6 --0
+            --var_insn_mem(7)  := X"9315"; -- xor $5, $3, $1 -- 11
+            --var_insn_mem(8)  := X"A424"; -- xor $4, $4, $2
             --var_insn_mem(9)  := X"0000";
             --var_insn_mem(10) := X"0000";
             --var_insn_mem(11) := X"0000";

@@ -82,9 +82,9 @@ begin
             when OP_ADD =>
                 alu_ctrl <= "00";
             when OP_AND =>
-                alu_ctrl <= "01";
-            when OP_XOR =>
                 alu_ctrl <= "10";
+            when OP_XOR =>
+                alu_ctrl <= "01";
             when others =>
                 alu_ctrl <= "11";
         end case;

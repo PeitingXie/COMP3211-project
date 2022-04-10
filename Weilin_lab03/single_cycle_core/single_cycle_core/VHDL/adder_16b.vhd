@@ -42,12 +42,16 @@ begin
             sig_result <= ('0' & src_a) + ('0' & src_b);
             sum        <= sig_result(15 downto 0);
             carry_out  <= sig_result(16);
-        elsif ctrl = "01" then                          -- and
+        elsif ctrl = "10" then                          -- and
             sum <= src_a and src_b;
-        elsif ctrl = "10" then                           -- xor
+            --carry_out  <= '0';
+        elsif ctrl = "01" then                           -- xor
             sum <= src_a xor src_b;
+            --carry_out  <= '0';
         else
-            sum <= x"0000";
+            sig_result <= ('0' & src_a) + ('0' & src_b);
+            sum        <= sig_result(15 downto 0);
+            carry_out  <= sig_result(16);
         end if;
     end process;
 end behavioural;
