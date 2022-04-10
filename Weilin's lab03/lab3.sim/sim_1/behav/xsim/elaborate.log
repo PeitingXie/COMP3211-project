@@ -1,0 +1,35 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: F:/Taozi/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto fd65501d546042cab75c257bd92559a6 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Single_cycle_core_TB_VHDL_behav xil_defaultlib.Single_cycle_core_TB_VHDL -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.program_counter [program_counter_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_4b [adder_4b_default]
+Compiling architecture behavioral of entity xil_defaultlib.instruction_memory [instruction_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.IF_ID_stage_registers [if_id_stage_registers_default]
+Compiling architecture behavioral of entity xil_defaultlib.sign_extend_4to16 [sign_extend_4to16_default]
+Compiling architecture behavioural of entity xil_defaultlib.control_unit [control_unit_default]
+Compiling architecture behavioural of entity xil_defaultlib.mux_2to1_1b [mux_2to1_1b_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_4b [mux_2to1_4b_default]
+Compiling architecture behavioral of entity xil_defaultlib.register_file [register_file_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_16b [mux_2to1_16b_default]
+Compiling architecture behavioral of entity xil_defaultlib.ID_EX_stage_register [id_ex_stage_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_3to1_16b [mux_3to1_16b_default]
+Compiling architecture behavioral of entity xil_defaultlib.forwarding_handler [forwarding_handler_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_16b [adder_16b_default]
+Compiling architecture behavioral of entity xil_defaultlib.EX_MEM_stage_registers [ex_mem_stage_registers_default]
+Compiling architecture behavioral of entity xil_defaultlib.data_memory [data_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.MEM_WB_stage_registers [mem_wb_stage_registers_default]
+Compiling architecture structural of entity xil_defaultlib.single_cycle_core [single_cycle_core_default]
+Compiling architecture behave of entity xil_defaultlib.single_cycle_core_tb_vhdl
+Built simulation snapshot Single_cycle_core_TB_VHDL_behav

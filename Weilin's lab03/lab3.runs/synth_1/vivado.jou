@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Mar 30 13:54:50 2022
+# Process ID: 2892
+# Current directory: F:/Taozi/lab3/lab3/lab3.runs/synth_1
+# Command line: vivado.exe -log single_cycle_core.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source single_cycle_core.tcl
+# Log file: F:/Taozi/lab3/lab3/lab3.runs/synth_1/single_cycle_core.vds
+# Journal file: F:/Taozi/lab3/lab3/lab3.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source single_cycle_core.tcl -notrace
