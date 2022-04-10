@@ -1,7 +1,0 @@
-Running: xsim.dir/Single_cycle_core_TB_VHDL_behav/xsimk.exe -simmode gui -wdb Single_cycle_core_TB_VHDL_behav.wdb -simrunnum 0 -socket 62689
-Design successfully loaded
-Design Loading Memory Usage: 6068 KB (Peak: 6068 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 7072 KB (Peak: 7072 KB)
-Simulation CPU Usage: 31 ms
