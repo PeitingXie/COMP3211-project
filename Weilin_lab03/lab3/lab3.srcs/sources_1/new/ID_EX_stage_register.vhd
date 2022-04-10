@@ -37,6 +37,7 @@ entity ID_EX_stage_register is
            ID_mem_to_reg : in STD_LOGIC;
            ID_mem_write : in STD_LOGIC;
            ID_reg_write : in STD_LOGIC;
+           ID_alu_ctrl : in STD_LOGIC_VECTOR(1 downto 0);
            ID_rs_data : in STD_LOGIC_VECTOR (15 downto 0);
            ID_mux_out : in STD_LOGIC_VECTOR (15 downto 0);
            ID_write_data : in STD_LOGIC_VECTOR (15 downto 0);
@@ -46,6 +47,7 @@ entity ID_EX_stage_register is
            EX_mem_to_reg : out STD_LOGIC;
            EX_mem_write : out STD_LOGIC;
            EX_reg_write : out STD_LOGIC;
+           EX_alu_ctrl  : out STD_LOGIC_VECTOR(1 downto 0);
            EX_alu_src_a : out STD_LOGIC_VECTOR (15 downto 0);
            EX_alu_src_b : out STD_LOGIC_VECTOR (15 downto 0);
            EX_write_data : out STD_LOGIC_VECTOR (15 downto 0);
@@ -69,6 +71,7 @@ begin
            EX_write_register <= (OTHERS => '0');
            EX_rs          <= (OTHERS => '0');
            EX_rt          <= (OTHERS => '0');
+           EX_alu_ctrl    <= (OTHERS => '0');
         elsif (rising_edge(clk)) then
            EX_mem_to_reg <= ID_mem_to_reg;
            EX_mem_write <= ID_mem_write;
@@ -79,6 +82,7 @@ begin
            EX_write_register <= ID_write_register;
            EX_rs          <= ID_rs;
            EX_rt          <= ID_rt;
+           EX_alu_ctrl    <= ID_alu_ctrl;
         end if;
     end process;
 

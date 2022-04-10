@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "F:/Taozi/lab3/lab3/lab3.runs/synth_1/single_cycle_core.tcl"
+  variable script "D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/lab3/lab3.runs/synth_1/single_cycle_core.tcl"
   variable category "vivado_synth"
 }
 
@@ -76,33 +76,33 @@ create_project -in_memory -part xc7a100tftg256-3
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir F:/Taozi/lab3/lab3/lab3.cache/wt [current_project]
-set_property parent.project_path F:/Taozi/lab3/lab3/lab3.xpr [current_project]
+set_property webtalk.parent_dir {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/lab3/lab3.cache/wt} [current_project]
+set_property parent.project_path {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/lab3/lab3.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo f:/Taozi/lab3/lab3/lab3.cache/ip [current_project]
+set_property ip_output_repo {d:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/lab3/lab3.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  F:/Taozi/lab3/lab3/lab3.srcs/sources_1/new/EX_MEM_stage_registers.vhd
-  F:/Taozi/lab3/lab3/lab3.srcs/sources_1/new/ID_EX_stage_register.vhd
-  F:/Taozi/lab3/lab3/lab3.srcs/sources_1/new/IF_ID_stage_registers.vhd
-  F:/Taozi/lab3/lab3/lab3.srcs/sources_1/new/MEM_WB_stage_registers.vhd
-  F:/Taozi/lab3/single_cycle_core/single_cycle_core/VHDL/adder_16b.vhd
-  F:/Taozi/lab3/single_cycle_core/single_cycle_core/VHDL/adder_4b.vhd
-  F:/Taozi/lab3/single_cycle_core/single_cycle_core/VHDL/control_unit.vhd
-  F:/Taozi/lab3/single_cycle_core/single_cycle_core/VHDL/data_memory.vhd
-  F:/Taozi/lab3/lab3/lab3.srcs/sources_1/new/forwarding_handler.vhd
-  F:/Taozi/lab3/single_cycle_core/single_cycle_core/VHDL/instruction_memory.vhd
-  F:/Taozi/lab3/single_cycle_core/single_cycle_core/VHDL/mux_2to1_16b.vhd
-  F:/Taozi/lab3/single_cycle_core/single_cycle_core/VHDL/mux_2to1_1b.vhd
-  F:/Taozi/lab3/single_cycle_core/single_cycle_core/VHDL/mux_2to1_4b.vhd
-  F:/Taozi/lab3/lab3/lab3.srcs/sources_1/new/mux_3to1_16b.vhd
-  F:/Taozi/lab3/single_cycle_core/single_cycle_core/VHDL/program_counter.vhd
-  F:/Taozi/lab3/single_cycle_core/single_cycle_core/VHDL/register_file.vhd
-  F:/Taozi/lab3/single_cycle_core/single_cycle_core/VHDL/sign_extend_4to16.vhd
-  F:/Taozi/lab3/single_cycle_core/single_cycle_core/VHDL/single_cycle_core.vhd
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/lab3/lab3.srcs/sources_1/new/EX_MEM_stage_registers.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/lab3/lab3.srcs/sources_1/new/ID_EX_stage_register.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/lab3/lab3.srcs/sources_1/new/IF_ID_stage_registers.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/lab3/lab3.srcs/sources_1/new/MEM_WB_stage_registers.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/single_cycle_core/single_cycle_core/VHDL/adder_16b.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/single_cycle_core/single_cycle_core/VHDL/adder_4b.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/single_cycle_core/single_cycle_core/VHDL/control_unit.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/single_cycle_core/single_cycle_core/VHDL/data_memory.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/lab3/lab3.srcs/sources_1/new/forwarding_handler.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/single_cycle_core/single_cycle_core/VHDL/instruction_memory.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/single_cycle_core/single_cycle_core/VHDL/mux_2to1_16b.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/single_cycle_core/single_cycle_core/VHDL/mux_2to1_1b.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/single_cycle_core/single_cycle_core/VHDL/mux_2to1_4b.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/lab3/lab3.srcs/sources_1/new/mux_3to1_16b.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/single_cycle_core/single_cycle_core/VHDL/program_counter.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/single_cycle_core/single_cycle_core/VHDL/register_file.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/single_cycle_core/single_cycle_core/VHDL/sign_extend_4to16.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/single_cycle_core/single_cycle_core/VHDL/single_cycle_core.vhd}
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -113,8 +113,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc F:/Taozi/lab3/lab3/lab3.srcs/constrs_1/new/cons_1.xdc
-set_property used_in_implementation false [get_files F:/Taozi/lab3/lab3/lab3.srcs/constrs_1/new/cons_1.xdc]
+read_xdc {{D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/lab3/lab3.srcs/constrs_1/new/cons_1.xdc}}
+set_property used_in_implementation false [get_files {{D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/lab3/lab3.srcs/constrs_1/new/cons_1.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

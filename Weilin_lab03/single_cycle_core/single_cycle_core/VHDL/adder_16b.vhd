@@ -25,6 +25,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity adder_16b is
     port ( src_a     : in  std_logic_vector(15 downto 0);
            src_b     : in  std_logic_vector(15 downto 0);
+           ctrl      : in  std_logic_vector(1 downto 0);
            sum       : out std_logic_vector(15 downto 0);
            carry_out : out std_logic );
 end adder_16b;
@@ -35,8 +36,18 @@ signal sig_result : std_logic_vector(16 downto 0);
 
 begin
 
-    sig_result <= ('0' & src_a) + ('0' & src_b);
-    sum        <= sig_result(15 downto 0);
-    carry_out  <= sig_result(16);
-    
+    process(ctrl, src_a, src_b, sig_result)
+    begin
+        if ctrl = "00" then                             -- add
+            sig_result <= ('0' & src_a) + ('0' & src_b);
+            sum        <= sig_result(15 downto 0);
+            carry_out  <= sig_result(16);
+        elsif ctrl = "01" then                          -- and
+            sum <= src_a and src_b;
+        elsif ctrl = "10" then                           -- xor
+            sum <= src_a xor src_b;
+        else
+            sum <= x"0000";
+        end if;
+    end process;
 end behavioural;

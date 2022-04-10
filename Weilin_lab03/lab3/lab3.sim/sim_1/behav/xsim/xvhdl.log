@@ -1,2 +1,6 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "F:/Taozi/lab3/single_cycle_core/single_cycle_core/VHDL/instruction_memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/single_cycle_core/single_cycle_core/VHDL/adder_16b.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'adder_16b'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/single_cycle_core/single_cycle_core/VHDL/data_memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'data_memory'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/single_cycle_core/single_cycle_core/VHDL/instruction_memory.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'instruction_memory'

@@ -38,7 +38,7 @@ type mem_array is array(0 to 15) of std_logic_vector(15 downto 0);
 signal sig_data_mem : mem_array;
 
 begin
-    mem_process: process ( clk,
+    mem_process: process ( reset, clk,
                            write_enable,
                            write_data,
                            addr_in ) is

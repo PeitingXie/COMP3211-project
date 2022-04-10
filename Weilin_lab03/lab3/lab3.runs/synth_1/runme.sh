@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='F:/Taozi/lab3/lab3/lab3.runs/synth_1'
+HD_PWD='D:/UNSW/2022 term1/COMP3211/COMP3211-project/Weilin_lab03/lab3/lab3.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

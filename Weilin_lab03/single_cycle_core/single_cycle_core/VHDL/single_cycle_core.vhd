@@ -93,7 +93,8 @@ component control_unit is
            reg_write  : out std_logic;
            alu_src    : out std_logic;
            mem_write  : out std_logic;
-           mem_to_reg : out std_logic );
+           mem_to_reg : out std_logic;
+           alu_ctrl   : out std_logic_vector(1 downto 0) );
 end component;
 
 component register_file is
@@ -118,6 +119,7 @@ end component;
 component adder_16b is
     port ( src_a     : in  std_logic_vector(15 downto 0);
            src_b     : in  std_logic_vector(15 downto 0);
+           ctrl      : in  std_logic_vector(1 downto 0);
            sum       : out std_logic_vector(15 downto 0);
            carry_out : out std_logic );
 end component;
@@ -144,6 +146,7 @@ component ID_EX_stage_register is
            ID_mem_to_reg : in STD_LOGIC;
            ID_mem_write : in STD_LOGIC;
            ID_reg_write : in STD_LOGIC;
+           ID_alu_ctrl : in STD_LOGIC_VECTOR(1 downto 0);
            ID_rs_data : in STD_LOGIC_VECTOR (15 downto 0);
            ID_mux_out : in STD_LOGIC_VECTOR (15 downto 0);
            ID_write_data : in STD_LOGIC_VECTOR (15 downto 0);
@@ -153,6 +156,7 @@ component ID_EX_stage_register is
            EX_mem_to_reg : out STD_LOGIC;
            EX_mem_write : out STD_LOGIC;
            EX_reg_write : out STD_LOGIC;
+           EX_alu_ctrl  : out STD_LOGIC_VECTOR(1 downto 0);
            EX_alu_src_a : out STD_LOGIC_VECTOR (15 downto 0);
            EX_alu_src_b : out STD_LOGIC_VECTOR (15 downto 0);
            EX_write_data : out STD_LOGIC_VECTOR (15 downto 0);
@@ -217,6 +221,8 @@ signal ID_sig_insn              : std_logic_vector(15 downto 0);
 signal ID_sig_sign_extended_offset : std_logic_vector(15 downto 0);
 signal ID_sig_reg_dst              : std_logic;
 signal ID_sig_reg_write            : std_logic;
+signal ID_sig_alu_ctrl             : std_logic_vector(1 downto 0);
+signal EX_sig_alu_ctrl             : std_logic_vector(1 downto 0);
 signal EX_sig_reg_write            : std_logic;
 signal MEM_sig_reg_write            : std_logic;
 signal WB_sig_reg_write            : std_logic;
@@ -293,7 +299,8 @@ begin
                reg_write  => ID_sig_reg_write,
                alu_src    => ID_sig_alu_src,
                mem_write  => ID_sig_mem_write,
-               mem_to_reg => ID_sig_mem_to_reg );
+               mem_to_reg => ID_sig_mem_to_reg,
+               alu_ctrl   => ID_sig_alu_ctrl);
 
     mux_reg_dst : mux_2to1_4b 
     port map ( mux_select => ID_sig_reg_dst,
@@ -325,6 +332,7 @@ begin
                ID_mem_to_reg => ID_sig_mem_to_reg,
                ID_mem_write => ID_sig_mem_write,
                ID_reg_write => ID_sig_reg_write,
+               ID_alu_ctrl => ID_sig_alu_ctrl,
                ID_rs_data         => ID_sig_read_data_a,
                ID_mux_out  => ID_sig_alu_src_b,
                ID_write_data => ID_sig_read_data_b,
@@ -334,6 +342,7 @@ begin
                EX_mem_to_reg    => EX_sig_mem_to_reg,
                EX_mem_write     => EX_sig_mem_write,
                EX_reg_write     => EX_sig_reg_write,
+               EX_alu_ctrl      => EX_sig_alu_ctrl,
                EX_alu_src_a  => EX_sig_read_data_a,
                EX_alu_src_b  => EX_sig_alu_src_b,
                EX_write_data => EX_sig_read_data_b,
@@ -371,6 +380,7 @@ begin
     alu : adder_16b 
     port map ( src_a     => EX_sig_forward_read_data_a,
                src_b     => EX_sig_forward_read_data_b,
+               ctrl      => EX_sig_alu_ctrl,
                sum       => EX_sig_alu_result,
                carry_out => EX_sig_alu_carry_out );
                

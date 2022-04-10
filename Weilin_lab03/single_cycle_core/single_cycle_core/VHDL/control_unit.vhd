@@ -47,7 +47,8 @@ entity control_unit is
            reg_write  : out std_logic;
            alu_src    : out std_logic;
            mem_write  : out std_logic;
-           mem_to_reg : out std_logic );
+           mem_to_reg : out std_logic;
+           alu_ctrl   : out std_logic_vector(1 downto 0));
 end control_unit;
 
 architecture behavioural of control_unit is
@@ -55,14 +56,15 @@ architecture behavioural of control_unit is
 constant OP_LOAD  : std_logic_vector(3 downto 0) := "0001";
 constant OP_STORE : std_logic_vector(3 downto 0) := "0011";
 constant OP_ADD   : std_logic_vector(3 downto 0) := "1000";
-
+constant OP_AND   : std_logic_vector(3 downto 0) := "1001";
+constant OP_XOR   : std_logic_vector(3 downto 0) := "1010";
 begin
 
-    reg_dst    <= '1' when opcode = OP_ADD else
+    reg_dst    <= '1' when (opcode = OP_ADD or opcode = OP_AND or opcode = OP_XOR) else
                   '0';
 
     reg_write  <= '1' when (opcode = OP_ADD 
-                            or opcode = OP_LOAD) else
+                            or opcode = OP_LOAD or opcode = OP_AND or opcode = OP_XOR) else
                   '0';
     
     alu_src    <= '1' when (opcode = OP_LOAD 
@@ -74,5 +76,17 @@ begin
                  
     mem_to_reg <= '1' when opcode = OP_LOAD else
                   '0';
-
+    process(opcode)
+    begin
+        case opcode is
+            when OP_ADD =>
+                alu_ctrl <= "00";
+            when OP_AND =>
+                alu_ctrl <= "01";
+            when OP_XOR =>
+                alu_ctrl <= "10";
+            when others =>
+                alu_ctrl <= "11";
+        end case;
+    end process;
 end behavioural;
