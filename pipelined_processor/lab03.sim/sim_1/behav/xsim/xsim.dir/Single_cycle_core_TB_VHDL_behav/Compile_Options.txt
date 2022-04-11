@@ -1,1 +1,0 @@
--wto "27ca164b90af4a6091087b2c64541a30" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" -L "xpm" --snapshot "Single_cycle_core_TB_VHDL_behav" "xil_defaultlib.Single_cycle_core_TB_VHDL" -log "elaborate.log" 
