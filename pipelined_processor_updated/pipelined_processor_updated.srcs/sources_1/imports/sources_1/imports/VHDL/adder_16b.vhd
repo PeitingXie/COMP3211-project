@@ -25,7 +25,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity adder_16b is
     port ( src_a     : in  std_logic_vector(15 downto 0);
            src_b     : in  std_logic_vector(15 downto 0);
-           alu_ctr   : in  std_logic_vector(1 downto 0);
+           alu_ctr   : in  std_logic_vector(2 downto 0);
            sum       : out std_logic_vector(15 downto 0);
            carry_out : out std_logic; 
            load_msb  : out std_logic);
@@ -56,13 +56,30 @@ begin
     -- src_b = -src_b --
     slt_src_b <= (not src_b) + '1';
     
-    with alu_ctr select
-        sig_src_b <= lb_src_b when "01",
-                     slt_src_b when "10",
-                     src_b when others;
-
-    sig_result <= ('0' & src_a) + ('0' & sig_src_b);
-    carry_out  <= sig_result(15);
-    sum <= sig_result(15 downto 0);
-    
+    process(alu_ctr, src_a, src_b, sig_result, lb_src_b, slt_src_b)
+    begin
+        case alu_ctr is 
+            when "000" => -- addition
+                sig_result <= ('0' & src_a) + ('0' & src_b);
+                carry_out  <= sig_result(15);
+                sum <= sig_result(15 downto 0);
+            when "001" =>
+                sig_result <= ('0' & src_a) + ('0' & lb_src_b);
+                carry_out  <= sig_result(15);
+                sum <= sig_result(15 downto 0);
+            when "010" =>
+                sig_result <= ('0' & src_a) + ('0' & slt_src_b);
+                carry_out  <= sig_result(15);
+                sum <= sig_result(15 downto 0);
+            when "100" => -- xor
+                sum <= src_a xor src_b;
+            when "011" => -- and
+                sum <= src_a and src_b;
+            when others =>
+                sig_result <= ('0' & src_a) + ('0' & src_b);
+                carry_out  <= sig_result(15);
+                sum <= sig_result(15 downto 0);
+        end case;
+    end process;
+            
 end behavioural;

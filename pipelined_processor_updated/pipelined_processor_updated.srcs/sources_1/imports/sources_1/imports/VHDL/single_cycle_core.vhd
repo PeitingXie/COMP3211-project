@@ -104,7 +104,7 @@ component control_unit is
            mem_write  : out std_logic;
            mem_to_reg : out std_logic_vector(1 downto 0);
            read_byte  : out std_logic;
-           alu_ctr    : out std_logic_vector(1 downto 0));
+           alu_ctr    : out std_logic_vector(2 downto 0));
 end component;
 
 component register_file is
@@ -129,7 +129,7 @@ end component;
 component adder_16b is
     port ( src_a     : in  std_logic_vector(15 downto 0);
            src_b     : in  std_logic_vector(15 downto 0);
-           alu_ctr   : in std_logic_vector(1 downto 0);
+           alu_ctr   : in std_logic_vector(2 downto 0);
            sum       : out std_logic_vector(15 downto 0);
            carry_out : out std_logic;
            load_msb  : out std_logic );
@@ -198,8 +198,10 @@ component id_ex_pipeline_stage is
          immed_out : out std_logic_vector(15 downto 0);
          reg_write_in, read_byte_in, alu_src_in, mem_to_write_in, reg_dst_in : in std_logic;
          reg_write_out, read_byte_out, alu_src_out, mem_to_write_out, reg_dst_out : out std_logic;
-         alu_ctr_in, mem_to_reg_in : in std_logic_vector(1 downto 0);
-         alu_ctr_out, mem_to_reg_out : out std_logic_vector(1 downto 0);
+         alu_ctr_in  : in std_logic_vector(2 downto 0);
+         mem_to_reg_in : in std_logic_vector(1 downto 0);
+         alu_ctr_out : out std_logic_vector(2 downto 0);
+         mem_to_reg_out : out std_logic_vector(1 downto 0);
          insn_in : in std_logic_vector(15 downto 0);
          insn_out : out std_logic_vector(15 downto 0);
          forwarded_write_register_in : in std_logic_vector(3 downto 0);
@@ -289,7 +291,7 @@ signal sig_alu_carry_out        : std_logic;
 signal sig_data_mem_out         : std_logic_vector(15 downto 0);
 signal sig_read_byte            : std_logic;
 signal sig_load_msb             : std_logic;
-signal sig_alu_ctr              : std_logic_vector(1 downto 0);
+signal sig_alu_ctr              : std_logic_vector(2 downto 0);
 signal sig_slt_result           : std_logic_vector(15 downto 0); 
 signal sig_srr_result           : std_logic_vector(15 downto 0); 
 signal sig_byte_data            : std_logic_vector(15 downto 0);
@@ -303,7 +305,7 @@ signal sig_idex_read_data_a     : std_logic_vector(15 downto 0);
 signal sig_idex_read_data_b     : std_logic_vector(15 downto 0);
 signal sig_idex_immed           : std_logic_vector(15 downto 0);
 signal sig_idex_reg_write       : std_logic;
-signal sig_idex_alu_ctr         : std_logic_vector(1 downto 0);
+signal sig_idex_alu_ctr         : std_logic_vector(2 downto 0);
 signal sig_idex_read_byte       : std_logic;
 signal sig_idex_mem_to_reg      : std_logic_vector(1 downto 0);
 signal sig_idex_alu_src         : std_logic;
