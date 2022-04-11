@@ -53,7 +53,7 @@ begin
             -- initial values of the data memory : reset to zero 
             var_data_mem(0)  := X"000F";
             var_data_mem(1)  := X"000B";
-            var_data_mem(2)  := X"0000";
+            var_data_mem(2)  := X"0005";
             var_data_mem(3)  := X"0000";
             var_data_mem(4)  := X"0000";
             var_data_mem(5)  := X"0000";

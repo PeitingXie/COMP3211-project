@@ -46,7 +46,8 @@ begin
             sum <= src_a and src_b;
             --carry_out  <= '0';
         elsif ctrl = "01" then                           -- xor
-            sum <= src_a xor src_b;
+            --sum <= src_a xor src_b;
+            sum <= (src_a and not src_b) or (not src_a and src_b);
             --carry_out  <= '0';
         else
             sig_result <= ('0' & src_a) + ('0' & src_b);
