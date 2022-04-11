@@ -42,8 +42,10 @@ entity id_ex_pipeline_stage is
          immed_out : out std_logic_vector(15 downto 0);
          reg_write_in, read_byte_in, alu_src_in, mem_to_write_in, reg_dst_in : in std_logic;
          reg_write_out, read_byte_out, alu_src_out, mem_to_write_out, reg_dst_out : out std_logic;
-         alu_ctr_in, mem_to_reg_in : in std_logic_vector(1 downto 0);
-         alu_ctr_out, mem_to_reg_out : out std_logic_vector(1 downto 0);
+         alu_ctr_in  : in std_logic_vector(2 downto 0);
+         mem_to_reg_in : in std_logic_vector(1 downto 0);
+         alu_ctr_out : out std_logic_vector(2 downto 0);
+         mem_to_reg_out : out std_logic_vector(1 downto 0);
          insn_in : in std_logic_vector(15 downto 0);
          insn_out : out std_logic_vector(15 downto 0);
          forwarded_write_register_in : in std_logic_vector(3 downto 0);
@@ -119,14 +121,22 @@ begin
             Q => reg_write_out
         );
    
-   pipe_alu_ctr : pipeline_2bit_register
-        port map (
-            data => alu_ctr_in,
-            enable => '1',
-            resetn => reset,
-            clk => clk,
-            Q => alu_ctr_out
-        );
+   --pipe_alu_ctr : pipeline_2bit_register
+   --     port map (
+   --         data => alu_ctr_in,
+    --        enable => '1',
+   --         resetn => reset,
+    --        clk => clk,
+    --        Q => alu_ctr_out
+    --    );
+   process(reset, clk, alu_ctr_in)
+   begin
+       if reset = '1' then
+           alu_ctr_out <= "101"; -- useless number 101
+       elsif rising_edge(clk) then
+           alu_ctr_out <= alu_ctr_in;
+       end if;
+   end process;
    
    pipe_read_byte : pipeline_bit_register
         port map (
