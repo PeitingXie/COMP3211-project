@@ -1,0 +1,1655 @@
+/*
+
+Xilinx Vivado v2020.2 (64-bit) [Major: 2020, Minor: 2]
+SW Build: 3064766 on Wed Nov 18 09:12:45 MST 2020
+IP Build: 3064653 on Wed Nov 18 14:17:31 MST 2020
+
+Process ID (PID): 2820
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Tue Apr 12 13:29:35 AEST 2022
+Time zone: 	Australian Eastern Standard Time (Australia/Sydney)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 2736x1824
+Screen resolution (DPI): 175
+Available screens: 1
+Default font: family=Segoe UI,name=Segoe UI,style=plain,size=21
+Scale size: 37
+
+Java version: 	11.0.2 64-bit
+Java home: 	C:/Xilinx/Vivado/2020.2/tps/win64/jre11.0.2
+Java executable location: 	C:/Xilinx/Vivado/2020.2/tps/win64/jre11.0.2/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	Katel
+User home directory: C:/Users/Katel
+User working directory: C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated
+User country: 	AU
+User language: 	en
+User locale: 	en_AU
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2020.2
+RDI_DATADIR: C:/Xilinx/Vivado/2020.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2020.2/bin
+
+Vivado preferences file location: C:/Users/Katel/AppData/Roaming/Xilinx/Vivado/2020.2/vivado.xml
+Vivado preferences directory: C:/Users/Katel/AppData/Roaming/Xilinx/Vivado/2020.2/
+Vivado layouts directory: C:/Users/Katel/AppData/Roaming/Xilinx/Vivado/2020.2/data/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2020.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/vivado.log
+Vivado journal file location: 	C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/vivado.jou
+Engine tmp dir: 	C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/.Xil/Vivado-2820-Haro
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_HLS: C:/Xilinx/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2020.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2020.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2020.2
+
+
+GUI allocated memory:	141 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,030 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bz (cr):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\Katel\OneDrive\Documents\GitHub\COMP3211-project\pipelined_processor_updated\pipelined_processor_updated.xpr. Version: Vivado v2020.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated' 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 69 MB. Current time: 4/12/22, 1:29:36 PM AEST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated' INFO: [Project 1-313] Project file moved from 'D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 84 MB (+85851kb) [00:00:23]
+// [Engine Memory]: 1,030 MB (+928516kb) [00:00:23]
+// [GUI Memory]: 106 MB (+18626kb) [00:00:24]
+// [GUI Memory]: 121 MB (+9575kb) [00:00:28]
+// WARNING: HEventQueue.dispatchEvent() is taking  10859 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1236 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:40 ; elapsed = 00:00:18 . Memory (MB): peak = 1019.527 ; gain = 0.000 
+// Project name: pipelined_processor_updated; location: C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated; part: xc7k70tfbv676-1
+// [GUI Memory]: 135 MB (+8224kb) [00:00:35]
+dismissDialog("Open Project"); // bz
+// a (cr): Critical Messages: addNotify
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 90 seconds
+dismissDialog("Critical Messages"); // a
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd)]", 1); // D
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd)]", 2); // D
+// RDIResource.RDIViews_PROPERTIES: Properties: close view
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bz (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// bz (cr):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// Tcl Message: [Tue Apr 12 13:31:44 2022] Launched synth_1... Run output will be captured here: C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 4 seconds
+// [GUI Memory]: 156 MB (+15349kb) [00:02:25]
+dismissDialog("Starting Design Runs"); // bz
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// WARNING: HTimer (ExpRunMgr Pending Runs Timer) is taking 551ms to process. Increasing delay to 3000 ms.
+// Elapsed time: 102 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ak
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cr):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'Single_cycle_core_TB_VHDL' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design 
+// Tcl Message: INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvhdl --incr --relax -prj Single_cycle_core_TB_VHDL_vhdl.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1019.527 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '7' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab -wto b71789dcab584d7b9eca3c6be0bb098d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Single_cycle_core_TB_VHDL_behav xil_defaultlib.Single_cycle_core_TB_VHDL -log elaborate.log" 
+// Tcl Message: Built simulation snapshot Single_cycle_core_TB_VHDL_behav 
+// Tcl Message:  ****** Webtalk v2020.2 (64-bit)   **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020   **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020     ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.  source C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim/xsim.dir/Single_cycle_core_TB_VHDL_behav/webtalk/xsim_webtalk.tcl -notrace 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [Common 17-186] 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim/xsim.dir/Single_cycle_core_TB_VHDL_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Apr 12 13:33:53 2022. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2020.2/doc/webtalk_introduction.html. webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 116.535 ; gain = 17.695 INFO: [Common 17-206] Exiting Webtalk at Tue Apr 12 13:33:53 2022... 
+// TclEventType: LOAD_FEATURE
+// Tcl Message: run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:16 . Memory (MB): peak = 1019.527 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '17' seconds INFO: [USF-XSim-4] XSim::Simulate design 
+// Tcl Message: INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "Single_cycle_core_TB_VHDL_behav -key {Behavioral:sim_1:Functional:Single_cycle_core_TB_VHDL} -tclbatch {Single_cycle_core_TB_VHDL.tcl} -view {C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2020.2 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// WARNING: HEventQueue.dispatchEvent() is taking  2948 ms.
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Elapsed time: 30 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Tcl Message: open_wave_config C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg 
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Waveform: addNotify
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Tcl Message: open_wave_config: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1019.527 ; gain = 0.000 
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 98 MB. Current time: 4/12/22, 1:34:06 PM AEST
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: source Single_cycle_core_TB_VHDL.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 1000ns 
+// Tcl Message: xsim: Time (s): cpu = 00:00:19 ; elapsed = 00:00:12 . Memory (MB): peak = 1019.527 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'Single_cycle_core_TB_VHDL_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:25 ; elapsed = 00:00:38 . Memory (MB): peak = 1019.527 ; gain = 0.000 
+// 'd' command handler elapsed time: 37 seconds
+dismissDialog("Run Simulation"); // e
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 10 seconds
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 1:34:17 PM AEST
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 1:34:19 PM AEST
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 1642, 412); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 1:34:22 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 1709, 465); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectTab((HResource) null, (HResource) null, "Sources", 1); // aK
+// PAPropertyPanels.initPanels (adder_16b.vhd) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), alu : adder_16b(behavioural) (adder_16b.vhd)]", 14, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), alu : adder_16b(behavioural) (adder_16b.vhd)]", 14, false, false, false, false, false, true); // D - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), alu : adder_16b(behavioural) (adder_16b.vhd)]", 14, false); // D
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // u
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cr): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+// F (c): Create Source File: addNotify
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "hazard_detection_unit"); // aa
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // F
+selectButton("FINISH", "Finish"); // JButton
+// 'g' command handler elapsed time: 15 seconds
+dismissDialog("Add Sources"); // c
+// Tcl Message: close [ open C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/hazard_detection_unit.vhd w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/hazard_detection_unit.vhd 
+// I (cr): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "Yes"); // JButton
+dismissDialog("Define Module"); // I
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 75 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hazard_detection_unit(Behavioral) (hazard_detection_unit.vhd)]", 27, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hazard_detection_unit(Behavioral) (hazard_detection_unit.vhd)]", 27, false, false, false, false, false, true); // D - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hazard_detection_unit(Behavioral) (hazard_detection_unit.vhd)]", 27, false); // D
+selectCodeEditor("hazard_detection_unit.vhd", 43, 588); // bP
+// Elapsed time: 255 seconds
+selectCodeEditor("hazard_detection_unit.vhd", 504, 779); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 514, 699); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 508, 782); // bP
+// Elapsed time: 269 seconds
+selectCodeEditor("hazard_detection_unit.vhd", 166, 479); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 146, 426); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 514, 563); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 380, 409); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 400, 474); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 227, 775); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 192, 788); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 328, 752); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 386, 754); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 339, 755); // bP
+// Elapsed time: 29 seconds
+selectCodeEditor("hazard_detection_unit.vhd", 429, 771); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 980, 781); // bP
+// Elapsed time: 24 seconds
+selectCodeEditor("hazard_detection_unit.vhd", 1094, 770); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 95, 767); // bP
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("hazard_detection_unit.vhd", 329, 826); // bP
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), forwarding_unit_part : forwarding_unit(Behavioral) (forwarding_unit.vhd)]", 26, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), forwarding_unit_part : forwarding_unit(Behavioral) (forwarding_unit.vhd)]", 26, false, false, false, false, false, true); // D - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), forwarding_unit_part : forwarding_unit(Behavioral) (forwarding_unit.vhd)]", 26, false); // D
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "hazard_detection_unit.vhd", 1); // m
+selectCodeEditor("hazard_detection_unit.vhd", 346, 697); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 315, 683); // bP
+// Elapsed time: 33 seconds
+selectCodeEditor("hazard_detection_unit.vhd", 280, 753); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 270, 766); // bP
+// Elapsed time: 13 seconds
+selectCodeEditor("hazard_detection_unit.vhd", 223, 775); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 191, 780); // bP
+// Elapsed time: 30 seconds
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 23 seconds
+selectCodeEditor("hazard_detection_unit.vhd", 191, 780); // bP
+selectCodeEditor("hazard_detection_unit.vhd", 255, 775); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 14 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Single_cycle_core_TB_VHDL__pipeline_behav.wcfg", 0); // m
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 104 MB. Current time: 4/12/22, 1:48:47 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, hazard_detection_unit(Behavioral) (hazard_detection_unit.vhd)]", 27, false); // D
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // u
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cr): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+// F (c): Create Source File: addNotify
+// Elapsed time: 18 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Create Source File"); // F
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+// F (c): Create Source File: addNotify
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "mux_ctr_unit"); // aa
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Create Source File"); // F
+selectButton("FINISH", "Finish"); // JButton
+// 'g' command handler elapsed time: 35 seconds
+dismissDialog("Add Sources"); // c
+// Tcl Message: close [ open C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_ctr_unit.vhd w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_ctr_unit.vhd 
+// I (cr): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "Yes"); // JButton
+dismissDialog("Define Module"); // I
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 70 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mux_ctr_unit(Behavioral) (mux_ctr_unit.vhd)]", 28, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mux_ctr_unit(Behavioral) (mux_ctr_unit.vhd)]", 28, false, false, false, false, false, true); // D - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mux_ctr_unit(Behavioral) (mux_ctr_unit.vhd)]", 28, false); // D
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+selectCodeEditor("mux_ctr_unit.vhd", 328, 572); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 325, 653); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 35, 604); // bP
+// Elapsed time: 183 seconds
+selectCodeEditor("mux_ctr_unit.vhd", 725, 668); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 116, 689); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 588, 832); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 643, 661); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 114, 594); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 239, 592); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 682, 658); // bP
+typeControlKey((HResource) null, "mux_ctr_unit.vhd", 'c'); // bP
+typeControlKey((HResource) null, "mux_ctr_unit.vhd", 'v'); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 281, 675); // bP
+typeControlKey(null, null, 'z');
+selectCodeEditor("mux_ctr_unit.vhd", 730, 745); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 897, 763); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 509, 724); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 736, 515); // bP
+// Elapsed time: 13 seconds
+selectCodeEditor("mux_ctr_unit.vhd", 380, 764); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 380, 776); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 352, 827); // bP
+// Elapsed time: 51 seconds
+selectCodeEditor("mux_ctr_unit.vhd", 164, 668); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 155, 657); // bP
+// Elapsed time: 15 seconds
+selectCodeEditor("mux_ctr_unit.vhd", 197, 759); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 197, 759); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 313, 690); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 320, 657); // bP
+// Elapsed time: 41 seconds
+selectCodeEditor("mux_ctr_unit.vhd", 504, 771); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 440, 696); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 372, 629); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 391, 621); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 412, 692); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 408, 760); // bP
+selectCodeEditor("mux_ctr_unit.vhd", 343, 826); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// WARNING: HEventQueue.dispatchEvent() is taking  35638 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  174763 ms.
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 253 seconds
+selectCodeEditor("mux_ctr_unit.vhd", 714, 758); // bP
+// Elapsed time: 58 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Single_cycle_core_TB_VHDL__pipeline_behav.wcfg", 0); // m
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 106 MB. Current time: 4/12/22, 2:02:35 PM AEST
+// TclEventType: WAVEFORM_CLOSE_WCFG
+closeView(RDIResource.RDIViews_WAVEFORM_VIEWER, "Single_cycle_core_TB_VHDL__pipeline_behav.wcfg"); // w
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), ctrl_unit : control_unit(behavioural) (control_unit.vhd)]", 7, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), ctrl_unit : control_unit(behavioural) (control_unit.vhd)]", 7, false, false, false, false, false, true); // D - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), ctrl_unit : control_unit(behavioural) (control_unit.vhd)]", 7, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), ctrl_unit : control_unit(behavioural) (control_unit.vhd)]", 7, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("control_unit.vhd", 414, 373); // bP
+selectCodeEditor("control_unit.vhd", 441, 298); // bP
+selectCodeEditor("control_unit.vhd", 424, 371); // bP
+selectCodeEditor("control_unit.vhd", 490, 367); // bP
+selectCodeEditor("control_unit.vhd", 502, 381); // bP
+selectCodeEditor("control_unit.vhd", 733, 409); // bP
+selectCodeEditor("control_unit.vhd", 933, 536); // bP
+selectCodeEditor("control_unit.vhd", 603, 344); // bP
+// Elapsed time: 137 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd)]", 2, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd)]", 2, true, false, false, false, false, true); // D - Double Click - Node
+// Elapsed time: 18 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "control_unit.vhd", 2); // m
+// Elapsed time: 17 seconds
+selectCodeEditor("control_unit.vhd", 394, 417); // bP
+selectCodeEditor("control_unit.vhd", 353, 483); // bP
+// Elapsed time: 60 seconds
+selectCodeEditor("control_unit.vhd", 400, 601); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 134 seconds
+selectCodeEditor("control_unit.vhd", 648, 319); // bP
+selectCodeEditor("control_unit.vhd", 648, 400); // bP
+selectCodeEditor("control_unit.vhd", 659, 430); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "single_cycle_core.vhd", 3); // m
+// Elapsed time: 13 seconds
+selectCodeEditor("single_cycle_core.vhd", 652, 632); // bP
+selectCodeEditor("single_cycle_core.vhd", 677, 635); // bP
+selectCodeEditor("single_cycle_core.vhd", 677, 635, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("single_cycle_core.vhd", 729, 667); // bP
+selectCodeEditor("single_cycle_core.vhd", 752, 680); // bP
+selectCodeEditor("single_cycle_core.vhd", 732, 656); // bP
+// Elapsed time: 24 seconds
+selectCodeEditor("single_cycle_core.vhd", 482, 679); // bP
+selectCodeEditor("single_cycle_core.vhd", 531, 774); // bP
+selectCodeEditor("single_cycle_core.vhd", 835, 481); // bP
+selectCodeEditor("single_cycle_core.vhd", 865, 436); // bP
+// Elapsed time: 22 seconds
+selectCodeEditor("single_cycle_core.vhd", 588, 681); // bP
+selectCodeEditor("single_cycle_core.vhd", 524, 568); // bP
+selectCodeEditor("single_cycle_core.vhd", 530, 595); // bP
+// Elapsed time: 18 seconds
+selectCodeEditor("single_cycle_core.vhd", 510, 699); // bP
+selectCodeEditor("single_cycle_core.vhd", 542, 594); // bP
+selectCodeEditor("single_cycle_core.vhd", 537, 622); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 55 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd)]", 2); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), id_ex_stage : id_ex_pipeline_stage(Behavioral) (id_ex_pipeline_stage.vhd)]", 23, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), id_ex_stage : id_ex_pipeline_stage(Behavioral) (id_ex_pipeline_stage.vhd)]", 23, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), id_ex_stage : id_ex_pipeline_stage(Behavioral) (id_ex_pipeline_stage.vhd), pipe_reg_write : pipeline_bit_register(Behavioral) (pipeline_bit_register.vhd)]", 27, false, false, false, false, false, true); // D - Double Click
+// WARNING: HEventQueue.dispatchEvent() is taking  3097180 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 3:04:06 PM AEST
+// Elapsed time: 3136 seconds
+selectCodeEditor("id_ex_pipeline_stage.vhd", 430, 353); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 718, 321); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 694, 259); // bP
+// WARNING: HEventQueue.dispatchEvent() is taking  7678099 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 7679226 ms. Increasing delay to 23037678 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 92 MB. Current time: 4/12/22, 5:13:17 PM AEST
+// Elapsed time: 7858 seconds
+selectCodeEditor("id_ex_pipeline_stage.vhd", 514, 560); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 652, 609); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 707, 623); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 923, 637); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 291, 213); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 291, 248); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 282, 214); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 282, 214, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 282, 214); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 429, 264); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 313, 403); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 334, 441); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 371, 498); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 441, 575); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 493, 630); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 947, 623); // bP
+// Elapsed time: 17 seconds
+selectCodeEditor("id_ex_pipeline_stage.vhd", 397, 515); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 696, 632); // bP
+// Elapsed time: 35 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), id_ex_stage : id_ex_pipeline_stage(Behavioral) (id_ex_pipeline_stage.vhd), pipe_reg_data_a : pipeline_register(Behavioral) (pipeline_register.vhd)]", 24, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), id_ex_stage : id_ex_pipeline_stage(Behavioral) (id_ex_pipeline_stage.vhd), pipe_reg_data_a : pipeline_register(Behavioral) (pipeline_register.vhd)]", 24, false, false, false, false, false, true); // D - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), id_ex_stage : id_ex_pipeline_stage(Behavioral) (id_ex_pipeline_stage.vhd), pipe_reg_data_a : pipeline_register(Behavioral) (pipeline_register.vhd)]", 24, false); // D
+selectCodeEditor("pipeline_register.vhd", 76, 615); // bP
+selectCodeEditor("pipeline_register.vhd", 248, 650); // bP
+selectCodeEditor("pipeline_register.vhd", 248, 650, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("pipeline_register.vhd", 311, 729); // bP
+selectCodeEditor("pipeline_register.vhd", 108, 659); // bP
+typeControlKey((HResource) null, "pipeline_register.vhd", 'c'); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex_pipeline_stage.vhd", 4); // m
+selectCodeEditor("id_ex_pipeline_stage.vhd", 233, 450); // bP
+typeControlKey((HResource) null, "id_ex_pipeline_stage.vhd", 'v'); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 305, 504); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 223, 448); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 231, 470); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 241, 510); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 288, 521); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 297, 535); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 326, 536); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 216, 513); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 216, 513, false, false, false, false, true); // bP - Double Click
+// Elapsed time: 15 seconds
+selectCodeEditor("id_ex_pipeline_stage.vhd", 424, 641); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 409, 635); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 176, 564); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 363, 567); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 363, 567, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 363, 567); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 354, 573); // bP
+// Elapsed time: 66 seconds
+selectCodeEditor("id_ex_pipeline_stage.vhd", 230, 279); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 230, 279, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 230, 279); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 782, 287); // bP
+typeControlKey((HResource) null, "id_ex_pipeline_stage.vhd", 'v'); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 227, 311); // bP
+typeControlKey(null, null, 'z');
+selectCodeEditor("id_ex_pipeline_stage.vhd", 422, 548); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 305, 517); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 304, 686); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 386, 852); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 372, 826); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 625, 852); // bP
+// Elapsed time: 18 seconds
+typeControlKey(null, null, 'z');
+// Elapsed time: 26 seconds
+selectCodeEditor("id_ex_pipeline_stage.vhd", 609, 546); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 468, 578); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 458, 578, false, true, false, false, false); // bP - Control Key
+selectCodeEditor("id_ex_pipeline_stage.vhd", 431, 498); // bP
+typeControlKey((HResource) null, "id_ex_pipeline_stage.vhd", 'c'); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 204, 570); // bP
+typeControlKey((HResource) null, "id_ex_pipeline_stage.vhd", 'v'); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 447, 573); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 447, 573, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 675, 638); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 478, 587); // bP
+// Elapsed time: 43 seconds
+selectCodeEditor("id_ex_pipeline_stage.vhd", 489, 520); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 361, 399); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 160, 392); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 144, 359); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 172, 363); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 443, 500); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 288, 657); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 268, 255); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 330, 491); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 317, 544); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 501, 629); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 470, 577); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 387, 542); // bP
+// Elapsed time: 20 seconds
+selectCodeEditor("id_ex_pipeline_stage.vhd", 284, 840); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 477, 188); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 477, 188, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 524, 198); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 524, 198, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 498, 192); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 498, 192, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 520, 230); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 475, 199); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 475, 199, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 389, 199); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 406, 203); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 406, 203, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 452, 187); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 452, 187, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 488, 258); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 417, 488); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 405, 550); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 405, 550, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 420, 602); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 420, 602, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 420, 602); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 406, 733); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 195, 810); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 119, 529); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 423, 710); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 280, 595); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 578, 597); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 581, 674); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 586, 726); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 629, 701); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 477, 498); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 276, 216); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 442, 516); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 481, 657); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 440, 649); // bP
+// Elapsed time: 14 seconds
+selectCodeEditor("id_ex_pipeline_stage.vhd", 573, 199); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 537, 189); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 401, 358); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 394, 393); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 371, 489); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 286, 594); // bP
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("id_ex_pipeline_stage.vhd", 221, 749); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 240, 767); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 148, 183); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 50, 87); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 139, 162); // bP
+typeControlKey((HResource) null, "id_ex_pipeline_stage.vhd", 'v'); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 41, 454); // bP
+// Elapsed time: 12 seconds
+selectCodeEditor("id_ex_pipeline_stage.vhd", 554, 615); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bz (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// bz (cr):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// Tcl Message: [Tue Apr 12 17:23:22 2022] Launched synth_1... Run output will be captured here: C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bz
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// Elapsed time: 84 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ak
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// bz (cr):  Close : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// WARNING: HEventQueue.dispatchEvent() is taking  1704 ms.
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+// Tcl Message: close_sim: Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 1019.527 ; gain = 0.000 
+// e (cr):  Run Simulation : addNotify
+// Elapsed time: 12 seconds
+dismissDialog("Close"); // bz
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'Single_cycle_core_TB_VHDL' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... 
+// Tcl Message: INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvhdl --incr --relax -prj Single_cycle_core_TB_VHDL_vhdl.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '4' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab -wto b71789dcab584d7b9eca3c6be0bb098d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Single_cycle_core_TB_VHDL_behav xil_defaultlib.Single_cycle_core_TB_VHDL -log elaborate.log" 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds INFO: [USF-XSim-99] Step results log file:'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim/elaborate.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim/elaborate.log' file for more information. ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation. 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1019.527 ; gain = 0.000 
+// Tcl Message: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  
+// HOptionPane Error: 'ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  (Run Simulation)'
+// 'd' command handler elapsed time: 28 seconds
+// Elapsed time: 14 seconds
+selectButton("OptionPane.button", "OK"); // JButton
+// a (cr): Critical Messages: addNotify
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f
+dismissDialog("Critical Messages"); // a
+// Elapsed time: 13 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Simulation, sim_1, [VRFC 10-3353] formal port 'mem_read_in' has no actual or default value [C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/id_ex_pipeline_stage.vhd:53]. ]", 51, false); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Simulation, sim_1, [XSIM 43-3321] Static elaboration of top level VHDL design unit single_cycle_core_tb_vhdl in library work failed.. ]", 52, false); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Simulation, sim_1, [VRFC 10-3353] formal port 'mem_read_in' has no actual or default value [C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/id_ex_pipeline_stage.vhd:53]. ]", 51, false); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Simulation, sim_1, [XSIM 43-3321] Static elaboration of top level VHDL design unit single_cycle_core_tb_vhdl in library work failed.. ]", 52, false); // ah
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Simulation, sim_1, [VRFC 10-3353] formal port 'mem_read_in' has no actual or default value [C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/id_ex_pipeline_stage.vhd:53]. ]", 51, false); // ah
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mux_ctr_unit.vhd", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "control_unit.vhd", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "single_cycle_core.vhd", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex_pipeline_stage.vhd", 4); // m
+selectCodeEditor("id_ex_pipeline_stage.vhd", 112, 561); // bP
+typeControlKey((HResource) null, "id_ex_pipeline_stage.vhd", 'c'); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "single_cycle_core.vhd", 3); // m
+selectCodeEditor("single_cycle_core.vhd", 932, 717); // bP
+typeControlKey((HResource) null, "single_cycle_core.vhd", 'v'); // bP
+selectCodeEditor("single_cycle_core.vhd", 997, 738); // bP
+selectCodeEditor("single_cycle_core.vhd", 567, 733); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 13 seconds
+selectCodeEditor("single_cycle_core.vhd", 845, 468); // bP
+// Elapsed time: 17 seconds
+selectCodeEditor("single_cycle_core.vhd", 697, 538); // bP
+selectCodeEditor("single_cycle_core.vhd", 1024, 424); // bP
+// Elapsed time: 16 seconds
+selectCodeEditor("single_cycle_core.vhd", 867, 569); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bz (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Launch Runs"); // f
+// Elapsed time: 11 seconds
+selectCodeEditor("single_cycle_core.vhd", 427, 604); // bP
+selectCodeEditor("single_cycle_core.vhd", 327, 635); // bP
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bz (cr):  Resetting Runs : addNotify
+// f (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// bz (cr):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// Tcl Message: [Tue Apr 12 17:27:35 2022] Launched synth_1... Run output will be captured here: C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.runs/synth_1/runme.log 
+dismissDialog("Starting Design Runs"); // bz
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 109 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ak
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// e (cr):  Run Simulation : addNotify
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'Single_cycle_core_TB_VHDL' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvhdl --incr --relax -prj Single_cycle_core_TB_VHDL_vhdl.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd" into library xil_defaultlib INFO: [VRFC 10-3107] analyzing entity 'single_cycle_core' 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '3' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab -wto b71789dcab584d7b9eca3c6be0bb098d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Single_cycle_core_TB_VHDL_behav xil_defaultlib.Single_cycle_core_TB_VHDL -log elaborate.log" 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: Built simulation snapshot Single_cycle_core_TB_VHDL_behav 
+// Tcl Message: run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1019.527 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds INFO: [USF-XSim-4] XSim::Simulate design 
+// Tcl Message: INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "Single_cycle_core_TB_VHDL_behav -key {Behavioral:sim_1:Functional:Single_cycle_core_TB_VHDL} -tclbatch {Single_cycle_core_TB_VHDL.tcl} -view {C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2020.2 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// WARNING: HEventQueue.dispatchEvent() is taking  1950 ms.
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Tcl Message: open_wave_config C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg 
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// Waveform: addNotify
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: open_wave_config: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1019.527 ; gain = 0.000 
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:29:46 PM AEST
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: source Single_cycle_core_TB_VHDL.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 1000ns 
+// Tcl Message: xsim: Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 1019.527 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'Single_cycle_core_TB_VHDL_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 1019.527 ; gain = 0.000 
+// 'd' command handler elapsed time: 20 seconds
+// Elapsed time: 21 seconds
+dismissDialog("Run Simulation"); // e
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:29:50 PM AEST
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:29:51 PM AEST
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:29:53 PM AEST
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:29:55 PM AEST
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_IN, "Waveform Viewer_zoom_in"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:29:56 PM AEST
+collapseTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, srr]", 12); // a
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:29:59 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Run Command: RDIResourceCommand.RDICommands_WAVEFORM_SAVE_CONFIGURATION
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// Tcl Message: save_wave_config {C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg} 
+selectButton(RDIResource.WaveformView_GOTO_CURSOR, "Waveform Viewer_waveformgotocursor"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.WaveformView_GOTO_CURSOR, "Waveform Viewer_waveformgotocursor"); // E
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 5:30:06 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 5:30:06 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 5:30:06 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 5:30:07 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 5:30:07 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 5:30:08 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 5:30:08 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 5:30:08 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 5:30:09 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 5:30:09 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 5:30:09 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 5:30:10 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 5:30:10 PM AEST
+selectButton(RDIResource.WaveformView_GOTO_TIME_0, "Waveform Viewer_RunReset"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 5:30:13 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:30:14 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 101 MB. Current time: 4/12/22, 5:30:15 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+collapseTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, sig_regfile[0:15][15:0]]", 2); // a
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:30:19 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+expandTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, sig_insn[15:0]]", 2); // a
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:30:27 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 112 MB. Current time: 4/12/22, 5:30:27 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 120 MB. Current time: 4/12/22, 5:30:27 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 120 MB. Current time: 4/12/22, 5:30:27 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 110 MB. Current time: 4/12/22, 5:30:27 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 112 MB. Current time: 4/12/22, 5:30:27 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:30:28 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:30:28 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 119 MB. Current time: 4/12/22, 5:30:28 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:30:29 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:30:29 PM AEST
+collapseTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, sig_insn[15:0]]", 2); // a
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 665, 37); // n
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 1263, 44); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:30:35 PM AEST
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:30:37 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -149, 60); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -111, 60); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -71, 69); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:30:42 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -193, 65); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+expandTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, idex_signals]", 5); // a
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:30:49 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -287, 446); // n
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.WaveformView_GOTO_LAST_TIME, "Waveform Viewer_RunAll"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.WaveformView_GOTO_TIME_0, "Waveform Viewer_RunReset"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:30:57 PM AEST
+selectButton(RDIResource.WaveformView_GOTO_CURSOR, "Waveform Viewer_waveformgotocursor"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectButton(RDIResource.WaveformView_GOTO_CURSOR, "Waveform Viewer_waveformgotocursor"); // E
+selectButton(RDIResource.WaveformView_GOTO_CURSOR, "Waveform Viewer_waveformgotocursor"); // E
+selectButton(RDIResource.WaveformView_GOTO_CURSOR, "Waveform Viewer_waveformgotocursor"); // E
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -310, 411); // n
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -282, 418); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.WaveformView_GOTO_CURSOR, "Waveform Viewer_waveformgotocursor"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -259, 423); // n
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:31:07 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -191, 439); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -179, 420); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -139, 432); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:31:13 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -198, 416); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -175, 420); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -191, 427); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:31:18 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -142, 44); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -100, 63); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -119, 63); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:31:23 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -62, 69); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -153, 65); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:31:28 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -49, 28); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 32, 14); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -138, -79); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:31:34 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -63, -71); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 44, -81); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -65, 12); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:31:40 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -53, 14); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 24, 20); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 102, 57); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:31:46 PM AEST
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, idex_signals, sig_idex_read_data_a[15:0]]", 6, true); // a - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+expandTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, idex_control_signals]", 11); // a
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:31:59 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 11 seconds
+collapseTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, idex_control_signals]", 11); // a
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+expandTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, sig_idex_insn[15:0]]", 4); // a
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+collapseTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, sig_idex_insn[15:0]]", 4); // a
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:32:13 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -150, -79); // n
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -55, 16); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 52, 86); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:32:21 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, 121, 98); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:32:29 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 102 MB. Current time: 4/12/22, 5:32:29 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 104 MB. Current time: 4/12/22, 5:32:33 PM AEST
+// Elapsed time: 10 seconds
+selectTab((HResource) null, (HResource) null, "Sources", 1); // aK
+// PAPropertyPanels.initPanels (instruction_memory.vhd) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), insn_mem : instruction_memory(behavioral) (instruction_memory.vhd)]", 5, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), insn_mem : instruction_memory(behavioral) (instruction_memory.vhd)]", 5, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), insn_mem : instruction_memory(behavioral) (instruction_memory.vhd)]", 5, false, false, false, false, false, true); // D - Double Click
+selectCodeEditor("instruction_memory.vhd", 677, 497); // bP
+selectCodeEditor("instruction_memory.vhd", 689, 463); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Single_cycle_core_TB_VHDL__pipeline_behav.wcfg", 6); // m
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+expandTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, idex_control_signals]", 9); // a
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -149, 243); // n
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 114 MB. Current time: 4/12/22, 5:33:05 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -167, 312); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -151, 401); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -76, 394); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 113 MB. Current time: 4/12/22, 5:33:12 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -76, 316); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -82, 240); // n
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 106 MB. Current time: 4/12/22, 5:33:14 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -82, 329); // n
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:33:15 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -78, 414); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -78, 327); // n
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 108 MB. Current time: 4/12/22, 5:33:17 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -80, 245); // n
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:33:18 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -69, 332); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -69, 398); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:33:19 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -82, 318); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -83, 260); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:33:21 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -69, 559); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "single_cycle_core.vhd", 3); // m
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex_pipeline_stage.vhd", 4); // m
+// Elapsed time: 12 seconds
+selectCodeEditor("id_ex_pipeline_stage.vhd", 272, 827); // bP
+// Elapsed time: 12 seconds
+selectCodeEditor("id_ex_pipeline_stage.vhd", 677, 278); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 646, 260); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 613, 251); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 597, 336); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 603, 394); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 582, 490); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 566, 521); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 416, 491); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 464, 500); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 467, 527); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 470, 573); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 481, 625); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 483, 665); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 483, 694); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 483, 716); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 486, 754); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "pipeline_register.vhd", 5); // m
+selectCodeEditor("pipeline_register.vhd", 569, 402); // bP
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), ctrl_unit : control_unit(behavioural) (control_unit.vhd)]", 7, false); // D
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "control_unit.vhd", 2); // m
+selectCodeEditor("control_unit.vhd", 335, 593); // bP
+selectCodeEditor("control_unit.vhd", 378, 644); // bP
+selectCodeEditor("control_unit.vhd", 378, 628); // bP
+selectCodeEditor("control_unit.vhd", 462, 335); // bP
+selectCodeEditor("control_unit.vhd", 480, 190); // bP
+selectCodeEditor("control_unit.vhd", 420, 295); // bP
+selectCodeEditor("control_unit.vhd", 415, 349); // bP
+selectCodeEditor("control_unit.vhd", 431, 419); // bP
+selectCodeEditor("control_unit.vhd", 431, 431); // bP
+selectCodeEditor("control_unit.vhd", 421, 472); // bP
+selectCodeEditor("control_unit.vhd", 425, 525); // bP
+selectCodeEditor("control_unit.vhd", 415, 618); // bP
+selectCodeEditor("control_unit.vhd", 411, 603); // bP
+selectCodeEditor("control_unit.vhd", 411, 639); // bP
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+selectCodeEditor("single_cycle_core.vhd", 507, 677); // bP
+selectCodeEditor("single_cycle_core.vhd", 529, 584); // bP
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex_pipeline_stage.vhd", 3); // m
+selectCodeEditor("id_ex_pipeline_stage.vhd", 325, 546); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 385, 605); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 562, 455); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Single_cycle_core_TB_VHDL__pipeline_behav.wcfg", 4); // m
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, idex_signals, sig_idex_immed[15:0]]", 6, true); // a - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, idex_signals, idex_reg_a_addr[3:0]]", 7, true); // a - Node
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 106 MB. Current time: 4/12/22, 5:35:17 PM AEST
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, idex_signals, idex_reg_b_addr[3:0]]", 8, true); // a - Node
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+selectTree(RDIResource.WaveformNameTree_WAVEFORM_NAME_TREE, "[true, idex_control_signals, sig_idex_alu_src]", 10, false); // a
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// Elapsed time: 21 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex_pipeline_stage.vhd", 3); // m
+selectCodeEditor("id_ex_pipeline_stage.vhd", 340, 541); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 335, 608); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 335, 696); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 335, 383); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 263, 306); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 219, 110); // bP
+// Elapsed time: 42 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, (String) null); // l
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex_pipeline_stage.vhd", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Single_cycle_core_TB_VHDL__pipeline_behav.wcfg", 4); // m
+// Elapsed time: 18 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex_pipeline_stage.vhd", 3); // m
+// Elapsed time: 13 seconds
+selectCodeEditor("id_ex_pipeline_stage.vhd", 122, 672); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 207, 614); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 279, 366); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 209, 404); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 214, 650); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 258, 387); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Single_cycle_core_TB_VHDL__pipeline_behav.wcfg", 4); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "single_cycle_core.vhd", 2); // m
+selectCodeEditor("single_cycle_core.vhd", 199, 603); // bP
+selectCodeEditor("single_cycle_core.vhd", 199, 632); // bP
+selectCodeEditor("single_cycle_core.vhd", 195, 683); // bP
+selectCodeEditor("single_cycle_core.vhd", 195, 703); // bP
+selectCodeEditor("single_cycle_core.vhd", 262, 558); // bP
+selectCodeEditor("single_cycle_core.vhd", 320, 346); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Single_cycle_core_TB_VHDL__pipeline_behav.wcfg", 4); // m
+// Elapsed time: 11 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "single_cycle_core.vhd", 2); // m
+// Elapsed time: 16 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "alu_src"); // l
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex_pipeline_stage.vhd", 3); // m
+selectCodeEditor("id_ex_pipeline_stage.vhd", 408, 316); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 408, 316, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 368, 353); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 387, 332); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 387, 332, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 396, 320); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 396, 320, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 397, 315); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 403, 315); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 403, 315, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 460, 755); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 412, 305); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 412, 305, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "id_ex_pipeline_stage.vhd", 'c'); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 328, 298); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 328, 298, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 378, 308); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 378, 308, false, false, false, false, true); // bP - Double Click
+typeControlKey((HResource) null, "id_ex_pipeline_stage.vhd", 'c'); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 632, 428); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 577, 141); // bP
+typeControlKey((HResource) null, "id_ex_pipeline_stage.vhd", 'v'); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 421, 486); // bP
+// Elapsed time: 23 seconds
+selectCodeEditor("id_ex_pipeline_stage.vhd", 517, 474); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 520, 428); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 520, 428, false, false, false, false, true); // bP - Double Click
+selectCodeEditor("id_ex_pipeline_stage.vhd", 520, 428); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 478, 441); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 575, 783); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 311, 386); // bP
+// Elapsed time: 10 seconds
+selectCodeEditor("id_ex_pipeline_stage.vhd", 445, 462); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 230, 395); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 163, 393); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 242, 413); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 152, 389); // bP
+typeControlKey((HResource) null, "id_ex_pipeline_stage.vhd", 'c'); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 548, 771); // bP
+typeControlKey((HResource) null, "id_ex_pipeline_stage.vhd", 'v'); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 417, 767); // bP
+// Elapsed time: 21 seconds
+selectCodeEditor("id_ex_pipeline_stage.vhd", 718, 761); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 673, 743); // bP
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bz (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run synth_1 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// f (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+// bz (cr):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Tue Apr 12 17:40:00 2022] Launched synth_1... Run output will be captured here: C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 5 seconds
+// TclEventType: RUN_STATUS_CHANGE
+dismissDialog("Starting Design Runs"); // bz
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: RUN_STATUS_CHANGE
+selectCodeEditor("id_ex_pipeline_stage.vhd", 561, 566); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 582, 700); // bP
+selectCodeEditor("id_ex_pipeline_stage.vhd", 613, 517); // bP
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Single_cycle_core_TB_VHDL__pipeline_behav.wcfg", 4); // m
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:40:13 PM AEST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:40:14 PM AEST
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "instruction_memory.vhd", 5); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Single_cycle_core_TB_VHDL__pipeline_behav.wcfg", 4); // m
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:40:18 PM AEST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:40:20 PM AEST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:40:20 PM AEST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 106 MB. Current time: 4/12/22, 5:40:21 PM AEST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:40:21 PM AEST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:40:22 PM AEST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:40:23 PM AEST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 106 MB. Current time: 4/12/22, 5:40:23 PM AEST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:40:23 PM AEST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:40:23 PM AEST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 106 MB. Current time: 4/12/22, 5:40:24 PM AEST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:40:24 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:40:25 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 107 MB. Current time: 4/12/22, 5:40:25 PM AEST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:40:25 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 110 MB. Current time: 4/12/22, 5:40:27 PM AEST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 106 MB. Current time: 4/12/22, 5:40:27 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 105 MB. Current time: 4/12/22, 5:40:28 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 108 MB. Current time: 4/12/22, 5:40:28 PM AEST
+// TclEventType: WAVEFORM_CLOSE_WCFG
+// Elapsed time: 13 seconds
+closeView(RDIResource.RDIViews_WAVEFORM_VIEWER, "Single_cycle_core_TB_VHDL__pipeline_behav.wcfg"); // w
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "id_ex_pipeline_stage.vhd", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "instruction_memory.vhd", 4); // m
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// Elapsed time: 66 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, "Run Behavioral Simulation"); // ak
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL
+// bz (cr):  Close : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// PAPropertyPanels.initPanels (control_unit.vhd) elapsed time: 0.2s
+// WARNING: HEventQueue.dispatchEvent() is taking  2276 ms.
+// Tcl Message: close_sim 
+// Tcl Message: INFO: [Simtcl 6-16] Simulation closed 
+// e (cr):  Run Simulation : addNotify
+dismissDialog("Close"); // bz
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation 
+// Tcl Message: Command: launch_simulation  
+// Tcl Message: INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' INFO: [SIM-utils-54] Inspecting design source files for 'Single_cycle_core_TB_VHDL' in fileset 'sim_1'... INFO: [USF-XSim-97] Finding global include files... INFO: [USF-XSim-98] Fetching design files from 'sim_1'... 
+// Tcl Message: INFO: [USF-XSim-2] XSim::Compile design INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim' 
+// Tcl Message: "xvhdl --incr --relax -prj Single_cycle_core_TB_VHDL_vhdl.prj" 
+// TclEventType: LAUNCH_SIM_LOG
+// Tcl Message: INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/id_ex_pipeline_stage.vhd" into library xil_defaultlib INFO: [VRFC 10-3107] analyzing entity 'id_ex_pipeline_stage' 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '4' seconds INFO: [USF-XSim-3] XSim::Elaborate design INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim' 
+// Tcl Message: "xelab -wto b71789dcab584d7b9eca3c6be0bb098d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Single_cycle_core_TB_VHDL_behav xil_defaultlib.Single_cycle_core_TB_VHDL -log elaborate.log" 
+// TclEventType: LAUNCH_SIM
+// Tcl Message: Built simulation snapshot Single_cycle_core_TB_VHDL_behav 
+// Tcl Message: run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 1019.527 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds INFO: [USF-XSim-4] XSim::Simulate design 
+// Tcl Message: INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim' INFO: [USF-XSim-98] *** Running xsim 
+// Tcl Message:    with args "Single_cycle_core_TB_VHDL_behav -key {Behavioral:sim_1:Functional:Single_cycle_core_TB_VHDL} -tclbatch {Single_cycle_core_TB_VHDL.tcl} -view {C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg} -log {simulate.log}" 
+// Tcl Message: INFO: [USF-XSim-8] Loading simulator feature 
+// Tcl Message: Vivado Simulator 2020.2 
+// TclEventType: SIMULATION_CREATE_SIMULATION_OBJECT
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// PAPropertyPanels.initPanels (control_unit.vhd) elapsed time: 0.2s
+// WARNING: HEventQueue.dispatchEvent() is taking  2669 ms.
+// Tcl Message: Time resolution is 1 ps 
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// Tcl Message: open_wave_config C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg 
+// TclEventType: WAVEFORM_UPDATE_TITLE
+// TclEventType: WAVEFORM_OPEN_WCFG
+// Waveform: addNotify
+// Waveform: addNotify
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_CLEAR_CURRENT_LINE
+// Tcl Message: open_wave_config: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1019.527 ; gain = 0.000 
+// Tcl Message: source Single_cycle_core_TB_VHDL.tcl 
+// Tcl Message: # set curr_wave [current_wave_config] # if { [string length $curr_wave] == 0 } { #   if { [llength [get_objects]] > 0} { #     add_wave / #     set_property needs_save false [current_wave_config] #   } else { #      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console." #   } # } # run 1000ns 
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 108 MB. Current time: 4/12/22, 5:42:28 PM AEST
+// TclEventType: WAVEFORM_DELAYED_MODEL_EVENT
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: SIMULATION_OBJECT_TREE_RESTORED
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: SIMULATION_UPDATE_LATEST_TIME
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: SIMULATION_CURRENT_SCOPE_CHANGED
+// TclEventType: SIMULATION_CURRENT_STACK_CHANGED
+// TclEventType: SIMULATION_UPDATE_STACK_FRAMES
+// TclEventType: SIMULATION_CURRENT_STACK_FRAME_CHANGED
+// TclEventType: SIMULATION_UPDATE_LOCALS
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_SIMULATION_STATE
+// Tcl Message: xsim: Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 1019.527 ; gain = 0.000 
+// Tcl Message: INFO: [USF-XSim-96] XSim completed. Design snapshot 'Single_cycle_core_TB_VHDL_behav' loaded. INFO: [USF-XSim-97] XSim simulation ran for 1000ns 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:23 ; elapsed = 00:00:28 . Memory (MB): peak = 1019.527 ; gain = 0.000 
+// 'd' command handler elapsed time: 35 seconds
+// Elapsed time: 28 seconds
+dismissDialog("Run Simulation"); // e
+// TclEventType: WAVEFORM_MODEL_EVENT
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_MODEL_EVENT
+selectButton(RDIResource.WaveformView_GOTO_TIME_0, "Waveform Viewer_RunReset"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// [GUI Memory]: 167 MB (+3704kb) [04:13:12]
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 107 MB. Current time: 4/12/22, 5:42:31 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 108 MB. Current time: 4/12/22, 5:42:32 PM AEST
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 107 MB. Current time: 4/12/22, 5:42:32 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 108 MB. Current time: 4/12/22, 5:42:33 PM AEST
+selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); // E
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 108 MB. Current time: 4/12/22, 5:42:34 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 116 MB. Current time: 4/12/22, 5:42:36 PM AEST
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,030 MB. GUI used memory: 108 MB. Current time: 4/12/22, 5:42:37 PM AEST
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -95, 95); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectGraphicalView(RDIResource.RDIViews_WAVEFORM_VIEWER, -85, 179); // n
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// TclEventType: WAVEFORM_UPDATE_COMMANDS
+selectTab((HResource) null, (HResource) null, "Sources", 1); // aK
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), insn_mem : instruction_memory(behavioral) (instruction_memory.vhd)]", 5, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), insn_mem : instruction_memory(behavioral) (instruction_memory.vhd)]", 5, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Single_cycle_core_TB_VHDL(behave) (single_cycle_core_TB_VHDL.vhd), UUT : single_cycle_core(structural) (single_cycle_core.vhd), insn_mem : instruction_memory(behavioral) (instruction_memory.vhd)]", 5, false, false, false, false, false, true); // D - Double Click
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F
+// TclEventType: WAVEFORM_CLOSE_WCFG
+closeView(RDIResource.RDIViews_WAVEFORM_VIEWER, "Single_cycle_core_TB_VHDL__pipeline_behav.wcfg"); // w
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // F

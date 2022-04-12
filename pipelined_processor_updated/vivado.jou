@@ -1,0 +1,45 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Apr 12 13:29:14 2022
+# Process ID: 2820
+# Current directory: C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4876 C:\Users\Katel\OneDrive\Documents\GitHub\COMP3211-project\pipelined_processor_updated\pipelined_processor_updated.xpr
+# Log file: C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/vivado.log
+# Journal file: C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_simulation
+open_wave_config C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg
+source Single_cycle_core_TB_VHDL.tcl
+close [ open C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/hazard_detection_unit.vhd w ]
+add_files C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/hazard_detection_unit.vhd
+update_compile_order -fileset sources_1
+close [ open C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_ctr_unit.vhd w ]
+add_files C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_ctr_unit.vhd
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_sim
+launch_simulation
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_simulation
+open_wave_config C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg
+source Single_cycle_core_TB_VHDL.tcl
+save_wave_config {C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg}
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+close_sim
+launch_simulation
+open_wave_config C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg
+source Single_cycle_core_TB_VHDL.tcl
