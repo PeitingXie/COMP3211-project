@@ -2,11 +2,11 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Mon Apr 11 21:04:38 2022
-# Process ID: 10004
-# Current directory: D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.runs/synth_1
+# Start of session at: Tue Apr 12 18:02:07 2022
+# Process ID: 9444
+# Current directory: C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.runs/synth_1
 # Command line: vivado.exe -log Single_cycle_core_TB_VHDL.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Single_cycle_core_TB_VHDL.tcl
-# Log file: D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.runs/synth_1/Single_cycle_core_TB_VHDL.vds
-# Journal file: D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.runs/synth_1\vivado.jou
+# Log file: C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.runs/synth_1/Single_cycle_core_TB_VHDL.vds
+# Journal file: C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source Single_cycle_core_TB_VHDL.tcl -notrace

@@ -104,7 +104,8 @@ component control_unit is
            mem_write  : out std_logic;
            mem_to_reg : out std_logic_vector(1 downto 0);
            read_byte  : out std_logic;
-           alu_ctr    : out std_logic_vector(2 downto 0));
+           alu_ctr    : out std_logic_vector(2 downto 0);
+           mem_read   : out std_logic );
 end component;
 
 component register_file is
@@ -205,7 +206,9 @@ component id_ex_pipeline_stage is
          insn_in : in std_logic_vector(15 downto 0);
          insn_out : out std_logic_vector(15 downto 0);
          forwarded_write_register_in : in std_logic_vector(3 downto 0);
-         forwarded_write_register_out : out std_logic_vector(3 downto 0));
+         forwarded_write_register_out : out std_logic_vector(3 downto 0);
+         mem_read_in : in std_logic;
+         mem_read_out : out std_logic );
 
 end component;
 
@@ -297,6 +300,7 @@ signal sig_srr_result           : std_logic_vector(15 downto 0);
 signal sig_byte_data            : std_logic_vector(15 downto 0);
 signal sig_data_out             : std_logic_vector(15 downto 0);
 signal sig_data_to_extend       : std_logic_vector(7 downto 0);
+signal sig_mem_read             : std_logic;
 
 -- pipeline signals --
 signal sig_ifid_insn            : std_logic_vector(15 downto 0);
@@ -312,6 +316,7 @@ signal sig_idex_alu_src         : std_logic;
 signal sig_idex_mem_write       : std_logic;
 signal sig_idex_reg_dst         : std_logic;
 signal sig_idex_insn            : std_logic_vector(15 downto 0);
+signal sig_idex_mem_read        : std_logic;
 
 signal sig_exmem_alu_result     : std_logic_vector(15 downto 0);
 signal sig_exmem_read_data_b    : std_logic_vector(15 downto 0);
@@ -379,7 +384,8 @@ begin
                mem_write  => sig_mem_write,
                mem_to_reg => sig_mem_to_reg,
                read_byte  => sig_read_byte,
-               alu_ctr    => sig_alu_ctr );
+               alu_ctr    => sig_alu_ctr,
+               mem_read   => sig_mem_read );
 
     mux_reg_dst : mux_2to1_4b 
     port map ( mux_select => sig_memwb_reg_dst,
@@ -508,7 +514,9 @@ begin
               insn_in => sig_ifid_insn,
               insn_out => sig_idex_insn,
               forwarded_write_register_in => sig_forwarded_write_register,
-              forwarded_write_register_out => sig_idex_forwarded_write_register);
+              forwarded_write_register_out => sig_idex_forwarded_write_register,
+              mem_read_in => sig_mem_read,
+              mem_read_out => sig_idex_mem_read);
 
     ex_mem_stage: ex_mem_pipeline_stage
     port map ( reset => reset,
