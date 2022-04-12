@@ -108,6 +108,16 @@ component control_unit is
            mem_read   : out std_logic );
 end component;
 
+component mux_ctr_unit is
+  Port ( ctr_sig_sel : in std_logic;
+         mem_write_in : in std_logic;
+         mem_write_out : out std_logic;
+         reg_write_in : in std_logic;
+         reg_write_out : out std_logic;
+         alu_ctr_in : in std_logic_vector(2 downto 0);
+         alu_ctr_out : out std_logic_vector(2 downto 0) );
+end component;
+
 component register_file is
     port ( reset           : in  std_logic;
            clk             : in  std_logic;
@@ -273,6 +283,17 @@ component forwarding_unit is
          );
 end component;
 
+-- hazard detection unit --
+component hazard_detection_unit is
+  Port ( ifid_reg_a : in std_logic_vector(3 downto 0);
+         ifid_reg_b : in std_logic_vector(3 downto 0);
+         idex_reg_b : in std_logic_vector(3 downto 0);
+         idex_mem_read : in std_logic;
+         ctr_sig_sel : out std_logic;
+         ifid_write : out std_logic;
+         pc_write : out std_logic );
+end component;
+
 signal sig_next_pc              : std_logic_vector(3 downto 0);
 signal sig_curr_pc              : std_logic_vector(3 downto 0);
 signal sig_one_4b               : std_logic_vector(3 downto 0);
@@ -349,6 +370,13 @@ signal sig_alu_src_b_forward_sel : std_logic_vector(1 downto 0);
 signal sig_alu_b_src_b : std_logic_vector(15 downto 0);
 signal sig_alu_src_a : std_logic_vector(15 downto 0);
 
+-- stalling signals --
+signal sig_mux_ctr_mem_write : std_logic;
+signal sig_mux_ctr_reg_write : std_logic;
+signal sig_mux_ctr_alu_ctr : std_logic_vector(2 downto 0);
+signal sig_ctr_sig_sel : std_logic;
+signal sig_ifid_write : std_logic;
+signal sig_pc_write : std_logic;
 
 begin
 
@@ -386,7 +414,16 @@ begin
                read_byte  => sig_read_byte,
                alu_ctr    => sig_alu_ctr,
                mem_read   => sig_mem_read );
-
+    
+    mux_ctr : mux_ctr_unit
+    port map ( ctr_sig_sel => sig_ctr_sig_sel,
+               mem_write_in => sig_mem_write,
+               mem_write_out => sig_mux_ctr_mem_write,
+               reg_write_in => sig_reg_write,
+               reg_write_out => sig_mux_ctr_reg_write,
+               alu_ctr_in => sig_alu_ctr,
+               alu_ctr_out => sig_mux_ctr_alu_ctr );
+    
     mux_reg_dst : mux_2to1_4b 
     port map ( mux_select => sig_memwb_reg_dst,
                data_a     => sig_memwb_insn(7 downto 4),
@@ -497,9 +534,9 @@ begin
               read_data_a_out => sig_idex_read_data_a,
               read_data_b_out => sig_idex_read_data_b,
               immed_out => sig_idex_immed,
-              reg_write_in => sig_reg_write,
+              reg_write_in => sig_mux_ctr_reg_write,
               reg_write_out => sig_idex_reg_write,
-              alu_ctr_in => sig_alu_ctr,
+              alu_ctr_in => sig_mux_ctr_alu_ctr,
               alu_ctr_out => sig_idex_alu_ctr,
               read_byte_in => sig_read_byte,
               read_byte_out => sig_idex_read_byte,
@@ -507,7 +544,7 @@ begin
               mem_to_reg_out => sig_idex_mem_to_reg,
               alu_src_in => sig_alu_src,
               alu_src_out => sig_idex_alu_src,
-              mem_to_write_in => sig_mem_write,
+              mem_to_write_in => sig_mux_ctr_mem_write,
               mem_to_write_out => sig_idex_mem_write,
               reg_dst_in => sig_reg_dst,
               reg_dst_out => sig_idex_reg_dst,
@@ -579,6 +616,17 @@ begin
         memwb_reg_dst_addr => sig_memwb_forwarded_write_register,
         aluSrc_a_sel => sig_alu_src_a_forward_sel,
         aluSrc_b_sel => sig_alu_src_b_forward_sel
+    );
+
+-- hazard detection unit --
+    hazard_dt_unit : hazard_detection_unit
+    port map ( ifid_reg_a => sig_ifid_insn(11 downto 8),
+               ifid_reg_b => sig_ifid_insn(7 downto 4),
+               idex_reg_b => sig_idex_insn(7 downto 4),
+               idex_mem_read => sig_idex_mem_read,
+               ctr_sig_sel => sig_ctr_sig_sel,
+               ifid_write => sig_ifid_write,
+               pc_write => sig_pc_write
     );
     
 end structural;

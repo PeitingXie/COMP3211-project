@@ -91,6 +91,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/data_memory.vhd
   C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/ex_mem_pipeline_stage.vhd
   C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/forwarding_unit.vhd
+  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/hazard_detection_unit.vhd
   C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/id_ex_pipeline_stage.vhd
   C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/if_id_pipeline_stage.vhd
   C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd
@@ -101,6 +102,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd
   C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/mux_4to1_16b.vhd
   C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_4to1_16b.vhd
+  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_ctr_unit.vhd
   C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_data_to_mem_to_reg.vhd
   C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_2bit_register.vhd
   C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_4bit_register.vhd

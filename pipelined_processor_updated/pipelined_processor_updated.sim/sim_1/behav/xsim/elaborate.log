@@ -18,6 +18,7 @@ Compiling architecture behavioural of entity xil_defaultlib.adder_4b [adder_4b_d
 Compiling architecture behavioral of entity xil_defaultlib.instruction_memory [instruction_memory_default]
 Compiling architecture behavioral of entity xil_defaultlib.sign_extend_4to16 [sign_extend_4to16_default]
 Compiling architecture behavioural of entity xil_defaultlib.control_unit [control_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_ctr_unit [mux_ctr_unit_default]
 Compiling architecture behavioural of entity xil_defaultlib.mux_2to1_1b [mux_2to1_1b_default]
 Compiling architecture structural of entity xil_defaultlib.mux_2to1_4b [mux_2to1_4b_default]
 Compiling architecture behavioral of entity xil_defaultlib.register_file [register_file_default]
@@ -40,6 +41,7 @@ Compiling architecture behavioral of entity xil_defaultlib.pipeline_4bit_registe
 Compiling architecture behavioral of entity xil_defaultlib.ex_mem_pipeline_stage [ex_mem_pipeline_stage_default]
 Compiling architecture behavioral of entity xil_defaultlib.mem_wb_pipeline_stage [mem_wb_pipeline_stage_default]
 Compiling architecture behavioral of entity xil_defaultlib.forwarding_unit [forwarding_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.hazard_detection_unit [hazard_detection_unit_default]
 Compiling architecture structural of entity xil_defaultlib.single_cycle_core [single_cycle_core_default]
 Compiling architecture behave of entity xil_defaultlib.single_cycle_core_tb_vhdl
 Built simulation snapshot Single_cycle_core_TB_VHDL_behav
