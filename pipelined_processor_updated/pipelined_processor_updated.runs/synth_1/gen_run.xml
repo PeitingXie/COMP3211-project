@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1649752690">
+<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1649753620">
   <File Type="PA-TCL" Name="Single_cycle_core_TB_VHDL.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="Single_cycle_core_TB_VHDL_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Single_cycle_core_TB_VHDL_reports.tcl"/>

@@ -143,12 +143,12 @@ begin
             
             var_insn_mem(0)  := X"1010"; -- $1 = 15
             var_insn_mem(1)  := X"1021"; -- $2 = 10
-            var_insn_mem(2)  := X"0000";
-            var_insn_mem(3)  := X"0000";
-            var_insn_mem(4)  := X"0000";
-            var_insn_mem(5)  := X"9123"; -- $3 = 10
-            var_insn_mem(6)  := X"9324"; -- $4 = 10
-            var_insn_mem(7)  := X"9315"; -- $5 = 10
+            var_insn_mem(2)  := X"9123"; -- $3 = 10
+            var_insn_mem(3)  := X"9324"; -- $4 = 10
+            var_insn_mem(4)  := X"9315"; -- $5 = 10
+            var_insn_mem(5)  := X"0000"; 
+            var_insn_mem(6)  := X"0000"; 
+            var_insn_mem(7)  := X"0000"; 
             var_insn_mem(8)  := X"0000";
             var_insn_mem(9)  := X"0000";
             var_insn_mem(10) := X"0000";

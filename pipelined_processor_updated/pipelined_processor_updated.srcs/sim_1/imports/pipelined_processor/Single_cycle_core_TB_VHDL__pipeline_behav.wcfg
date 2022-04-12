@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="48001fs"></ZoomEndTime>
-      <Cursor1Time time="12650fs"></Cursor1Time>
+      <ZoomStartTime time="8000fs"></ZoomStartTime>
+      <ZoomEndTime time="28021fs"></ZoomEndTime>
+      <Cursor1Time time="15800fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="174"></NameColumnWidth>
-      <ValueColumnWidth column_width="104"></ValueColumnWidth>
+      <NameColumnWidth column_width="479"></NameColumnWidth>
+      <ValueColumnWidth column_width="190"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="18" />
+   <WVObjectSize size="19" />
    <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
@@ -114,6 +114,7 @@
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/mux_ctr/alu_ctr_out" type="array">
          <obj_property name="ElementShortName">alu_ctr_out[2:0]</obj_property>
          <obj_property name="ObjectShortName">alu_ctr_out[2:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_idex_insn" type="array">
@@ -147,6 +148,7 @@
    <wvobject fp_name="group199" type="group">
       <obj_property name="label">idex_control_signals</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_idex_alu_src" type="logic">
          <obj_property name="ElementShortName">sig_idex_alu_src</obj_property>
          <obj_property name="ObjectShortName">sig_idex_alu_src</obj_property>
@@ -226,13 +228,13 @@
          <obj_property name="ObjectShortName">exmem_reg_dst_addr[3:0]</obj_property>
       </wvobject>
    </wvobject>
+   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_exmem_insn" type="array">
+      <obj_property name="ElementShortName">sig_exmem_insn[15:0]</obj_property>
+      <obj_property name="ObjectShortName">sig_exmem_insn[15:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="group228" type="group">
       <obj_property name="label">exmem_control_signals</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_exmem_insn" type="array">
-         <obj_property name="ElementShortName">sig_exmem_insn[15:0]</obj_property>
-         <obj_property name="ObjectShortName">sig_exmem_insn[15:0]</obj_property>
-      </wvobject>
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_exmem_mem_write" type="logic">
          <obj_property name="ElementShortName">sig_exmem_mem_write</obj_property>
          <obj_property name="ObjectShortName">sig_exmem_mem_write</obj_property>
@@ -253,6 +255,10 @@
          <obj_property name="ElementShortName">sig_exmem_reg_dst</obj_property>
          <obj_property name="ObjectShortName">sig_exmem_reg_dst</obj_property>
       </wvobject>
+   </wvobject>
+   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_memwb_insn" type="array">
+      <obj_property name="ElementShortName">sig_memwb_insn[15:0]</obj_property>
+      <obj_property name="ObjectShortName">sig_memwb_insn[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="group236" type="group">
       <obj_property name="label">memwb_signals</obj_property>
@@ -285,10 +291,7 @@
    <wvobject fp_name="group241" type="group">
       <obj_property name="label">memwb_control_signals</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_memwb_insn" type="array">
-         <obj_property name="ElementShortName">sig_memwb_insn[15:0]</obj_property>
-         <obj_property name="ObjectShortName">sig_memwb_insn[15:0]</obj_property>
-      </wvobject>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_memwb_reg_write" type="logic">
          <obj_property name="ElementShortName">sig_memwb_reg_write</obj_property>
          <obj_property name="ObjectShortName">sig_memwb_reg_write</obj_property>
@@ -300,38 +303,6 @@
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_memwb_reg_dst" type="logic">
          <obj_property name="ElementShortName">sig_memwb_reg_dst</obj_property>
          <obj_property name="ObjectShortName">sig_memwb_reg_dst</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="group117" type="group">
-      <obj_property name="label">srr</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/rotate_right_shifter/src_a" type="array">
-         <obj_property name="ElementShortName">src_a[15:0]</obj_property>
-         <obj_property name="ObjectShortName">src_a[15:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/rotate_right_shifter/rotations" type="array">
-         <obj_property name="ElementShortName">rotations[3:0]</obj_property>
-         <obj_property name="ObjectShortName">rotations[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/rotate_right_shifter/result" type="array">
-         <obj_property name="ElementShortName">result[15:0]</obj_property>
-         <obj_property name="ObjectShortName">result[15:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/rotate_right_shifter/bit_0_out" type="array">
-         <obj_property name="ElementShortName">bit_0_out[15:0]</obj_property>
-         <obj_property name="ObjectShortName">bit_0_out[15:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/rotate_right_shifter/bit_1_out" type="array">
-         <obj_property name="ElementShortName">bit_1_out[15:0]</obj_property>
-         <obj_property name="ObjectShortName">bit_1_out[15:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/rotate_right_shifter/bit_2_out" type="array">
-         <obj_property name="ElementShortName">bit_2_out[15:0]</obj_property>
-         <obj_property name="ObjectShortName">bit_2_out[15:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/rotate_right_shifter/bit_3_out" type="array">
-         <obj_property name="ElementShortName">bit_3_out[15:0]</obj_property>
-         <obj_property name="ObjectShortName">bit_3_out[15:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group826" type="group">

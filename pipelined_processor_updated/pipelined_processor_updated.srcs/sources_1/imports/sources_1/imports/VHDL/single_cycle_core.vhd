@@ -192,6 +192,7 @@ end component;
 component if_id_pipeline_stage is
   Port ( clk : in std_logic;
          reset : in std_logic;
+         ifid_write : in std_logic;
          ifid_instr_in : in std_logic_vector(15 downto 0);
          ifid_instr_out : out std_logic_vector(15 downto 0));
 end component;
@@ -297,6 +298,7 @@ end component;
 signal sig_next_pc              : std_logic_vector(3 downto 0);
 signal sig_curr_pc              : std_logic_vector(3 downto 0);
 signal sig_one_4b               : std_logic_vector(3 downto 0);
+signal sig_zero_4b              : std_logic_vector(3 downto 0);
 signal sig_pc_carry_out         : std_logic;
 signal sig_insn                 : std_logic_vector(15 downto 0);
 signal sig_sign_extended_offset : std_logic_vector(15 downto 0);
@@ -377,20 +379,30 @@ signal sig_mux_ctr_alu_ctr : std_logic_vector(2 downto 0);
 signal sig_ctr_sig_sel : std_logic;
 signal sig_ifid_write : std_logic;
 signal sig_pc_write : std_logic;
+signal sig_next_pc_add : std_logic_vector(3 downto 0);
 
 begin
 
     sig_one_4b <= "0001";
-
+    sig_zero_4b <= "0000";
+    
     pc : program_counter
     port map ( reset    => reset,
                clk      => clk,
                addr_in  => sig_next_pc,
                addr_out => sig_curr_pc ); 
-
+    
+    mux_next_pc : mux_2to1_4b
+    port map (
+        mux_select => sig_pc_write,
+        data_a => sig_zero_4b,
+        data_b => sig_one_4b,
+        data_out => sig_next_pc_add
+    );
+    
     next_pc : adder_4b 
     port map ( src_a     => sig_curr_pc, 
-               src_b     => sig_one_4b,
+               src_b     => sig_next_pc_add,
                sum       => sig_next_pc,   
                carry_out => sig_pc_carry_out );
     
@@ -523,7 +535,8 @@ begin
     port map ( clk => clk,
                reset => reset,
                ifid_instr_in => sig_insn,
-               ifid_instr_out => sig_ifid_insn );
+               ifid_instr_out => sig_ifid_insn,
+               ifid_write => sig_ifid_write );
 
     id_ex_stage: id_ex_pipeline_stage
     port map (reset => reset,
