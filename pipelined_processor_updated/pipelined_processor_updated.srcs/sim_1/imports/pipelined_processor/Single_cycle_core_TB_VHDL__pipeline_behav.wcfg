@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="8000fs"></ZoomStartTime>
-      <ZoomEndTime time="28021fs"></ZoomEndTime>
-      <Cursor1Time time="15800fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="36081fs"></ZoomEndTime>
+      <Cursor1Time time="9000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="479"></NameColumnWidth>
-      <ValueColumnWidth column_width="190"></ValueColumnWidth>
+      <NameColumnWidth column_width="359"></NameColumnWidth>
+      <ValueColumnWidth column_width="185"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="19" />
+   <WVObjectSize size="24" />
    <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
@@ -26,6 +26,18 @@
    <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/pc/addr_out" type="array">
+      <obj_property name="ElementShortName">addr_out[3:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_out[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/insn_mem/addr_in" type="array">
+      <obj_property name="ElementShortName">addr_in[3:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_in[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/insn_mem/insn_out" type="array">
+      <obj_property name="ElementShortName">insn_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">insn_out[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_insn" type="array">
       <obj_property name="ElementShortName">sig_insn[15:0]</obj_property>
@@ -86,7 +98,6 @@
    <wvobject fp_name="group91" type="group">
       <obj_property name="label">mux_ctr</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/mux_ctr/ctr_sig_sel" type="logic">
          <obj_property name="ElementShortName">ctr_sig_sel</obj_property>
          <obj_property name="ObjectShortName">ctr_sig_sel</obj_property>
@@ -115,6 +126,31 @@
          <obj_property name="ElementShortName">alu_ctr_out[2:0]</obj_property>
          <obj_property name="ObjectShortName">alu_ctr_out[2:0]</obj_property>
          <obj_property name="Radix">BINARYRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group100" type="group">
+      <obj_property name="label">hazard_dt_unit</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/hazard_dt_unit/idex_reg_b" type="array">
+         <obj_property name="ElementShortName">idex_reg_b[3:0]</obj_property>
+         <obj_property name="ObjectShortName">idex_reg_b[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/hazard_dt_unit/ifid_reg_a" type="array">
+         <obj_property name="ElementShortName">ifid_reg_a[3:0]</obj_property>
+         <obj_property name="ObjectShortName">ifid_reg_a[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/hazard_dt_unit/ifid_reg_b" type="array">
+         <obj_property name="ElementShortName">ifid_reg_b[3:0]</obj_property>
+         <obj_property name="ObjectShortName">ifid_reg_b[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/hazard_dt_unit/ifid_write" type="logic">
+         <obj_property name="ElementShortName">ifid_write</obj_property>
+         <obj_property name="ObjectShortName">ifid_write</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/hazard_dt_unit/pc_write" type="logic">
+         <obj_property name="ElementShortName">pc_write</obj_property>
+         <obj_property name="ObjectShortName">pc_write</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_idex_insn" type="array">
@@ -148,7 +184,6 @@
    <wvobject fp_name="group199" type="group">
       <obj_property name="label">idex_control_signals</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_idex_alu_src" type="logic">
          <obj_property name="ElementShortName">sig_idex_alu_src</obj_property>
          <obj_property name="ObjectShortName">sig_idex_alu_src</obj_property>
@@ -176,9 +211,54 @@
          <obj_property name="ObjectShortName">sig_idex_reg_write</obj_property>
       </wvobject>
    </wvobject>
+   <wvobject fp_name="group826" type="group">
+      <obj_property name="label">Forwarding Unit</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/forwarding_unit_part/exmem_reg_write" type="logic">
+         <obj_property name="ElementShortName">exmem_reg_write</obj_property>
+         <obj_property name="ObjectShortName">exmem_reg_write</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/forwarding_unit_part/memwb_reg_write" type="logic">
+         <obj_property name="ElementShortName">memwb_reg_write</obj_property>
+         <obj_property name="ObjectShortName">memwb_reg_write</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/forwarding_unit_part/exmem_reg_dst_addr" type="array">
+         <obj_property name="ElementShortName">exmem_reg_dst_addr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">exmem_reg_dst_addr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/forwarding_unit_part/memwb_reg_dst_addr" type="array">
+         <obj_property name="ElementShortName">memwb_reg_dst_addr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">memwb_reg_dst_addr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/forwarding_unit_part/idex_reg_a_addr" type="array">
+         <obj_property name="ElementShortName">idex_reg_a_addr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">idex_reg_a_addr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/forwarding_unit_part/idex_reg_b_addr" type="array">
+         <obj_property name="ElementShortName">idex_reg_b_addr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">idex_reg_b_addr[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/forwarding_unit_part/aluSrc_a_sel" type="array">
+         <obj_property name="ElementShortName">aluSrc_a_sel[1:0]</obj_property>
+         <obj_property name="ObjectShortName">aluSrc_a_sel[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/forwarding_unit_part/aluSrc_b_sel" type="array">
+         <obj_property name="ElementShortName">aluSrc_b_sel[1:0]</obj_property>
+         <obj_property name="ObjectShortName">aluSrc_b_sel[1:0]</obj_property>
+      </wvobject>
+   </wvobject>
    <wvobject fp_name="group817" type="group">
       <obj_property name="label">Forwarding Muxes</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_write_data" type="array">
+         <obj_property name="ElementShortName">sig_write_data[15:0]</obj_property>
+         <obj_property name="ObjectShortName">sig_write_data[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_alu_b_src_b" type="array">
+         <obj_property name="ElementShortName">sig_alu_b_src_b[15:0]</obj_property>
+         <obj_property name="ObjectShortName">sig_alu_b_src_b[15:0]</obj_property>
+      </wvobject>
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_alu_src_a_forward_sel" type="array">
          <obj_property name="ElementShortName">sig_alu_src_a_forward_sel[1:0]</obj_property>
          <obj_property name="ObjectShortName">sig_alu_src_a_forward_sel[1:0]</obj_property>
@@ -187,22 +267,48 @@
          <obj_property name="ElementShortName">idex_reg_a_addr[3:0]</obj_property>
          <obj_property name="ObjectShortName">idex_reg_a_addr[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/forwarding_unit_part/exmem_reg_dst_addr" type="array">
-         <obj_property name="ElementShortName">exmem_reg_dst_addr[3:0]</obj_property>
-         <obj_property name="ObjectShortName">exmem_reg_dst_addr[3:0]</obj_property>
-      </wvobject>
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_alu_src_b_forward_sel" type="array">
          <obj_property name="ElementShortName">sig_alu_src_b_forward_sel[1:0]</obj_property>
          <obj_property name="ObjectShortName">sig_alu_src_b_forward_sel[1:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_alu_b_src_b" type="array">
-         <obj_property name="ElementShortName">sig_alu_b_src_b[15:0]</obj_property>
-         <obj_property name="ObjectShortName">sig_alu_b_src_b[15:0]</obj_property>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_exmem_alu_result" type="array">
+         <obj_property name="ElementShortName">sig_exmem_alu_result[15:0]</obj_property>
+         <obj_property name="ObjectShortName">sig_exmem_alu_result[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/forwarding_unit_part/exmem_reg_dst_addr" type="array">
+         <obj_property name="ElementShortName">exmem_reg_dst_addr[3:0]</obj_property>
+         <obj_property name="ObjectShortName">exmem_reg_dst_addr[3:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_exmem_insn" type="array">
+      <obj_property name="ElementShortName">sig_exmem_insn[15:0]</obj_property>
+      <obj_property name="ObjectShortName">sig_exmem_insn[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="group130" type="group">
+      <obj_property name="label">alu_signals</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/alu/alu_ctr" type="array">
+         <obj_property name="ElementShortName">alu_ctr[2:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_ctr[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/alu/src_a" type="array">
+         <obj_property name="ElementShortName">src_a[15:0]</obj_property>
+         <obj_property name="ObjectShortName">src_a[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/alu/src_b" type="array">
+         <obj_property name="ElementShortName">src_b[15:0]</obj_property>
+         <obj_property name="ObjectShortName">src_b[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/alu/sum" type="array">
+         <obj_property name="ElementShortName">sum[15:0]</obj_property>
+         <obj_property name="ObjectShortName">sum[15:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group223" type="group">
       <obj_property name="label">exmem_signals</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_exmem_read_data_a" type="array">
          <obj_property name="ElementShortName">sig_exmem_read_data_a[15:0]</obj_property>
          <obj_property name="ObjectShortName">sig_exmem_read_data_a[15:0]</obj_property>
@@ -227,10 +333,6 @@
          <obj_property name="ElementShortName">exmem_reg_dst_addr[3:0]</obj_property>
          <obj_property name="ObjectShortName">exmem_reg_dst_addr[3:0]</obj_property>
       </wvobject>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_exmem_insn" type="array">
-      <obj_property name="ElementShortName">sig_exmem_insn[15:0]</obj_property>
-      <obj_property name="ObjectShortName">sig_exmem_insn[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="group228" type="group">
       <obj_property name="label">exmem_control_signals</obj_property>
@@ -263,6 +365,7 @@
    <wvobject fp_name="group236" type="group">
       <obj_property name="label">memwb_signals</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_memwb_alu_result" type="array">
          <obj_property name="ElementShortName">sig_memwb_alu_result[15:0]</obj_property>
          <obj_property name="ObjectShortName">sig_memwb_alu_result[15:0]</obj_property>
@@ -283,15 +386,10 @@
          <obj_property name="ElementShortName">memwb_reg_dst_addr[3:0]</obj_property>
          <obj_property name="ObjectShortName">memwb_reg_dst_addr[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_memwb_insn" type="array">
-         <obj_property name="ElementShortName">sig_memwb_insn[15:0]</obj_property>
-         <obj_property name="ObjectShortName">sig_memwb_insn[15:0]</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject fp_name="group241" type="group">
       <obj_property name="label">memwb_control_signals</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_memwb_reg_write" type="logic">
          <obj_property name="ElementShortName">sig_memwb_reg_write</obj_property>
          <obj_property name="ObjectShortName">sig_memwb_reg_write</obj_property>
@@ -303,22 +401,6 @@
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_memwb_reg_dst" type="logic">
          <obj_property name="ElementShortName">sig_memwb_reg_dst</obj_property>
          <obj_property name="ObjectShortName">sig_memwb_reg_dst</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject fp_name="group826" type="group">
-      <obj_property name="label">Forwarding Unit</obj_property>
-      <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/forwarding_unit_part/exmem_reg_write" type="logic">
-         <obj_property name="ElementShortName">exmem_reg_write</obj_property>
-         <obj_property name="ObjectShortName">exmem_reg_write</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/forwarding_unit_part/memwb_reg_write" type="logic">
-         <obj_property name="ElementShortName">memwb_reg_write</obj_property>
-         <obj_property name="ObjectShortName">memwb_reg_write</obj_property>
-      </wvobject>
-      <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/forwarding_unit_part/aluSrc_b_sel" type="array">
-         <obj_property name="ElementShortName">aluSrc_b_sel[1:0]</obj_property>
-         <obj_property name="ObjectShortName">aluSrc_b_sel[1:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group440" type="group">
@@ -340,6 +422,5 @@
    <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/reg_file/sig_regfile" type="array">
       <obj_property name="ElementShortName">sig_regfile[0:15][15:0]</obj_property>
       <obj_property name="ObjectShortName">sig_regfile[0:15][15:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>
