@@ -57,6 +57,7 @@ architecture structural of single_cycle_core is
 component program_counter is
     port ( reset    : in  std_logic;
            clk      : in  std_logic;
+           pc_write : in std_logic;
            addr_in  : in  std_logic_vector(3 downto 0);
            addr_out : out std_logic_vector(3 downto 0) );
 end component;
@@ -65,6 +66,7 @@ component instruction_memory is
     port ( reset    : in  std_logic;
            clk      : in  std_logic;
            addr_in  : in  std_logic_vector(3 downto 0);
+           pc_write : in std_logic;
            insn_out : out std_logic_vector(15 downto 0) );
 end component;
 
@@ -389,20 +391,21 @@ begin
     pc : program_counter
     port map ( reset    => reset,
                clk      => clk,
+               pc_write => sig_pc_write,
                addr_in  => sig_next_pc,
                addr_out => sig_curr_pc ); 
     
-    mux_next_pc : mux_2to1_4b
-    port map (
-        mux_select => sig_pc_write,
-        data_a => sig_zero_4b,
-        data_b => sig_one_4b,
-        data_out => sig_next_pc_add
-    );
+--    mux_next_pc : mux_2to1_4b
+--    port map (
+--        mux_select => sig_pc_write,
+--        data_a => sig_zero_4b,
+--        data_b => sig_one_4b,
+--        data_out => sig_next_pc_add
+--    );
     
     next_pc : adder_4b 
     port map ( src_a     => sig_curr_pc, 
-               src_b     => sig_next_pc_add,
+               src_b     => sig_one_4b,
                sum       => sig_next_pc,   
                carry_out => sig_pc_carry_out );
     
@@ -410,6 +413,7 @@ begin
     port map ( reset    => reset,
                clk      => clk,
                addr_in  => sig_curr_pc,
+               pc_write => sig_pc_write,
                insn_out => sig_insn );
 
     sign_extend : sign_extend_4to16 

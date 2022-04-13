@@ -28,6 +28,7 @@ entity instruction_memory is
     port ( reset    : in  std_logic;
            clk      : in  std_logic;
            addr_in  : in  std_logic_vector(3 downto 0);
+           pc_write : in std_logic;
            insn_out : out std_logic_vector(15 downto 0) );
 end instruction_memory;
 
@@ -158,7 +159,7 @@ begin
             var_insn_mem(14) := X"0000";
             var_insn_mem(15) := X"0000";
         
-        elsif (rising_edge(clk)) then
+        elsif (rising_edge(clk) and pc_write = '1') then
             -- read instructions on the rising clock edge
             var_addr := conv_integer(addr_in);
             insn_out <= var_insn_mem(var_addr);

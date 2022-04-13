@@ -10,13 +10,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="36081fs"></ZoomEndTime>
-      <Cursor1Time time="9000fs"></Cursor1Time>
+      <ZoomStartTime time="10970fs"></ZoomStartTime>
+      <ZoomEndTime time="18051fs"></ZoomEndTime>
+      <Cursor1Time time="24090fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="359"></NameColumnWidth>
-      <ValueColumnWidth column_width="185"></ValueColumnWidth>
+      <ValueColumnWidth column_width="171"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="24" />
    <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/reset" type="logic">
@@ -27,9 +27,13 @@
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/pc/addr_out" type="array">
-      <obj_property name="ElementShortName">addr_out[3:0]</obj_property>
-      <obj_property name="ObjectShortName">addr_out[3:0]</obj_property>
+   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_curr_pc" type="array">
+      <obj_property name="ElementShortName">sig_curr_pc[3:0]</obj_property>
+      <obj_property name="ObjectShortName">sig_curr_pc[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/pc/pc_write" type="logic">
+      <obj_property name="ElementShortName">pc_write</obj_property>
+      <obj_property name="ObjectShortName">pc_write</obj_property>
    </wvobject>
    <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/insn_mem/addr_in" type="array">
       <obj_property name="ElementShortName">addr_in[3:0]</obj_property>
@@ -38,10 +42,6 @@
    <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/insn_mem/insn_out" type="array">
       <obj_property name="ElementShortName">insn_out[15:0]</obj_property>
       <obj_property name="ObjectShortName">insn_out[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_insn" type="array">
-      <obj_property name="ElementShortName">sig_insn[15:0]</obj_property>
-      <obj_property name="ObjectShortName">sig_insn[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_ifid_insn" type="array">
       <obj_property name="ElementShortName">sig_ifid_insn[15:0]</obj_property>
@@ -131,7 +131,6 @@
    <wvobject fp_name="group100" type="group">
       <obj_property name="label">hazard_dt_unit</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/hazard_dt_unit/idex_reg_b" type="array">
          <obj_property name="ElementShortName">idex_reg_b[3:0]</obj_property>
          <obj_property name="ObjectShortName">idex_reg_b[3:0]</obj_property>
@@ -308,7 +307,6 @@
    <wvobject fp_name="group223" type="group">
       <obj_property name="label">exmem_signals</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_exmem_read_data_a" type="array">
          <obj_property name="ElementShortName">sig_exmem_read_data_a[15:0]</obj_property>
          <obj_property name="ObjectShortName">sig_exmem_read_data_a[15:0]</obj_property>
@@ -406,6 +404,7 @@
    <wvobject fp_name="group440" type="group">
       <obj_property name="label">wb_stage</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/mux_mem_to_reg/mux_select" type="array">
          <obj_property name="ElementShortName">mux_select[1:0]</obj_property>
          <obj_property name="ObjectShortName">mux_select[1:0]</obj_property>
@@ -422,5 +421,6 @@
    <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/reg_file/sig_regfile" type="array">
       <obj_property name="ElementShortName">sig_regfile[0:15][15:0]</obj_property>
       <obj_property name="ObjectShortName">sig_regfile[0:15][15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>
