@@ -381,7 +381,7 @@ begin
                carry_out => sig_pc_carry_out );
                
     branch_mux: mux_2to1_4b
-    port map(mux_select => '1',
+    port map(mux_select => sig_if_flush,
              data_a => sig_next_pc,
              data_b => sig_branch_addr,
              data_out => sig_next_pc_branch);

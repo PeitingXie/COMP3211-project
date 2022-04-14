@@ -42,15 +42,24 @@ entity if_id_pipeline_stage is
 end if_id_pipeline_stage;
 
 architecture Behavioral of if_id_pipeline_stage is
+signal tmp1: std_logic_vector(15 downto 0);
+signal tmp2: std_logic_vector(3 downto 0);
 begin
     process(reset, clk, if_flush, ifid_instr_in, if_curr_pc)
     begin
         if reset = '1' or if_flush = '1' then
-            ifid_instr_out <= (OTHERS => '0');
-            id_curr_pc <= (OTHERS => '0');
-        elsif rising_edge(clk) then
-            ifid_instr_out <= ifid_instr_in;
-            id_curr_pc <= if_curr_pc;
+            tmp1 <= (OTHERS => '0');
+            tmp2 <= (OTHERS => '0');
+            --ifid_instr_out <= (OTHERS => '0');
+            --id_curr_pc <= (OTHERS => '0');
+        else
+            tmp1 <= ifid_instr_in;
+            tmp2 <= if_curr_pc;
+        end if;
+        
+        if rising_edge(clk) then
+            ifid_instr_out <= tmp1;
+            id_curr_pc <= tmp2;
         end if;
     end process;
         
