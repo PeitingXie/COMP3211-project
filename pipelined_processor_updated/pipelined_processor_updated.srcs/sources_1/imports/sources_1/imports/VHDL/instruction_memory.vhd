@@ -37,7 +37,7 @@ type mem_array is array(0 to 15) of std_logic_vector(15 downto 0);
 signal sig_insn_mem : mem_array;
 
 begin
-    mem_process: process ( clk,
+    mem_process: process ( reset, clk,
                            addr_in ) is
   
     variable var_insn_mem : mem_array;
@@ -143,15 +143,15 @@ begin
             
             var_insn_mem(0)  := X"1010"; -- $1 = 15
             var_insn_mem(1)  := X"1021"; -- $2 = 10
-            var_insn_mem(2)  := X"0000";
+            var_insn_mem(2)  := X"1031"; -- $3 = 10
             var_insn_mem(3)  := X"0000";
             var_insn_mem(4)  := X"0000";
-            var_insn_mem(5)  := X"9123"; -- $3 = 10
-            var_insn_mem(6)  := X"9324"; -- $4 = 10
+            var_insn_mem(5)  := X"0000"; 
+            var_insn_mem(6)  := X"B004"; -- jump to addr 10
             var_insn_mem(7)  := X"9315"; -- $5 = 10
             var_insn_mem(8)  := X"0000";
             var_insn_mem(9)  := X"0000";
-            var_insn_mem(10) := X"0000";
+            var_insn_mem(10) := X"8126"; -- $6 = 25
             var_insn_mem(11) := X"0000";
             var_insn_mem(12) := X"0000";
             var_insn_mem(13) := X"0000";

@@ -43,13 +43,15 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity control_unit is
     port ( opcode     : in  std_logic_vector(3 downto 0);
+           branch_ctrl: in std_logic;
            reg_dst    : out std_logic;
            reg_write  : out std_logic;
            alu_src    : out std_logic;
            mem_write  : out std_logic;
            mem_to_reg : out std_logic_vector(1 downto 0);
            read_byte  : out std_logic;
-           alu_ctr    : out std_logic_vector(2 downto 0));
+           alu_ctr    : out std_logic_vector(2 downto 0);
+           if_flush   : out std_logic);
 end control_unit;
 
 architecture behavioural of control_unit is
@@ -62,11 +64,14 @@ constant OP_SRR   : std_logic_vector(3 downto 0) := "0101";
 constant OP_ADD   : std_logic_vector(3 downto 0) := "1000";
 constant OP_AND   : std_logic_vector(3 downto 0) := "1001";
 constant OP_XOR   : std_logic_vector(3 downto 0) := "1010";
+constant OP_BEQ   : std_logic_vector(3 downto 0) := "1011";
 
 signal sig_alu_ctr_l : std_logic;
 signal sig_alu_ctr_r : std_logic;
 
 begin
+   if_flush <= '1' when (branch_ctrl = '1' and opcode = OP_BEQ) else '0';
+            
 
     reg_dst    <= '1' when (opcode = OP_ADD
                             or opcode = OP_SLT

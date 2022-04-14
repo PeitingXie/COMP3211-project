@@ -34,24 +34,25 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity if_id_pipeline_stage is
   Port ( clk : in std_logic;
          reset : in std_logic;
+         if_flush : in std_logic;
+         if_curr_pc: in std_logic_vector(3 downto 0);
          ifid_instr_in : in std_logic_vector(15 downto 0);
+         id_curr_pc: out std_logic_vector(3 downto 0);
          ifid_instr_out : out std_logic_vector(15 downto 0));
 end if_id_pipeline_stage;
 
 architecture Behavioral of if_id_pipeline_stage is
-    component pipeline_register is
-        Port ( data : in std_logic_vector (15 downto 0);
-             enable : in std_logic;
-             resetn : in std_logic;
-             clk : in std_logic;
-             Q : out std_logic_vector(15 downto 0));
-    end component;
 begin
-    pipe_reg_inst : pipeline_register
-        port map ( data => ifid_instr_in,
-                   enable => '1',
-                   resetn => reset,
-                   clk => clk,
-                   Q => ifid_instr_out);
-
+    process(reset, clk, if_flush, ifid_instr_in, if_curr_pc)
+    begin
+        if reset = '1' or if_flush = '1' then
+            ifid_instr_out <= (OTHERS => '0');
+            id_curr_pc <= (OTHERS => '0');
+        elsif rising_edge(clk) then
+            ifid_instr_out <= ifid_instr_in;
+            id_curr_pc <= if_curr_pc;
+        end if;
+    end process;
+        
+                 
 end Behavioral;

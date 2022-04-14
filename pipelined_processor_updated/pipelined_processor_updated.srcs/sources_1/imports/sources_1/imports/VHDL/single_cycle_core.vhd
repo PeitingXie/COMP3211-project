@@ -98,13 +98,15 @@ end component;
 
 component control_unit is
     port ( opcode     : in  std_logic_vector(3 downto 0);
+           branch_ctrl: in std_logic;
            reg_dst    : out std_logic;
            reg_write  : out std_logic;
            alu_src    : out std_logic;
            mem_write  : out std_logic;
            mem_to_reg : out std_logic_vector(1 downto 0);
            read_byte  : out std_logic;
-           alu_ctr    : out std_logic_vector(2 downto 0));
+           alu_ctr    : out std_logic_vector(2 downto 0);
+           if_flush   : out std_logic);
 end component;
 
 component register_file is
@@ -117,6 +119,12 @@ component register_file is
            write_data      : in  std_logic_vector(15 downto 0);
            read_data_a     : out std_logic_vector(15 downto 0);
            read_data_b     : out std_logic_vector(15 downto 0) );
+end component;
+
+component xor_com is
+    Port ( data_a : in STD_LOGIC_VECTOR (15 downto 0);
+           data_b : in STD_LOGIC_VECTOR (15 downto 0);
+           ctrl : out STD_LOGIC);
 end component;
 
 component adder_4b is
@@ -181,7 +189,10 @@ end component;
 component if_id_pipeline_stage is
   Port ( clk : in std_logic;
          reset : in std_logic;
+         if_flush : in std_logic;
+         if_curr_pc: in std_logic_vector(3 downto 0);
          ifid_instr_in : in std_logic_vector(15 downto 0);
+         id_curr_pc: out std_logic_vector(3 downto 0);
          ifid_instr_out : out std_logic_vector(15 downto 0));
 end component;
 
@@ -298,6 +309,14 @@ signal sig_byte_data            : std_logic_vector(15 downto 0);
 signal sig_data_out             : std_logic_vector(15 downto 0);
 signal sig_data_to_extend       : std_logic_vector(7 downto 0);
 
+-- branch signals --
+signal sig_if_flush             : std_logic;
+signal sig_xor_com              : std_logic;
+signal sig_id_curr_pc           : std_logic_vector(3 downto 0);
+signal sig_branch_addr          : std_logic_vector(3 downto 0);
+signal sig_branch_carry_out     : std_logic;
+signal sig_next_pc_branch       : std_logic_vector(3 downto 0);
+
 -- pipeline signals --
 signal sig_ifid_insn            : std_logic_vector(15 downto 0);
 
@@ -352,7 +371,7 @@ begin
     pc : program_counter
     port map ( reset    => reset,
                clk      => clk,
-               addr_in  => sig_next_pc,
+               addr_in  => sig_next_pc_branch,
                addr_out => sig_curr_pc ); 
 
     next_pc : adder_4b 
@@ -360,6 +379,12 @@ begin
                src_b     => sig_one_4b,
                sum       => sig_next_pc,   
                carry_out => sig_pc_carry_out );
+               
+    branch_mux: mux_2to1_4b
+    port map(mux_select => '1',
+             data_a => sig_next_pc,
+             data_b => sig_branch_addr,
+             data_out => sig_next_pc_branch);
     
     insn_mem : instruction_memory 
     port map ( reset    => reset,
@@ -373,13 +398,15 @@ begin
 
     ctrl_unit : control_unit 
     port map ( opcode     => sig_ifid_insn(15 downto 12),
+               branch_ctrl => sig_xor_com,
                reg_dst    => sig_reg_dst,
                reg_write  => sig_reg_write,
                alu_src    => sig_alu_src,
                mem_write  => sig_mem_write,
                mem_to_reg => sig_mem_to_reg,
                read_byte  => sig_read_byte,
-               alu_ctr    => sig_alu_ctr );
+               alu_ctr    => sig_alu_ctr,
+               if_flush   => sig_if_flush );
 
     mux_reg_dst : mux_2to1_4b 
     port map ( mux_select => sig_memwb_reg_dst,
@@ -404,6 +431,17 @@ begin
                read_data_a     => sig_read_data_a,
                read_data_b     => sig_read_data_b );
 
+    xor_unit : xor_com
+    port map ( data_a    => sig_read_data_a,
+               data_b    => sig_read_data_b,
+               ctrl      => sig_xor_com);
+
+    branch_adder: adder_4b
+    port map( src_a => sig_id_curr_pc,
+              src_b => sig_ifid_insn(3 downto 0),
+              sum => sig_branch_addr,
+              carry_out => sig_branch_carry_out);
+    
     mux_alu_src_b : mux_2to1_16b 
     port map ( mux_select => sig_idex_alu_src,
                data_a     => sig_alu_b_src_b,
@@ -479,7 +517,10 @@ begin
     if_id_stage : if_id_pipeline_stage 
     port map ( clk => clk,
                reset => reset,
+               if_flush => sig_if_flush,
+               if_curr_pc => sig_next_pc,
                ifid_instr_in => sig_insn,
+               id_curr_pc => sig_id_curr_pc,
                ifid_instr_out => sig_ifid_insn );
 
     id_ex_stage: id_ex_pipeline_stage

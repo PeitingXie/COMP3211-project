@@ -113,6 +113,7 @@ read_vhdl -library xil_defaultlib {
   {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/sign_extend_8to16.vhd}
   {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd}
   {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/slt_result.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/xor_com.vhd}
   {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core_TB_VHDL.vhd}
 }
 OPTRACE "Adding files" END { }

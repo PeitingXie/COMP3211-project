@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="205601fs"></ZoomEndTime>
-      <Cursor1Time time="44500fs"></Cursor1Time>
+      <ZoomStartTime time="25770fs"></ZoomStartTime>
+      <ZoomEndTime time="32291fs"></ZoomEndTime>
+      <Cursor1Time time="27250fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="220"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <NameColumnWidth column_width="198"></NameColumnWidth>
+      <ValueColumnWidth column_width="88"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="16" />
+   <WVObjectSize size="17" />
    <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
@@ -26,6 +26,10 @@
    <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/pc/addr_in" type="array">
+      <obj_property name="ElementShortName">addr_in[3:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_in[3:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_insn" type="array">
       <obj_property name="ElementShortName">sig_insn[15:0]</obj_property>
@@ -71,8 +75,8 @@
          <obj_property name="ObjectShortName">sig_idex_alu_src</obj_property>
       </wvobject>
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_idex_alu_ctr" type="array">
-         <obj_property name="ElementShortName">sig_idex_alu_ctr[1:0]</obj_property>
-         <obj_property name="ObjectShortName">sig_idex_alu_ctr[1:0]</obj_property>
+         <obj_property name="ElementShortName">sig_idex_alu_ctr[2:0]</obj_property>
+         <obj_property name="ObjectShortName">sig_idex_alu_ctr[2:0]</obj_property>
          <obj_property name="Radix">BINARYRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_idex_read_byte" type="logic">

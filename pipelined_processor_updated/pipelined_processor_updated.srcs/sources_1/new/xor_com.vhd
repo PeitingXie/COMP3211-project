@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 28.03.2022 22:20:24
+-- Create Date: 2022/04/13 22:24:32
 -- Design Name: 
--- Module Name: pipeline_register - Behavioral
+-- Module Name: xor_com - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,24 +31,22 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity pipeline_register is
-  Port ( data : in std_logic_vector (15 downto 0);
-         enable : in std_logic;
-         resetn : in std_logic;
-         clk : in std_logic;
-         Q : out std_logic_vector(15 downto 0));
-end pipeline_register;
+entity xor_com is
+    Port ( data_a : in STD_LOGIC_VECTOR (15 downto 0);
+           data_b : in STD_LOGIC_VECTOR (15 downto 0);
+           ctrl : out STD_LOGIC);
+end xor_com;
 
-architecture Behavioral of pipeline_register is
+architecture Behavioral of xor_com is
 
 begin
-    process
+    process(data_a, data_b)
     begin
-        wait until (clk'event and clk = '1');
-        if resetn = '1'then
-            Q <= X"0000";
-        elsif enable = '1' then
-            Q <= data;
+        if (data_a xor data_b) = x"0000" then
+            ctrl <= '1';
+        else
+            ctrl <= '0';
         end if;
-   end process;
+    end process;
+    
 end Behavioral;
