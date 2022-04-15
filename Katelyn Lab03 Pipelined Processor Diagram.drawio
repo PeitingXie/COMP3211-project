@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-04-15T10:39:13.583Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36 OPR/85.0.4341.47" etag="ok8hYreEivY71IRNb-Us" version="17.4.4" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-15T11:38:18.835Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36 OPR/85.0.4341.47" etag="ilJw6E5i2tNs0tSGCe-Y" version="17.4.4" type="github">
   <diagram id="X9zZmPEaqtEekRVXDIqs" name="Page-1">
-    <mxGraphModel dx="2213" dy="1154" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1549" dy="825" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -894,6 +894,16 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="MGpwRtADwgVNTOVfMMKY-5" value="exmem_insn[7:4]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF8000;entryX=1.002;entryY=0.386;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="cfhEfqjK3iJdFm8jVArX-109" target="yGvOkxiand3LqxDzhhp--1">
+          <mxGeometry x="0.8546" y="-1" relative="1" as="geometry">
+            <mxPoint x="630" y="140" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1330" y="350" />
+              <mxPoint x="1330" y="131" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="cfhEfqjK3iJdFm8jVArX-109" value="ex-mem" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1270" y="250" width="30" height="479.84" as="geometry" />
         </mxCell>
@@ -1324,6 +1334,9 @@
             <mxPoint x="920" y="604" as="sourcePoint" />
             <mxPoint x="950" y="604" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="MGpwRtADwgVNTOVfMMKY-6" value="&lt;span style=&quot;font-size: 11px&quot;&gt;exmem.reg_b&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="565" y="118" width="42" height="16" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
