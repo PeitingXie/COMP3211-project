@@ -85,37 +85,36 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/adder_16b.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/adder_4b.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/control_unit.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/data_memory.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/ex_mem_pipeline_stage.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/forwarding_unit.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/hazard_detection_unit.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/id_ex_pipeline_stage.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/if_id_pipeline_stage.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/load_byte_unit.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mem_wb_pipeline_stage.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_16b.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_1b.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/mux_4to1_16b.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_4to1_16b.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_ctr_unit.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_data_to_mem_to_reg.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_2bit_register.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_4bit_register.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_bit_register.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_register.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/program_counter.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/register_file.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/rotate_right_shifter_16b.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/sign_extend_4to16.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/sign_extend_8to16.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/slt_result.vhd
-  C:/Users/Katel/OneDrive/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core_TB_VHDL.vhd
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/adder_16b.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/adder_4b.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/control_unit.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/data_memory.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/ex_mem_pipeline_stage.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/forwarding_unit.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/id_ex_pipeline_stage.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/if_id_pipeline_stage.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/load_byte_unit.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mem_wb_pipeline_stage.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_16b.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_1b.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/mux_4to1_16b.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_4to1_16b.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_data_to_mem_to_reg.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_2bit_register.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_4bit_register.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_bit_register.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_register.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/program_counter.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/register_file.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/rotate_right_shifter_16b.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/sign_extend_4to16.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/sign_extend_8to16.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/slt_result.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/xor_com.vhd}
+  {D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core_TB_VHDL.vhd}
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

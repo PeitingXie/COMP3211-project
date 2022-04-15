@@ -38,7 +38,7 @@ type mem_array is array(0 to 15) of std_logic_vector(15 downto 0);
 signal sig_insn_mem : mem_array;
 
 begin
-    mem_process: process ( clk,
+    mem_process: process ( reset, clk,
                            addr_in ) is
   
     variable var_insn_mem : mem_array;
@@ -142,18 +142,18 @@ begin
             -- load $2, $0, 15      # $2 <- 000e
             -- srr $3, $1, $2       # $3 <- FFF0 rotated shift right by 11 = FE1F
             
-            var_insn_mem(0)  := X"1010"; -- $1 = 15
-            var_insn_mem(1)  := X"1021"; -- $2 = 10
-            var_insn_mem(2)  := X"9123"; -- $3 = 10
-            var_insn_mem(3)  := X"9324"; -- $4 = 10
-            var_insn_mem(4)  := X"9315"; -- $5 = 10
-            var_insn_mem(5)  := X"0000"; 
-            var_insn_mem(6)  := X"0000"; 
-            var_insn_mem(7)  := X"0000"; 
+            var_insn_mem(0)  := X"0000"; -- $1 = 15
+            var_insn_mem(1)  := X"B004"; -- $2 = 10
+            var_insn_mem(2)  := X"8132"; -- $3 = 10
+            var_insn_mem(3)  := X"0000";
+            var_insn_mem(4)  := X"9314";
+            var_insn_mem(5)  := X"8125"; 
+            var_insn_mem(6)  := X"8126"; -- jump to addr 10
+            var_insn_mem(7)  := X"8127"; -- $5 = 10
             var_insn_mem(8)  := X"0000";
             var_insn_mem(9)  := X"0000";
-            var_insn_mem(10) := X"0000";
-            var_insn_mem(11) := X"0000";
+            var_insn_mem(10) := X"8126"; -- $6 = 25
+            var_insn_mem(11) := X"8126";
             var_insn_mem(12) := X"0000";
             var_insn_mem(13) := X"0000";
             var_insn_mem(14) := X"0000";

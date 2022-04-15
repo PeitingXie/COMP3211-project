@@ -30,6 +30,7 @@ vhdl xil_defaultlib  \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/sign_extend_8to16.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/slt_result.vhd" \
+"../../../../pipelined_processor_updated.srcs/sources_1/new/xor_com.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core_TB_VHDL.vhd" \
 
 # Do not sort compile order
