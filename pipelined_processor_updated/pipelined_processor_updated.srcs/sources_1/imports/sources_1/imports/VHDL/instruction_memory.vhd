@@ -27,6 +27,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity instruction_memory is
     port ( reset    : in  std_logic;
            clk      : in  std_logic;
+           is_flush : in std_logic;
            addr_in  : in  std_logic_vector(3 downto 0);
            insn_out : out std_logic_vector(15 downto 0) );
 end instruction_memory;
@@ -38,7 +39,7 @@ signal sig_insn_mem : mem_array;
 
 begin
     mem_process: process ( reset, clk,
-                           addr_in ) is
+                           addr_in, is_flush ) is
   
     variable var_insn_mem : mem_array;
     variable var_addr     : integer;
@@ -148,20 +149,24 @@ begin
             var_insn_mem(4)  := X"0000";
             var_insn_mem(5)  := X"8103"; -- $3 = 15
             var_insn_mem(6)  := X"0000"; -- need stall
-            var_insn_mem(7)  := X"b134"; -- jump to addr 10
-            var_insn_mem(8)  := X"8127"; -- $7 = 25 (not executed)
-            var_insn_mem(9)  := X"0000";
-            var_insn_mem(10) := X"0000"; 
-            var_insn_mem(11) := X"0000";
-            var_insn_mem(12) := X"0000"; 
-            var_insn_mem(13) := X"8124"; -- $4 = 25
+            var_insn_mem(7)  := X"b133"; -- jump 
+            var_insn_mem(8)  := X"8127"; -- $7 = 25 
+            var_insn_mem(9)  := X"8128"; 
+            var_insn_mem(10) := X"8129"; 
+            var_insn_mem(11) := X"812a";
+            var_insn_mem(12) := X"812b"; 
+            var_insn_mem(13) := X"812c"; -- $12 = 25
             var_insn_mem(14) := X"0000";
             var_insn_mem(15) := X"0000";
         
         elsif (rising_edge(clk)) then
             -- read instructions on the rising clock edge
-            var_addr := conv_integer(addr_in);
-            insn_out <= var_insn_mem(var_addr);
+            if is_flush = '1' then
+                insn_out <= x"0000";
+            else
+                var_addr := conv_integer(addr_in);
+                insn_out <= var_insn_mem(var_addr);
+            end if;
         end if;
 
         -- the following are probe signals (for simulation purpose)

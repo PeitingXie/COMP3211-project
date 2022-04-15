@@ -64,6 +64,7 @@ end component;
 component instruction_memory is
     port ( reset    : in  std_logic;
            clk      : in  std_logic;
+           is_flush : in std_logic;
            addr_in  : in  std_logic_vector(3 downto 0);
            insn_out : out std_logic_vector(15 downto 0) );
 end component;
@@ -99,6 +100,7 @@ end component;
 component control_unit is
     port ( opcode     : in  std_logic_vector(3 downto 0);
            branch_ctrl: in std_logic;
+           imm_value  : in std_logic_vector(3 downto 0);
            reg_dst    : out std_logic;
            reg_write  : out std_logic;
            alu_src    : out std_logic;
@@ -106,6 +108,7 @@ component control_unit is
            mem_to_reg : out std_logic_vector(1 downto 0);
            read_byte  : out std_logic;
            alu_ctr    : out std_logic_vector(2 downto 0);
+           if_beq     : out std_logic;
            if_flush   : out std_logic);
 end component;
 
@@ -124,6 +127,8 @@ end component;
 component xor_com is
     Port ( data_a : in STD_LOGIC_VECTOR (15 downto 0);
            data_b : in STD_LOGIC_VECTOR (15 downto 0);
+           is_beq : in std_logic;
+           imm : in std_logic_vector(3 downto 0);
            ctrl : out STD_LOGIC);
 end component;
 
@@ -379,6 +384,8 @@ signal sig_alu_b_src_b : std_logic_vector(15 downto 0);
 signal sig_alu_src_a : std_logic_vector(15 downto 0);
 
 
+signal is_beq : std_logic;
+signal tmp_curr_pc : std_logic_vector(3 downto 0);
 begin
 
     sig_one_4b <= "0001";
@@ -394,7 +401,8 @@ begin
                src_b     => sig_one_4b,
                sum       => sig_next_pc,   
                carry_out => sig_pc_carry_out );
-               
+    
+        
     branch_mux: mux_2to1_4b
     port map(mux_select => sig_if_flush,
              data_a => sig_next_pc,
@@ -404,6 +412,7 @@ begin
     insn_mem : instruction_memory 
     port map ( reset    => reset,
                clk      => clk,
+               is_flush => sig_xor_com,
                addr_in  => sig_curr_pc,
                insn_out => sig_insn );
 
@@ -414,6 +423,7 @@ begin
     ctrl_unit : control_unit 
     port map ( opcode     => sig_ifid_insn(15 downto 12),
                branch_ctrl => sig_xor_com,
+               imm_value => sig_ifid_insn(3 downto 0),
                reg_dst    => sig_reg_dst,
                reg_write  => sig_reg_write,
                alu_src    => sig_alu_src,
@@ -421,6 +431,7 @@ begin
                mem_to_reg => sig_mem_to_reg,
                read_byte  => sig_read_byte,
                alu_ctr    => sig_alu_ctr,
+               if_beq     => is_beq,
                if_flush   => sig_if_flush );
 
     mux_reg_dst : mux_2to1_4b 
@@ -449,6 +460,8 @@ begin
     xor_unit : xor_com
     port map ( data_a    => sig_forwarded_br_read_data_a,
                data_b    => sig_forwarded_br_read_data_b,
+               is_beq    => is_beq,
+               imm       => sig_ifid_insn(3 downto 0),
                ctrl      => sig_xor_com);
 
     forwarding_br_unit: forwarding_branch 
@@ -470,9 +483,10 @@ begin
                data_a     => sig_read_data_b,
                data_b     => sig_exmem_alu_result,
                data_out   => sig_forwarded_br_read_data_b);
-
+    
+    tmp_curr_pc <= sig_id_curr_pc - 1;
     branch_adder: adder_4b
-    port map( src_a => sig_id_curr_pc,
+    port map( src_a => tmp_curr_pc,
               src_b => sig_ifid_insn(3 downto 0),
               sum => sig_branch_addr,
               carry_out => sig_branch_carry_out);

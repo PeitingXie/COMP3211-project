@@ -44,6 +44,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity control_unit is
     port ( opcode     : in  std_logic_vector(3 downto 0);
            branch_ctrl: in std_logic;
+           imm_value  : in std_logic_vector(3 downto 0);
            reg_dst    : out std_logic;
            reg_write  : out std_logic;
            alu_src    : out std_logic;
@@ -51,6 +52,7 @@ entity control_unit is
            mem_to_reg : out std_logic_vector(1 downto 0);
            read_byte  : out std_logic;
            alu_ctr    : out std_logic_vector(2 downto 0);
+           if_beq     : out std_logic;
            if_flush   : out std_logic);
 end control_unit;
 
@@ -70,7 +72,7 @@ signal sig_alu_ctr_l : std_logic;
 signal sig_alu_ctr_r : std_logic;
 
 begin
-   if_flush <= '1' when (branch_ctrl = '1' and opcode = OP_BEQ) else '0';
+   if_flush <= '1' when (branch_ctrl = '1' and opcode = OP_BEQ and imm_value /= x"0000") else '0';
             
 
     reg_dst    <= '1' when (opcode = OP_ADD
@@ -92,7 +94,8 @@ begin
                  
     mem_write  <= '1' when opcode = OP_STORE else
                   '0';
-                 
+        
+    if_beq <= '1' when opcode = OP_BEQ else '0';         
     with opcode select
         mem_to_reg <= "01" when OP_LOAD,
                       "01" when OP_LOADB,
@@ -109,5 +112,5 @@ begin
                       "011" when OP_AND,
                       "100" when OP_XOR,
                       "000" when others;
-
+    
 end behavioural;

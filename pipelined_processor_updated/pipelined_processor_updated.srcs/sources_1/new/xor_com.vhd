@@ -34,6 +34,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity xor_com is
     Port ( data_a : in STD_LOGIC_VECTOR (15 downto 0);
            data_b : in STD_LOGIC_VECTOR (15 downto 0);
+           is_beq : in std_logic;
+           imm : in std_logic_vector(3 downto 0);
            ctrl : out STD_LOGIC);
 end xor_com;
 
@@ -42,7 +44,7 @@ architecture Behavioral of xor_com is
 begin
     process(data_a, data_b)
     begin
-        if (data_a xor data_b) = x"0000" then
+        if (data_a xor data_b) = x"0000" and is_beq = '1' and imm /= "0000" then
             ctrl <= '1';
         else
             ctrl <= '0';
