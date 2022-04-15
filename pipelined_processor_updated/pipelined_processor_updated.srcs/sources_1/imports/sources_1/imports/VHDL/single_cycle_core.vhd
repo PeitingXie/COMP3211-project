@@ -108,7 +108,8 @@ component control_unit is
            mem_to_reg : out std_logic_vector(1 downto 0);
            read_byte  : out std_logic;
            alu_ctr    : out std_logic_vector(2 downto 0);
-           if_flush   : out std_logic);
+           if_flush   : out std_logic;
+           mem_read   : out std_logic );
 end component;
 
 component register_file is
@@ -192,13 +193,12 @@ component if_id_pipeline_stage is
   Port ( clk : in std_logic;
          reset : in std_logic;
          if_flush : in std_logic;
+         ifid_write : in std_logic;
          if_curr_pc: in std_logic_vector(3 downto 0);
          ifid_instr_in : in std_logic_vector(15 downto 0);
          id_curr_pc: out std_logic_vector(3 downto 0);
          ifid_instr_out : out std_logic_vector(15 downto 0));
 end component;
-
-
 
 component id_ex_pipeline_stage is
   Port ( reset : in std_logic;
@@ -251,14 +251,8 @@ end component;
 component mem_wb_pipeline_stage is
   Port ( reset : in std_logic;
          clk : in std_logic;
-         read_data_in : in std_logic_vector (15 downto 0);
-         slt_data_in : in std_logic_vector (15 downto 0);
-         srr_data_in : in std_logic_vector (15 downto 0);
-         alu_result_in : in std_logic_vector (15 downto 0);
-         read_data_out : out std_logic_vector (15 downto 0);
-         slt_data_out : out std_logic_vector (15 downto 0);
-         srr_data_out : out std_logic_vector (15 downto 0);
-         alu_result_out : out std_logic_vector (15 downto 0);
+         write_data_in : in std_logic_vector(15 downto 0);
+         write_data_out : out std_logic_vector(15 downto 0);
          
          -- ctr signals --
          reg_write_in, reg_dst_in : in std_logic;
@@ -275,13 +269,18 @@ end component;
 -- forwarding unit --
 component forwarding_unit is
   Port ( exmem_reg_write : in std_logic;
+         idex_reg_write : in std_logic;
          exmem_reg_dst_addr : in std_logic_vector(3 downto 0);
          idex_reg_a_addr : in std_logic_vector(3 downto 0);
          idex_reg_b_addr : in std_logic_vector(3 downto 0);
          memwb_reg_write : in std_logic;
          memwb_reg_dst_addr : in std_logic_vector(3 downto 0);
+         ifid_reg_a_addr : in std_logic_vector(3 downto 0);
+         ifid_reg_b_addr : in std_logic_vector(3 downto 0);
          aluSrc_a_sel : out std_logic_vector(1 downto 0);
-         aluSrc_b_sel : out std_logic_vector(1 downto 0)
+         aluSrc_b_sel : out std_logic_vector(1 downto 0);
+         reg_data_a_sel : out std_logic_vector(1 downto 0);
+         reg_data_b_sel : out std_logic_vector(1 downto 0)
          );
 end component;
 
@@ -294,6 +293,16 @@ component hazard_detection_unit is
          ctr_sig_sel : out std_logic;
          ifid_write : out std_logic;
          pc_write : out std_logic );
+end component;
+
+component mux_ctr_unit is
+  Port ( ctr_sig_sel : in std_logic;
+         mem_write_in : in std_logic;
+         mem_write_out : out std_logic;
+         reg_write_in : in std_logic;
+         reg_write_out : out std_logic;
+         alu_ctr_in : in std_logic_vector(2 downto 0);
+         alu_ctr_out : out std_logic_vector(2 downto 0) );
 end component;
 
 signal sig_next_pc              : std_logic_vector(3 downto 0);
@@ -328,6 +337,10 @@ signal sig_mem_read             : std_logic;
 
 -- branch signals --
 signal sig_if_flush             : std_logic;
+signal sig_reg_data_a_sel       : std_logic_vector(1 downto 0);
+signal sig_reg_data_b_sel       : std_logic_vector(1 downto 0);
+signal sig_xor_data_a           : std_logic_vector(15 downto 0);
+signal sig_xor_data_b           : std_logic_vector(15 downto 0);
 signal sig_xor_com              : std_logic;
 signal sig_id_curr_pc           : std_logic_vector(3 downto 0);
 signal sig_branch_addr          : std_logic_vector(3 downto 0);
@@ -371,6 +384,8 @@ signal sig_memwb_mem_to_reg     : std_logic_vector(1 downto 0);
 signal sig_memwb_reg_dst        : std_logic;
 signal sig_memwb_insn           : std_logic_vector(15 downto 0);
 
+signal sig_mem_write_data       : std_logic_vector(15 downto 0);
+
 -- forwarding signals --
 signal sig_forwarded_write_register : std_logic_vector(3 downto 0);
 signal sig_idex_forwarded_write_register : std_logic_vector(3 downto 0);
@@ -399,7 +414,8 @@ begin
     port map ( reset    => reset,
                clk      => clk,
                addr_in  => sig_next_pc_branch,
-               addr_out => sig_curr_pc ); 
+               addr_out => sig_curr_pc,
+               pc_write => sig_pc_write ); 
     
 --    mux_next_pc : mux_2to1_4b
 --    port map (
@@ -442,7 +458,17 @@ begin
                mem_to_reg => sig_mem_to_reg,
                read_byte  => sig_read_byte,
                alu_ctr    => sig_alu_ctr,
-               if_flush   => sig_if_flush );
+               if_flush   => sig_if_flush,
+               mem_read   => sig_mem_read );
+
+    mux_ctr : mux_ctr_unit
+    port map( ctr_sig_sel => sig_ctr_sig_sel,
+         mem_write_in => sig_mem_write,
+         mem_write_out => sig_mux_ctr_mem_write,
+         reg_write_in => sig_reg_write,
+         reg_write_out => sig_mux_ctr_reg_write,
+         alu_ctr_in => sig_alu_ctr,
+         alu_ctr_out => sig_mux_ctr_alu_ctr );
 
     mux_reg_dst : mux_2to1_4b 
     port map ( mux_select => sig_memwb_reg_dst,
@@ -467,9 +493,25 @@ begin
                read_data_a     => sig_read_data_a,
                read_data_b     => sig_read_data_b );
 
+    mux_xor_data_a : mux_4to1_16b
+    port map ( mux_select => sig_reg_data_a_sel,
+               data_a => sig_read_data_a,
+               data_b => sig_write_data,
+               data_c => sig_mem_write_data,
+               data_d => sig_alu_result,
+               data_out => sig_xor_data_a );
+
+    mux_xor_data_b : mux_4to1_16b
+    port map ( mux_select => sig_reg_data_b_sel,
+               data_a => sig_read_data_b,
+               data_b => sig_write_data,
+               data_c => sig_mem_write_data,
+               data_d => sig_alu_result,
+               data_out => sig_xor_data_b );
+
     xor_unit : xor_com
-    port map ( data_a    => sig_read_data_a,
-               data_b    => sig_read_data_b,
+    port map ( data_a    => sig_xor_data_a,
+               data_b    => sig_xor_data_b,
                ctrl      => sig_xor_com);
 
     branch_adder: adder_4b
@@ -517,12 +559,13 @@ begin
                data_out     => sig_data_mem_out );
                
     mux_mem_to_reg : mux_4to1_16b 
-    port map ( mux_select => sig_memwb_mem_to_reg,
-               data_a     => sig_memwb_alu_result,
-               data_b     => sig_memwb_read_data,
-               data_c     => sig_memwb_slt_data,
-               data_d     => sig_memwb_srr_data,
-               data_out   => sig_write_data );
+    port map ( mux_select => sig_exmem_mem_to_reg,
+               data_a     => sig_exmem_alu_result,
+               data_b     => sig_data_out,
+               data_c     => sig_slt_result,
+               data_d     => sig_srr_result,
+               data_out   => sig_mem_write_data );
+    
                
     slt_result_comp : slt_result_calc
     port map ( msb        => sig_exmem_carry,
@@ -554,6 +597,7 @@ begin
     port map ( clk => clk,
                reset => reset,
                if_flush => sig_if_flush,
+               ifid_write => sig_ifid_write,
                if_curr_pc => sig_next_pc,
                ifid_instr_in => sig_insn,
                id_curr_pc => sig_id_curr_pc,
@@ -620,14 +664,8 @@ begin
     mem_wb_stage: mem_wb_pipeline_stage
     port map ( reset => reset,
                clk => clk,
-               read_data_in => sig_data_out,
-               slt_data_in => sig_slt_result,
-               srr_data_in => sig_srr_result,
-               alu_result_in => sig_exmem_alu_result,
-               read_data_out => sig_memwb_read_data,
-               slt_data_out => sig_memwb_slt_data,
-               srr_data_out => sig_memwb_srr_data,
-               alu_result_out => sig_memwb_alu_result,
+               write_data_in => sig_mem_write_data,
+               write_data_out => sig_write_data,
                reg_write_in => sig_exmem_reg_write,
                reg_write_out => sig_memwb_reg_write,
                mem_to_reg_in => sig_exmem_mem_to_reg,
@@ -643,13 +681,18 @@ begin
     forwarding_unit_part: forwarding_unit
     port map (
         exmem_reg_write => sig_exmem_reg_write,
+        idex_reg_write => sig_idex_reg_write,
         exmem_reg_dst_addr => sig_exmem_forwarded_write_register,
         idex_reg_a_addr => sig_idex_insn(11 downto 8),
         idex_reg_b_addr => sig_idex_insn(7 downto 4),
         memwb_reg_write => sig_memwb_reg_write,
         memwb_reg_dst_addr => sig_memwb_forwarded_write_register,
+        ifid_reg_a_addr => sig_ifid_insn(11 downto 8),
+        ifid_reg_b_addr => sig_ifid_insn(7 downto 4),
         aluSrc_a_sel => sig_alu_src_a_forward_sel,
-        aluSrc_b_sel => sig_alu_src_b_forward_sel
+        aluSrc_b_sel => sig_alu_src_b_forward_sel,
+        reg_data_a_sel => sig_reg_data_a_sel,
+        reg_data_b_sel => sig_reg_data_b_sel
     );
 
 -- hazard detection unit --

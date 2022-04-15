@@ -112,24 +112,22 @@ begin
 --            var_insn_mem(14) := X"0000";
 --            var_insn_mem(15) := X"0000";
             
-            -- load  $1, $0, 9   # $1 <- 3
-            -- load $2, $0, 10   # $2 <- 4
-            -- load $3, $0, 11   # $3 <- 5
-            -- do nothing
-            -- do nothing
-            -- do nothing
-            -- add $4, $1, $2    # $4 <- 3 + 4 = 7
-            -- add $5, $4, $3    # $5 <- 7 + 5 = 12 or c
-            -- add $5, $4, $2    # $5 <- 7 + 4 = 11 or b
+              
+--            -- load  $1, $0, 9   # $1 <- 3
+--            -- load $2, $0, 10   # $2 <- 4
+--            -- load $3, $0, 11   # $3 <- 5
+--            -- add $4, $1, $2    # $4 <- 3 + 4 = 7
+--            -- add $5, $4, $3    # $5 <- 7 + 5 = 12 or c
+--            -- add $5, $4, $2    # $5 <- 7 + 4 = 11 or b
 --            var_insn_mem(0)  := X"1019";
 --            var_insn_mem(1)  := X"102a";
 --            var_insn_mem(2)  := X"103b";
---            var_insn_mem(3)  := X"0000";
---            var_insn_mem(4)  := X"0000";
---            var_insn_mem(5)  := X"0000";
---            var_insn_mem(6)  := X"8124";
---            var_insn_mem(7)  := X"8435";
---            var_insn_mem(8)  := X"8425";
+--            var_insn_mem(3)  := X"8124";
+--            var_insn_mem(4)  := X"8435";
+--            var_insn_mem(5)  := X"8425";
+--            var_insn_mem(6)  := X"0000";
+--            var_insn_mem(7)  := X"0000";
+--            var_insn_mem(8)  := X"0000";
 --            var_insn_mem(9)  := X"0000";
 --            var_insn_mem(10) := X"0000";
 --            var_insn_mem(11) := X"0000";
@@ -138,26 +136,48 @@ begin
 --            var_insn_mem(14) := X"0000";
 --            var_insn_mem(15) := X"0000";
 
-            -- load $1, $0, 8       # $1 <- FFF0
-            -- load $2, $0, 15      # $2 <- 000e
-            -- srr $3, $1, $2       # $3 <- FFF0 rotated shift right by 11 = FE1F
-            
-            var_insn_mem(0)  := X"0000"; -- $1 = 15
-            var_insn_mem(1)  := X"B004"; -- $2 = 10
-            var_insn_mem(2)  := X"8132"; -- $3 = 10
-            var_insn_mem(3)  := X"0000";
-            var_insn_mem(4)  := X"9314";
-            var_insn_mem(5)  := X"8125"; 
-            var_insn_mem(6)  := X"8126"; -- jump to addr 10
-            var_insn_mem(7)  := X"8127"; -- $5 = 10
+            --Load $1, $0, 0 # $1 <- 1
+            --Load $2, $0, 1 # $2 <- 2
+            --Load $3, $0, 2 # $3 <- f
+            --Beq $3, $2, 1 # if ($3 = $2) then jump 
+            --Add $3, $3, $1
+            --Load $4, $0, 6 # $4 <- eedd
+            --Beq $3, $2, 4 # if ($3 = $2) then jump 
+            --Load $5, $0, 6 # $4 <- eedd
+            var_insn_mem(0)  := X"1010";
+            var_insn_mem(1)  := X"1021";
+            var_insn_mem(2)  := X"1032";
+            var_insn_mem(3)  := X"b328";
+            var_insn_mem(4)  := X"8313";
+            var_insn_mem(5)  := X"1046";
+            var_insn_mem(6)  := X"b324";
+            var_insn_mem(7)  := X"1057";
             var_insn_mem(8)  := X"0000";
             var_insn_mem(9)  := X"0000";
-            var_insn_mem(10) := X"8126"; -- $6 = 25
-            var_insn_mem(11) := X"8126";
+            var_insn_mem(10) := X"0000";
+            var_insn_mem(11) := X"0000";
             var_insn_mem(12) := X"0000";
             var_insn_mem(13) := X"0000";
             var_insn_mem(14) := X"0000";
             var_insn_mem(15) := X"0000";
+
+            
+--            var_insn_mem(0)  := X"0000"; -- $1 = 15
+--            var_insn_mem(1)  := X"B004"; -- $2 = 10
+--            var_insn_mem(2)  := X"8132"; -- $3 = 10
+--            var_insn_mem(3)  := X"0000";
+--            var_insn_mem(4)  := X"9314";
+--            var_insn_mem(5)  := X"8125"; 
+--            var_insn_mem(6)  := X"8126"; -- jump to addr 10
+--            var_insn_mem(7)  := X"8127"; -- $5 = 10
+--            var_insn_mem(8)  := X"0000";
+--            var_insn_mem(9)  := X"0000";
+--            var_insn_mem(10) := X"8126"; -- $6 = 25
+--            var_insn_mem(11) := X"8126";
+--            var_insn_mem(12) := X"0000";
+--            var_insn_mem(13) := X"0000";
+--            var_insn_mem(14) := X"0000";
+--            var_insn_mem(15) := X"0000";
         
         elsif (rising_edge(clk) and pc_write = '1') then
             -- read instructions on the rising clock edge

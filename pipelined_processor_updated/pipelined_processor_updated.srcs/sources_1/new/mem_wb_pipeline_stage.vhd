@@ -34,14 +34,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity mem_wb_pipeline_stage is
   Port ( reset : in std_logic;
          clk : in std_logic;
-         read_data_in : in std_logic_vector (15 downto 0);
-         slt_data_in : in std_logic_vector (15 downto 0);
-         srr_data_in : in std_logic_vector (15 downto 0);
-         alu_result_in : in std_logic_vector (15 downto 0);
-         read_data_out : out std_logic_vector (15 downto 0);
-         slt_data_out : out std_logic_vector (15 downto 0);
-         srr_data_out : out std_logic_vector (15 downto 0);
-         alu_result_out : out std_logic_vector (15 downto 0);
+         write_data_in : in std_logic_vector(15 downto 0);
+         write_data_out : out std_logic_vector(15 downto 0);
          
          -- ctr signals --
          reg_write_in, reg_dst_in : in std_logic;
@@ -56,111 +50,25 @@ entity mem_wb_pipeline_stage is
 end mem_wb_pipeline_stage;
 
 architecture Behavioral of mem_wb_pipeline_stage is
-    component pipeline_register is
-        Port ( data : in std_logic_vector (15 downto 0);
-             enable : in std_logic;
-             resetn : in std_logic;
-             clk : in std_logic;
-             Q : out std_logic_vector(15 downto 0));
-    end component;
     
-    component pipeline_bit_register is
-        Port ( data : in std_logic;
-             enable : in std_logic;
-             resetn : in std_logic;
-             clk : in std_logic;
-             Q : out std_logic );
-    end component;
-    
-    component pipeline_2bit_register is
-        Port ( data : in std_logic_vector(1 downto 0);
-             enable : in std_logic;
-             resetn : in std_logic;
-             clk : in std_logic;
-             Q : out std_logic_vector(1 downto 0) );
-    end component;
-    
-    component pipeline_4bit_register is
-    Port ( data : in std_logic_vector(3 downto 0);
-             enable : in std_logic;
-             resetn : in std_logic;
-             clk : in std_logic;
-             Q : out std_logic_vector(3 downto 0));
-    end component;
 begin
+    stage_registers_proc : process (reset, clk)
+    begin
+        if reset = '1' then
+             write_data_out <= X"0000";
+             reg_write_out <= '0';
+             reg_dst_out <= '0';
+             mem_to_reg_out <= "00";
+             insn_out <= X"0000";
+             forwarded_write_register_out <= "0000";
+        elsif (clk'event and clk = '1') then
+             write_data_out <= write_data_in;
+             reg_write_out <= reg_write_in;
+             reg_dst_out <= reg_dst_in;
+             mem_to_reg_out <= mem_to_reg_in;
+             insn_out <= insn_in;
+             forwarded_write_register_out <= forwarded_write_register_in;
+        end if;
+    end process;
     
-    pipe_reg_alu_result : pipeline_register
-        port map ( data => alu_result_in,
-                   enable => '1',
-                   resetn => reset,
-                   clk => clk,
-                   Q => alu_result_out );
-    
-    pipe_reg_read_data : pipeline_register
-        port map ( data => read_data_in,
-                   enable => '1',
-                   resetn => reset,
-                   clk => clk,
-                   Q => read_data_out );
-                   
-    pipe_reg_slt_data : pipeline_register
-        port map ( data => slt_data_in,
-                   enable => '1',
-                   resetn => reset,
-                   clk => clk,
-                   Q => slt_data_out );
-    
-    pipe_reg_srr_data : pipeline_register
-        port map ( data => srr_data_in,
-                   enable => '1',
-                   resetn => reset,
-                   clk => clk,
-                   Q => srr_data_out );
-    
-    -- control signals --
-    -- reg_write, mem_to_reg --     
-    pipe_reg_write : pipeline_bit_register
-        port map (
-            data => reg_write_in,
-            enable => '1',
-            resetn => reset,
-            clk => clk,
-            Q => reg_write_out
-        );            
-    
-    pipe_mem_to_reg : pipeline_2bit_register
-        port map ( 
-            data => mem_to_reg_in,
-            enable => '1',
-            resetn => reset,
-            clk => clk,
-            Q => mem_to_reg_out
-        );   
-        
-   pipe_reg_dst : pipeline_bit_register
-        port map (
-            data => reg_dst_in,
-            enable => '1',
-            resetn => reset,
-            clk => clk,
-            Q => reg_dst_out
-        );
-   
-   pipe_insn : pipeline_register
-        port map (
-            data => insn_in,
-            enable => '1',
-            resetn => reset,
-            clk => clk,
-            Q => insn_out
-        );
-    
-    pipe_forward_write_reg : pipeline_4bit_register
-        port map (
-            data => forwarded_write_register_in,
-            enable => '1',
-            resetn => reset,
-            clk => clk,
-            Q => forwarded_write_register_out
-        );     
 end Behavioral;

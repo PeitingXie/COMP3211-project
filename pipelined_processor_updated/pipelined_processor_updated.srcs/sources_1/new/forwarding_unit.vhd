@@ -33,33 +33,59 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity forwarding_unit is
   Port ( exmem_reg_write : in std_logic;
+         idex_reg_write : in std_logic;
          exmem_reg_dst_addr : in std_logic_vector(3 downto 0);
          idex_reg_a_addr : in std_logic_vector(3 downto 0);
          idex_reg_b_addr : in std_logic_vector(3 downto 0);
          memwb_reg_write : in std_logic;
          memwb_reg_dst_addr : in std_logic_vector(3 downto 0);
+         ifid_reg_a_addr : in std_logic_vector(3 downto 0);
+         ifid_reg_b_addr : in std_logic_vector(3 downto 0);
          aluSrc_a_sel : out std_logic_vector(1 downto 0);
-         aluSrc_b_sel : out std_logic_vector(1 downto 0)
+         aluSrc_b_sel : out std_logic_vector(1 downto 0);
+         reg_data_a_sel : out std_logic_vector(1 downto 0);
+         reg_data_b_sel : out std_logic_vector(1 downto 0)
          );
 end forwarding_unit;
 
 architecture Behavioral of forwarding_unit is
 
 begin
-    mem_stage_proc : process ( exmem_reg_write, exmem_reg_dst_addr, idex_reg_a_addr, idex_reg_b_addr )
+    forwarding_proc : process ( exmem_reg_write, exmem_reg_dst_addr, idex_reg_a_addr, idex_reg_b_addr )
     begin
+        aluSrc_a_sel <= "00";
+        aluSrc_b_sel <= "00";
+        reg_data_a_sel <= "00";
+        reg_data_b_sel <= "00";
+        
         if (exmem_reg_write = '1') and (exmem_reg_dst_addr /= X"0") and (exmem_reg_dst_addr = idex_reg_a_addr) then
             aluSrc_a_sel <= "10";
-        elsif (exmem_reg_write = '1') and (exmem_reg_dst_addr /= X"0") and (exmem_reg_dst_addr = idex_reg_b_addr) then
-            aluSrc_b_sel <= "10";
         elsif (memwb_reg_write = '1') and (memwb_reg_dst_addr /= X"0") and (memwb_reg_dst_addr = idex_reg_a_addr) then
             aluSrc_a_sel <= "01";
+        end if;
+        
+        if (exmem_reg_write = '1') and (exmem_reg_dst_addr /= X"0") and (exmem_reg_dst_addr = idex_reg_b_addr) then
+            aluSrc_b_sel <= "10";
         elsif (memwb_reg_write = '1') and (memwb_reg_dst_addr /= X"0") and (memwb_reg_dst_addr = idex_reg_b_addr) then
             aluSrc_b_sel <= "01";
-        else
-            aluSrc_a_sel <= "00";
-            aluSrc_b_sel <= "00";
         end if;
+        
+        if (idex_reg_write = '1') and (idex_reg_a_addr /= X"0") and (idex_reg_a_addr = ifid_reg_a_addr) then
+            reg_data_a_sel <= "11";
+        elsif (exmem_reg_write = '1') and (exmem_reg_dst_addr /= X"0") and (exmem_reg_dst_addr = ifid_reg_a_addr) then
+            reg_data_a_sel <= "10";
+        elsif (memwb_reg_write = '1') and (memwb_reg_dst_addr /= X"0") and (memwb_reg_dst_addr = ifid_reg_a_addr) then
+            reg_data_a_sel <= "01";
+        end if;
+        
+        if (idex_reg_write = '1') and (idex_reg_b_addr /= X"0") and (idex_reg_b_addr = ifid_reg_b_addr) then
+            reg_data_a_sel <= "11";
+        elsif (exmem_reg_write = '1') and (exmem_reg_dst_addr /= X"0") and (exmem_reg_dst_addr = ifid_reg_b_addr) then
+            reg_data_b_sel <= "10";
+        elsif (memwb_reg_write = '1') and (memwb_reg_dst_addr /= X"0") and (memwb_reg_dst_addr = ifid_reg_b_addr) then
+            reg_data_b_sel <= "01";
+        end if;
+        
     end process;
 
 end Behavioral;
