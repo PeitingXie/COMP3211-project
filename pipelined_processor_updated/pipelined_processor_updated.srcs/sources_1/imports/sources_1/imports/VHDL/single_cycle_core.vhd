@@ -397,18 +397,18 @@ signal sig_alu_b_src_b : std_logic_vector(15 downto 0);
 signal sig_alu_src_a : std_logic_vector(15 downto 0);
 
 -- stalling signals --
+signal sig_pc_write : std_logic;
+signal sig_ifid_write : std_logic;
 signal sig_mux_ctr_mem_write : std_logic;
 signal sig_mux_ctr_reg_write : std_logic;
 signal sig_mux_ctr_alu_ctr : std_logic_vector(2 downto 0);
 signal sig_ctr_sig_sel : std_logic;
-signal sig_ifid_write : std_logic;
-signal sig_pc_write : std_logic;
+
 signal sig_next_pc_add : std_logic_vector(3 downto 0);
 
 begin
 
     sig_one_4b <= "0001";
-    sig_zero_4b <= "0000";
     
     pc : program_counter
     port map ( reset    => reset,

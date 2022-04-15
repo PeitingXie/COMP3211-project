@@ -55,8 +55,8 @@ begin
     begin
         aluSrc_a_sel <= "00";
         aluSrc_b_sel <= "00";
-        reg_data_a_sel <= "00";
-        reg_data_b_sel <= "00";
+--        reg_data_a_sel <= "00";
+--        reg_data_b_sel <= "00";
         
         if (exmem_reg_write = '1') and (exmem_reg_dst_addr /= X"0") and (exmem_reg_dst_addr = idex_reg_a_addr) then
             aluSrc_a_sel <= "10";
@@ -69,6 +69,26 @@ begin
         elsif (memwb_reg_write = '1') and (memwb_reg_dst_addr /= X"0") and (memwb_reg_dst_addr = idex_reg_b_addr) then
             aluSrc_b_sel <= "01";
         end if;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         if (idex_reg_write = '1') and (idex_reg_a_addr /= X"0") and (idex_reg_a_addr = ifid_reg_a_addr) then
             reg_data_a_sel <= "11";

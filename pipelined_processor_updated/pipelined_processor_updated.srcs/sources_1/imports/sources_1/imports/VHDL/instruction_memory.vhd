@@ -39,7 +39,7 @@ signal sig_insn_mem : mem_array;
 
 begin
     mem_process: process ( reset, clk,
-                           addr_in ) is
+                           addr_in, pc_write ) is
   
     variable var_insn_mem : mem_array;
     variable var_addr     : integer;

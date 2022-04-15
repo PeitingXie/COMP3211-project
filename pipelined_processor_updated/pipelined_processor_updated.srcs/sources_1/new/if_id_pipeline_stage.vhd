@@ -46,7 +46,7 @@ architecture Behavioral of if_id_pipeline_stage is
 signal tmp1: std_logic_vector(15 downto 0);
 signal tmp2: std_logic_vector(3 downto 0);
 begin
-    process(reset, clk, if_flush, ifid_instr_in, if_curr_pc)
+    process(reset, clk, if_flush, ifid_instr_in, if_curr_pc, ifid_write)
     begin
         if reset = '1' or if_flush = '1' then
             tmp1 <= (OTHERS => '0');
