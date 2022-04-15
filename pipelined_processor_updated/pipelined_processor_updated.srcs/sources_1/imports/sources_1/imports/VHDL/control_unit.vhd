@@ -51,7 +51,8 @@ entity control_unit is
            mem_to_reg : out std_logic_vector(1 downto 0);
            read_byte  : out std_logic;
            alu_ctr    : out std_logic_vector(2 downto 0);
-           if_flush   : out std_logic);
+           if_flush   : out std_logic;
+           mem_read   : out std_logic);
 end control_unit;
 
 architecture behavioural of control_unit is
@@ -92,6 +93,8 @@ begin
                  
     mem_write  <= '1' when opcode = OP_STORE else
                   '0';
+    
+    mem_read    <= '1' when (opcode = OP_LOAD or opcode = OP_LOADB) else '0';
                  
     with opcode select
         mem_to_reg <= "01" when OP_LOAD,

@@ -35,6 +35,7 @@ entity if_id_pipeline_stage is
   Port ( clk : in std_logic;
          reset : in std_logic;
          if_flush : in std_logic;
+         ifid_write: in std_logic;
          if_curr_pc: in std_logic_vector(3 downto 0);
          ifid_instr_in : in std_logic_vector(15 downto 0);
          id_curr_pc: out std_logic_vector(3 downto 0);
@@ -45,7 +46,7 @@ architecture Behavioral of if_id_pipeline_stage is
 signal tmp1: std_logic_vector(15 downto 0);
 signal tmp2: std_logic_vector(3 downto 0);
 begin
-    process(reset, clk, if_flush, ifid_instr_in, if_curr_pc)
+    process(reset, clk, if_flush, ifid_instr_in, if_curr_pc, ifid_write)
     begin
         if reset = '1' or if_flush = '1' then
             tmp1 <= (OTHERS => '0');
@@ -57,7 +58,7 @@ begin
             tmp2 <= if_curr_pc;
         end if;
         
-        if rising_edge(clk) then
+        if rising_edge(clk) and ifid_write = '1' then
             ifid_instr_out <= tmp1;
             id_curr_pc <= tmp2;
         end if;
