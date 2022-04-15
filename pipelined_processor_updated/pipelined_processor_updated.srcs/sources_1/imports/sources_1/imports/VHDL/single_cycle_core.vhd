@@ -127,6 +127,15 @@ component xor_com is
            ctrl : out STD_LOGIC);
 end component;
 
+component forwarding_branch is
+    Port ( if_id_regs : in STD_LOGIC_VECTOR (3 downto 0);
+           if_id_regt : in STD_LOGIC_VECTOR (3 downto 0);
+           ex_mem_regd : in STD_LOGIC_VECTOR (3 downto 0);
+           ex_mem_regWrite : in STD_LOGIC;
+           forwarding_br_ctrls : out STD_LOGIC;
+           forwarding_br_ctrlt : out STD_LOGIC);
+end component;
+
 component adder_4b is
     port ( src_a     : in  std_logic_vector(3 downto 0);
            src_b     : in  std_logic_vector(3 downto 0);
@@ -317,6 +326,12 @@ signal sig_branch_addr          : std_logic_vector(3 downto 0);
 signal sig_branch_carry_out     : std_logic;
 signal sig_next_pc_branch       : std_logic_vector(3 downto 0);
 
+-- branch forwarding signals --
+signal sig_forwarding_br_ctrls  : std_logic;
+signal sig_forwarding_br_ctrlt  : std_logic;
+signal sig_forwarded_br_read_data_a: std_logic_vector(15 downto 0);
+signal sig_forwarded_br_read_data_b: std_logic_vector(15 downto 0);
+
 -- pipeline signals --
 signal sig_ifid_insn            : std_logic_vector(15 downto 0);
 
@@ -432,9 +447,29 @@ begin
                read_data_b     => sig_read_data_b );
 
     xor_unit : xor_com
-    port map ( data_a    => sig_read_data_a,
-               data_b    => sig_read_data_b,
+    port map ( data_a    => sig_forwarded_br_read_data_a,
+               data_b    => sig_forwarded_br_read_data_b,
                ctrl      => sig_xor_com);
+
+    forwarding_br_unit: forwarding_branch 
+    port map ( if_id_regs => sig_ifid_insn(11 downto 8),
+           if_id_regt => sig_ifid_insn(7 downto 4),
+           ex_mem_regd => sig_exmem_forwarded_write_register,
+           ex_mem_regWrite => sig_exmem_reg_write,
+           forwarding_br_ctrls => sig_forwarding_br_ctrls,
+           forwarding_br_ctrlt => sig_forwarding_br_ctrlt);
+    
+    forward_br_rs_mux: mux_2to1_16b
+    port map ( mux_select => sig_forwarding_br_ctrls,
+               data_a     => sig_read_data_a,
+               data_b     => sig_exmem_alu_result,
+               data_out   => sig_forwarded_br_read_data_a);
+    
+    forward_br_rt_mux: mux_2to1_16b
+    port map ( mux_select => sig_forwarding_br_ctrlt,
+               data_a     => sig_read_data_b,
+               data_b     => sig_exmem_alu_result,
+               data_out   => sig_forwarded_br_read_data_b);
 
     branch_adder: adder_4b
     port map( src_a => sig_id_curr_pc,

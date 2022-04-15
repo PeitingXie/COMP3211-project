@@ -141,20 +141,20 @@ begin
             -- load $2, $0, 15      # $2 <- 000e
             -- srr $3, $1, $2       # $3 <- FFF0 rotated shift right by 11 = FE1F
             
-            var_insn_mem(0)  := X"0000"; -- $1 = 15
-            var_insn_mem(1)  := X"B004"; -- $2 = 10
-            var_insn_mem(2)  := X"8132"; -- $3 = 10
+            var_insn_mem(0)  := X"1010"; -- $1 = 15
+            var_insn_mem(1)  := X"1021"; -- $2 = 10
+            var_insn_mem(2)  := X"0000"; 
             var_insn_mem(3)  := X"0000";
-            var_insn_mem(4)  := X"9314";
-            var_insn_mem(5)  := X"8125"; 
-            var_insn_mem(6)  := X"8126"; -- jump to addr 10
-            var_insn_mem(7)  := X"8127"; -- $5 = 10
-            var_insn_mem(8)  := X"0000";
+            var_insn_mem(4)  := X"0000";
+            var_insn_mem(5)  := X"8103"; -- $3 = 15
+            var_insn_mem(6)  := X"0000"; -- need stall
+            var_insn_mem(7)  := X"b134"; -- jump to addr 10
+            var_insn_mem(8)  := X"8127"; -- $7 = 25 (not executed)
             var_insn_mem(9)  := X"0000";
-            var_insn_mem(10) := X"8126"; -- $6 = 25
-            var_insn_mem(11) := X"8126";
-            var_insn_mem(12) := X"0000";
-            var_insn_mem(13) := X"0000";
+            var_insn_mem(10) := X"0000"; 
+            var_insn_mem(11) := X"0000";
+            var_insn_mem(12) := X"0000"; 
+            var_insn_mem(13) := X"8124"; -- $4 = 25
             var_insn_mem(14) := X"0000";
             var_insn_mem(15) := X"0000";
         
