@@ -15,7 +15,7 @@ Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
 Compiling architecture behavioral of entity xil_defaultlib.program_counter [program_counter_default]
 Compiling architecture behavioural of entity xil_defaultlib.adder_4b [adder_4b_default]
-Compiling architecture behavioural of entity xil_defaultlib.mux_2to1_1b [mux_2to1_1b_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_2to1_1b [mux_2to1_1b_default]
 Compiling architecture structural of entity xil_defaultlib.mux_2to1_4b [mux_2to1_4b_default]
 Compiling architecture behavioral of entity xil_defaultlib.instruction_memory [instruction_memory_default]
 Compiling architecture behavioral of entity xil_defaultlib.sign_extend_4to16 [sign_extend_4to16_default]

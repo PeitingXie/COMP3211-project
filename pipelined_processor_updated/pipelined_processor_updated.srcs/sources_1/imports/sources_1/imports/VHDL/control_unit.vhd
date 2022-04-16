@@ -52,7 +52,9 @@ entity control_unit is
            read_byte  : out std_logic;
            alu_ctr    : out std_logic_vector(2 downto 0);
            if_flush   : out std_logic;
-           mem_read   : out std_logic);
+           mem_read   : out std_logic;
+           beq        : out std_logic;
+           ctrl_beq_op: out std_logic);
 end control_unit;
 
 architecture behavioural of control_unit is
@@ -72,8 +74,9 @@ signal sig_alu_ctr_r : std_logic;
 
 begin
    if_flush <= '1' when (branch_ctrl = '1' and opcode = OP_BEQ) else '0';
-            
-
+   beq <= '1' when opcode = OP_BEQ else '0';  
+    ctrl_beq_op <= '1' when opcode /= OP_BEQ else '0';
+    
     reg_dst    <= '1' when (opcode = OP_ADD
                             or opcode = OP_SLT
                             or opcode = OP_SRR or opcode = OP_AND or opcode = OP_XOR) else

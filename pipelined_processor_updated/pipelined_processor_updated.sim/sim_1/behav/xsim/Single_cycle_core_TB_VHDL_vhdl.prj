@@ -14,7 +14,7 @@ vhdl xil_defaultlib  \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/load_byte_unit.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/mem_wb_pipeline_stage.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_16b.vhd" \
-"../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_1b.vhd" \
+"../../../../pipelined_processor_updated.srcs/sources_1/new/mux_2to1_1b.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/mux_4to1_16b.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/mux_4to1_16b.vhd" \

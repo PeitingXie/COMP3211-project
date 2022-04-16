@@ -51,7 +51,9 @@ entity id_ex_pipeline_stage is
          forwarded_write_register_in : in std_logic_vector(3 downto 0);
          forwarded_write_register_out : out std_logic_vector(3 downto 0);
          mem_read_in : in std_logic;
-         mem_read_out: out std_logic);
+         mem_read_out: out std_logic;
+         ctrl_beq_op_in : in std_logic;
+         ctrl_beq_op_out : out std_logic);
 
 end id_ex_pipeline_stage;
 
@@ -74,6 +76,7 @@ begin
             insn_out <= X"0000";
             forwarded_write_register_out <= X"0";
             mem_read_out <= '0';
+            ctrl_beq_op_out <= '0';
         elsif (clk'event and clk = '1') then
             read_data_a_out <= read_data_a_in;
             read_data_b_out <= read_data_b_in;
@@ -88,6 +91,7 @@ begin
             insn_out <= insn_in;
             forwarded_write_register_out <= forwarded_write_register_in;
             mem_read_out <= mem_read_in;
+            ctrl_beq_op_out <= ctrl_beq_op_in;
         end if;
     
     end process;
