@@ -164,7 +164,13 @@ Tag generation example
             xor $0, $0, $2
             xor $0, $0, $3
             
-            sw $0, $10, 150  ----- store generated tag in data memory 512
+            sw $0, $10, 150  ----- store generated tag in data memory 150
+
+            beq $0, $4, 2
+            beq $0, $1, 100
+            nop
+            nop
+            lw $15, $10, 160
             
 
 
@@ -229,4 +235,6 @@ Tag generation example
     122 : 22
     123 : 23
     124 : 24
+
+    160 : 0 (global variable to count candicate number)
     

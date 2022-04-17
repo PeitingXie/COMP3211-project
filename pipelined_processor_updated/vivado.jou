@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Apr 18 01:41:49 2022
+# Process ID: 15084
+# Current directory: F:/COMP3211/project/mips/COMP3211-project/pipelined_processor_updated
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14044 F:\COMP3211\project\mips\COMP3211-project\pipelined_processor_updated\pipelined_processor_updated.xpr
+# Log file: F:/COMP3211/project/mips/COMP3211-project/pipelined_processor_updated/vivado.log
+# Journal file: F:/COMP3211/project/mips/COMP3211-project/pipelined_processor_updated\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/COMP3211/project/mips/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.xpr
+update_compile_order -fileset sources_1

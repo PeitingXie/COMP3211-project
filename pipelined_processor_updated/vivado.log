@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Apr 18 01:41:49 2022
+# Process ID: 15084
+# Current directory: F:/COMP3211/project/mips/COMP3211-project/pipelined_processor_updated
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14044 F:\COMP3211\project\mips\COMP3211-project\pipelined_processor_updated\pipelined_processor_updated.xpr
+# Log file: F:/COMP3211/project/mips/COMP3211-project/pipelined_processor_updated/vivado.log
+# Journal file: F:/COMP3211/project/mips/COMP3211-project/pipelined_processor_updated\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/COMP3211/project/mips/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.xpr
+INFO: [Project 1-313] Project file moved from 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated' since last save.
+WARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'F:/COMP3211/project/mips/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.gen/sources_1', nor could it be found using path 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.gen/sources_1'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'F:/COMP3211/project/mips/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL_lab02_behav.wcfg', nor could it be found using path 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL_lab02_behav.wcfg'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/COMP3211/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 1014.746 ; gain = 0.000
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 18 01:42:32 2022...
