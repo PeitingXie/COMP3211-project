@@ -70,17 +70,6 @@ begin
             ifid_write <= '1';
             pc_write <= '1';
         end if;
-    
-        -- stall for branch--
-        --if ifid_beq = '1' and (idex_reg_d = ifid_reg_a or idex_reg_d = ifid_reg_b) then
-        --    ctr_sig_sel <= '1';
-        --    ifid_write <= '0';
-        --    pc_write <= '0';
-        --else
-        --    ctr_sig_sel <= '0';
-        --    ifid_write <= '1';
-        --    pc_write <= '1';
-        --end if;
        
     end process;
 

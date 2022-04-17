@@ -33,12 +33,12 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity slt_result_calc is
     Port ( msb : in std_logic;
-           slt_result : out STD_LOGIC_VECTOR (15 downto 0));
+           slt_result : out STD_LOGIC_VECTOR (31 downto 0));
 end slt_result_calc;
 
 architecture Behavioral of slt_result_calc is
 
 begin
-    slt_result(15 downto 1) <= "000000000000000";
+    slt_result(31 downto 1) <= "0000000000000000000000000000000";
     slt_result(0) <= msb;
 end Behavioral;

@@ -32,11 +32,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity pipeline_register is
-  Port ( data : in std_logic_vector (15 downto 0);
+  Port ( data : in std_logic_vector (31 downto 0);
          enable : in std_logic;
          resetn : in std_logic;
          clk : in std_logic;
-         Q : out std_logic_vector(15 downto 0));
+         Q : out std_logic_vector(31 downto 0));
 end pipeline_register;
 
 architecture Behavioral of pipeline_register is
@@ -46,7 +46,7 @@ begin
     begin
         wait until (clk'event and clk = '1');
         if resetn = '1'then
-            Q <= X"0000";
+            Q <= X"00000000";
         elsif enable = '1' then
             Q <= data;
         end if;

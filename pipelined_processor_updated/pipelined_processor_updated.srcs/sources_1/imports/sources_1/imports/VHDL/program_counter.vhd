@@ -29,8 +29,8 @@ entity program_counter is
     port ( reset    : in  std_logic;
            clk      : in  std_logic;
            pc_write : in  std_logic;
-           addr_in  : in  std_logic_vector(3 downto 0);
-           addr_out : out std_logic_vector(3 downto 0) );
+           addr_in  : in  std_logic_vector(9 downto 0);
+           addr_out : out std_logic_vector(9 downto 0) );
 end program_counter;
 
 architecture behavioral of program_counter is

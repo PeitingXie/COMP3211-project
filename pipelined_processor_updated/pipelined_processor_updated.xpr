@@ -46,7 +46,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="105"/>
+    <Option Name="WTXSimLaunchSim" Val="117"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -75,18 +75,20 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/VHDL/adder_16b.vhd">
+      <File Path="$PSRCDIR/sources_1/new/adder_10b.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="C:/Users/Katelyn/OneDrive - UNSW/22T1/COMP3211/Labs/Lab02/lab02-task-1/lab02-task-1.srcs/sources_1/imports/VHDL/adder_16b.vhd"/>
-          <Attr Name="ImportTime" Val="1648572851"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/VHDL/adder_4b.vhd">
+      <File Path="$PSRCDIR/sources_1/new/adder_20b.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="C:/Users/Katelyn/OneDrive - UNSW/22T1/COMP3211/Labs/Lab02/lab02-task-1/lab02-task-1.srcs/sources_1/imports/VHDL/adder_4b.vhd"/>
-          <Attr Name="ImportTime" Val="1153804950"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/adder_32b.vhd">
+        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -175,15 +177,19 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/VHDL/mux_2to1_16b.vhd">
+      <File Path="$PSRCDIR/sources_1/new/mux_2to1_10b.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="C:/Users/Katelyn/OneDrive - UNSW/22T1/COMP3211/Labs/Lab02/lab02-task-1/lab02-task-1.srcs/sources_1/imports/VHDL/mux_2to1_16b.vhd"/>
-          <Attr Name="ImportTime" Val="1646793318"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/mux_2to1_1b.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/mux_2to1_32b.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -205,10 +211,8 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/mux_4to1_16b.vhd">
+      <File Path="$PSRCDIR/sources_1/new/mux_4to1_32b.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="C:/Users/Katelyn/OneDrive - UNSW/22T1/COMP3211/Labs/Lab03/pipelined_processor/lab03.srcs/sources_1/new/mux_4to1_16b.vhd"/>
-          <Attr Name="ImportTime" Val="1648568080"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -325,6 +329,42 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="C:/Users/Katelyn/OneDrive - UNSW/22T1/COMP3211/Labs/Lab02/lab02-task-1/lab02-task-1.srcs/sources_1/imports/VHDL/single_cycle_core_TB_VHDL.vhd"/>
           <Attr Name="ImportTime" Val="1646456932"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/VHDL/adder_4b.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="C:/Users/Katelyn/OneDrive - UNSW/22T1/COMP3211/Labs/Lab02/lab02-task-1/lab02-task-1.srcs/sources_1/imports/VHDL/adder_4b.vhd"/>
+          <Attr Name="ImportTime" Val="1153804950"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/mux_4to1_16b.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="C:/Users/Katelyn/OneDrive - UNSW/22T1/COMP3211/Labs/Lab03/pipelined_processor/lab03.srcs/sources_1/new/mux_4to1_16b.vhd"/>
+          <Attr Name="ImportTime" Val="1648568080"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/VHDL/mux_2to1_16b.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="C:/Users/Katelyn/OneDrive - UNSW/22T1/COMP3211/Labs/Lab02/lab02-task-1/lab02-task-1.srcs/sources_1/imports/VHDL/mux_2to1_16b.vhd"/>
+          <Attr Name="ImportTime" Val="1646793318"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources_1/imports/VHDL/adder_16b.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="C:/Users/Katelyn/OneDrive - UNSW/22T1/COMP3211/Labs/Lab02/lab02-task-1/lab02-task-1.srcs/sources_1/imports/VHDL/adder_16b.vhd"/>
+          <Attr Name="ImportTime" Val="1648572851"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>

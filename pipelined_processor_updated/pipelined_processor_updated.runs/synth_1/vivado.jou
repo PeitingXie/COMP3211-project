@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sat Apr 16 15:23:17 2022
-# Process ID: 1132
+# Start of session at: Sun Apr 17 15:38:16 2022
+# Process ID: 15740
 # Current directory: D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.runs/synth_1
 # Command line: vivado.exe -log Single_cycle_core_TB_VHDL.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Single_cycle_core_TB_VHDL.tcl
 # Log file: D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.runs/synth_1/Single_cycle_core_TB_VHDL.vds

@@ -34,22 +34,22 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity mem_wb_pipeline_stage is
   Port ( reset : in std_logic;
          clk : in std_logic;
-         read_data_in : in std_logic_vector (15 downto 0);
-         slt_data_in : in std_logic_vector (15 downto 0);
-         srr_data_in : in std_logic_vector (15 downto 0);
-         alu_result_in : in std_logic_vector (15 downto 0);
-         read_data_out : out std_logic_vector (15 downto 0);
-         slt_data_out : out std_logic_vector (15 downto 0);
-         srr_data_out : out std_logic_vector (15 downto 0);
-         alu_result_out : out std_logic_vector (15 downto 0);
+         read_data_in : in std_logic_vector (31 downto 0);
+         slt_data_in : in std_logic_vector (31 downto 0);
+         srr_data_in : in std_logic_vector (31 downto 0);
+         alu_result_in : in std_logic_vector (31 downto 0);
+         read_data_out : out std_logic_vector (31 downto 0);
+         slt_data_out : out std_logic_vector (31 downto 0);
+         srr_data_out : out std_logic_vector (31 downto 0);
+         alu_result_out : out std_logic_vector (31 downto 0);
          
          -- ctr signals --
          reg_write_in, reg_dst_in : in std_logic;
          reg_write_out, reg_dst_out : out std_logic;
          mem_to_reg_in : in std_logic_vector(1 downto  0);
          mem_to_reg_out : out std_logic_vector(1 downto 0);
-         insn_in : in std_logic_vector(15 downto 0);
-         insn_out : out std_logic_vector(15 downto 0);
+         insn_in : in std_logic_vector(31 downto 0);
+         insn_out : out std_logic_vector(31 downto 0);
          forwarded_write_register_in : in std_logic_vector(3 downto 0);
          forwarded_write_register_out : out std_logic_vector(3 downto 0));
          
@@ -57,11 +57,11 @@ end mem_wb_pipeline_stage;
 
 architecture Behavioral of mem_wb_pipeline_stage is
     component pipeline_register is
-        Port ( data : in std_logic_vector (15 downto 0);
+        Port ( data : in std_logic_vector (31 downto 0);
              enable : in std_logic;
              resetn : in std_logic;
              clk : in std_logic;
-             Q : out std_logic_vector(15 downto 0));
+             Q : out std_logic_vector(31 downto 0));
     end component;
     
     component pipeline_bit_register is

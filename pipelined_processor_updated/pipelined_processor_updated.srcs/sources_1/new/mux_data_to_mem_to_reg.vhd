@@ -33,10 +33,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity mux_data_to_mem_to_reg is
   Port ( 
-        word_data : in std_logic_vector(15 downto 0);
-        byte_data : in std_logic_vector(15 downto 0);
+        word_data : in std_logic_vector(31 downto 0);
+        byte_data : in std_logic_vector(31 downto 0);
         read_byte : in std_logic;
-        data_out : out std_logic_vector(15 downto 0)
+        data_out : out std_logic_vector(31 downto 0)
   );
 end mux_data_to_mem_to_reg;
 

@@ -33,25 +33,25 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity load_byte_unit is
   Port ( 
-        data_in      : in std_logic_vector(15 downto 0);
+        data_in      : in std_logic_vector(31 downto 0);
         read_byte    : in std_logic;
         load_msb     : in std_logic;
-        data_to_extend  : out std_logic_vector(7 downto 0));
+        data_to_extend  : out std_logic_vector(15 downto 0));
 end load_byte_unit;
 
 architecture Behavioral of load_byte_unit is
-signal byte_mask    : std_logic_vector (15 downto 0);
+signal byte_mask    : std_logic_vector (31 downto 0);
 begin
     select_bits : process ( data_in, load_msb ) is
     begin
         -- shift bits if the most significant byte was loaded --
         case load_msb is
             when '1' => 
-                for i in 0 to 7 loop
-                        data_to_extend(i) <= data_in(i + 8);
+                for i in 0 to 15 loop
+                        data_to_extend(i) <= data_in(i + 16);
                 end loop;
             when others =>
-                for i in 0 to 7 loop
+                for i in 0 to 15 loop
                         data_to_extend(i) <= data_in(i);
                 end loop;
         end case;

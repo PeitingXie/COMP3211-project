@@ -27,14 +27,14 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity instruction_memory is
     port ( reset    : in  std_logic;
            clk      : in  std_logic;
-           addr_in  : in  std_logic_vector(3 downto 0);
+           addr_in  : in  std_logic_vector(9 downto 0);
            pc_write : in std_logic;
-           insn_out : out std_logic_vector(15 downto 0) );
+           insn_out : out std_logic_vector(31 downto 0) );
 end instruction_memory;
 
 architecture behavioral of instruction_memory is
 
-type mem_array is array(0 to 15) of std_logic_vector(15 downto 0);
+type mem_array is array(0 to 15) of std_logic_vector(31 downto 0);
 signal sig_insn_mem : mem_array;
 
 begin
@@ -161,22 +161,22 @@ begin
 --           var_insn_mem(14) := X"0000";
 --            var_insn_mem(15) := X"0000";
 
-              var_insn_mem(0)  := X"1010"; -- $1 = 15
-              var_insn_mem(1)  := X"1021"; -- $2 = 15
-              var_insn_mem(2)  := X"8123"; -- $3 = 30
-              var_insn_mem(3)  := X"8304"; -- $4 = 30
-              var_insn_mem(4)  := X"b342";
-              var_insn_mem(5)  := X"8128"; 
-              var_insn_mem(6)  := X"0000"; 
-              var_insn_mem(7)  := X"8127"; 
-              var_insn_mem(8)  := X"8125"; 
-              var_insn_mem(9)  := X"0000"; -- $5 = 30
-              var_insn_mem(10) := X"0000"; 
-              var_insn_mem(11) := X"0000"; 
-              var_insn_mem(12) := X"0000"; 
-              var_insn_mem(13) := X"0000"; 
-              var_insn_mem(14) := X"0000";
-              var_insn_mem(15) := X"0000";
+              var_insn_mem(0)  := X"10100000"; -- $1 = 15
+              var_insn_mem(1)  := X"10200001"; -- $2 = 15
+              var_insn_mem(2)  := X"00000000"; 
+              var_insn_mem(3)  := X"00000000"; 
+              var_insn_mem(4)  := X"80100003"; 
+              var_insn_mem(5)  := X"b3100002"; 
+              var_insn_mem(6)  := X"81200006"; 
+              var_insn_mem(7)  := X"00000000"; 
+              var_insn_mem(8)  := X"81200005"; 
+              var_insn_mem(9)  := X"81200004"; 
+              var_insn_mem(10) := X"b31ffffc"; 
+              var_insn_mem(11) := X"00000000"; 
+              var_insn_mem(12) := X"00000000"; 
+              var_insn_mem(13) := X"00000000"; 
+              var_insn_mem(14) := X"00000000";
+              var_insn_mem(15) := X"00000000";
        
        elsif (rising_edge(clk) and pc_write = '1') then
            -- read instructions on the rising clock edge

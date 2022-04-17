@@ -1,7 +1,8 @@
 # compile vhdl design source files
 vhdl xil_defaultlib  \
-"../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/adder_16b.vhd" \
-"../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/adder_4b.vhd" \
+"../../../../pipelined_processor_updated.srcs/sources_1/new/adder_10b.vhd" \
+"../../../../pipelined_processor_updated.srcs/sources_1/new/adder_20b.vhd" \
+"../../../../pipelined_processor_updated.srcs/sources_1/new/adder_32b.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/control_unit.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/data_memory.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/ex_mem_pipeline_stage.vhd" \
@@ -13,11 +14,12 @@ vhdl xil_defaultlib  \
 "../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/load_byte_unit.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/mem_wb_pipeline_stage.vhd" \
-"../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_16b.vhd" \
+"../../../../pipelined_processor_updated.srcs/sources_1/new/mux_2to1_10b.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/mux_2to1_1b.vhd" \
+"../../../../pipelined_processor_updated.srcs/sources_1/new/mux_2to1_32b.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/mux_4to1_16b.vhd" \
-"../../../../pipelined_processor_updated.srcs/sources_1/new/mux_4to1_16b.vhd" \
+"../../../../pipelined_processor_updated.srcs/sources_1/new/mux_4to1_32b.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/mux_ctr_unit.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/mux_data_to_mem_to_reg.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/pipeline_2bit_register.vhd" \

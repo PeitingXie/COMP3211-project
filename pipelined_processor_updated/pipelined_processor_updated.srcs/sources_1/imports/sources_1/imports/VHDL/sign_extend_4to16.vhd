@@ -22,23 +22,23 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-entity sign_extend_4to16 is
-    port ( data_in  : in  std_logic_vector(3 downto 0);
-           data_out : out std_logic_vector(15 downto 0) );
-end sign_extend_4to16;
+entity sign_extend_20to32 is
+    port ( data_in  : in  std_logic_vector(19 downto 0);
+           data_out : out std_logic_vector(31 downto 0) );
+end sign_extend_20to32;
 
-architecture behavioral of sign_extend_4to16 is
+architecture behavioral of sign_extend_20to32 is
 
 begin
     
     sign_extend : process ( data_in ) is
     begin
-        data_out(3 downto 0) <= data_in(3 downto 0);
+        data_out(19 downto 0) <= data_in(19 downto 0);
 
         -- the extended bits take on the value of the most significant
         -- bit (MSB) of data_in
-        for i in 15 downto 4 loop
-            data_out(i) <= data_in(3);
+        for i in 31 downto 20 loop
+            data_out(i) <= data_in(19);
         end loop;
 
     end process;
