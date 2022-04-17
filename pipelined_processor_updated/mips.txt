@@ -59,7 +59,7 @@ Tag generation example
 
             // now
             $5 = secret
-            $6 = size
+            $6 = size in binary
             $7 = b1
             $8 = p1
             $9 = useless
@@ -71,28 +71,36 @@ Tag generation example
             $15 = b2 bits to swap
             //
 
+            
+            lw $14, $10, 110
+            srr $14, $5, $14  
+            lw $9, $10, 3     get 0b111, store in $14 
+            and $14, $14, $9 ----  get size in decimal
+
             lw $9, $7, 20      get b1 related block, store in $9
-            add $0, $8, $6
+
+
+            add $0, $8, $14
             srr $1, $9, $0     
-            sll $1, $1, 0       get bits left from p1 + s, shift to right position, store in $1    
+            sll $1, $1, $0       get bits left from p1 + s, shift to right position, store in $1    
 
             lw $0, $8, 0        get transfer x as binary, store in $0 for example, if p1 is 3, we will load ob111 into $0
             and $0, $9, $0      get bits right from bit p1, store in $0
             sll $2, $15, $8
-            xor $3, $0, $1
-            xor $3, $3, $2
+            add $3, $0, $1
+            add $3, $3, $2
             sw $3, $7, 20       get first record after swap, store in related position in data memory
 
             lw $9, $12, 20
-            add $0, $13, $12
+            add $0, $13, $14
             srr $1, $9, $0
-            sll $1, $1, $0
+            sll $1, $1, $0      get bits left from p2 + s, shift to right position, store in $1 
 
             lw $0, $13, 0
             and $0, $9, $0
             sll $2, $11, $13
-            xor $3, $0, $1
-            xor $3, $3, $2
+            add $3, $0, $1
+            add $3, $3, $2
             sw $3, $12, 20    get second record after swap, store in related position in data memory
 
 
@@ -156,7 +164,7 @@ Tag generation example
             xor $0, $0, $2
             xor $0, $0, $3
             
-            sw $0, $10, 512   ----- store generated tag in data memory 512
+            sw $0, $10, 150  ----- store generated tag in data memory 512
             
 
 
