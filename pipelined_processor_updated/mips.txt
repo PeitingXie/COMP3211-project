@@ -1,0 +1,224 @@
+
+
+Tag generation example
+
+
+    ins memory
+
+        pre-defined(registers) :
+            $0 : D0
+            $1 : D1
+            $2 : D2
+            $3 : D3
+            $4 : tag
+            $10 : 0
+        start :
+             // will change after swap and rotate, to generate tag
+            sw $0, $10, 20, store D0 in data memory 20
+            sw $1, $10, 21, store D1 in data memory 21
+            sw $2, $10, 22, store D2 in data memory 22
+            sw $3, $10, 23, store D3 in data memory 23
+            // backup record, won't change
+            sw $0, $10, 24, store D0 in data memory 24
+            sw $1, $10, 25, store D1 in data memory 25
+            sw $2, $10, 26, store D2 in data memory 26
+            sw $3, $10, 27, store D3 in data memory 27
+
+            // decode secret
+            lw $5, $10, 9  load secret in $5
+
+            lw $15, $10, 110    load 10 into $15 
+            lw $14, $10, 3     get 0b111, store in $14
+            srr $6, $5, $15
+            and $6, $6, $14    
+            lw $6, $6, 0      get size, store in $6
+            //
+                for example, if size is 4, we will store ob1111 in $6
+            //
+
+            lw $15, $10, 2    get 0b11, store in $15
+            and $7, $5, $15    get b1, store in $7
+
+            lw $15, $10, 104  get 4, store in $15
+            srr $8, $5, $15  
+            and $8, $8, $14    get p1, store in $8
+            lw $9, $7, 20      get b1 related block, store in $9
+            srr $9, $9, $8     shift b1 block for p1 bits
+            and $11, $9, $6    get given size of bits in block b1, ready for swap, store in $11
+
+            lw $12, $10, 102    get value 2, store in $7
+            srr $12, $5, $12    
+            lw $15, $10, 2    get 0b11, store in $15
+            and $12, $12, $15   get b2, store in $12
+            lw $15, $10, 107    get 7, store in $15
+            srr $13, $5, $15  
+            and $13, $13, $14   get p2, store in  $13
+            lw $14, $12, 20     get b2 related block, store in $14
+            srr $14, $14, $13   
+            and $15, $14, $6    get given size of bits in block b2, ready for swap, store in $15
+
+            // now
+            $5 = secret
+            $6 = size
+            $7 = b1
+            $8 = p1
+            $9 = useless
+            $10 = 0
+            $11 = b1 bits to swap
+            $12 = b2
+            $13 = p2
+            $14 = useless
+            $15 = b2 bits to swap
+            //
+
+            lw $9, $7, 20      get b1 related block, store in $9
+            add $0, $8, $6
+            srr $1, $9, $0     
+            sll $1, $1, 0       get bits left from p1 + s, shift to right position, store in $1    
+
+            lw $0, $8, 0        get transfer x as binary, store in $0 for example, if p1 is 3, we will load ob111 into $0
+            and $0, $9, $0      get bits right from bit p1, store in $0
+            sll $2, $15, $8
+            xor $3, $0, $1
+            xor $3, $3, $2
+            sw $3, $7, 20       get first record after swap, store in related position in data memory
+
+            lw $9, $12, 20
+            add $0, $13, $12
+            srr $1, $9, $0
+            sll $1, $1, $0
+
+            lw $0, $13, 0
+            and $0, $9, $0
+            sll $2, $11, $13
+            xor $3, $0, $1
+            xor $3, $3, $2
+            sw $3, $12, 20    get second record after swap, store in related position in data memory
+
+
+            ------------
+            finished swap, store in 20-23 in data memory
+            ------------
+
+            lw $0, $10, 20   get D0 after swap, store in $0
+            lw $1, $10, 113     get 13, store in $1
+            srr $1, $5, $1
+            lw $2, $10, 3       get 0b111, store in $2
+            and $3, $2, $1      get r0, store in $3
+
+            slr $0, $0, $3
+            sw $0, $10, 20      
+            ---------------
+            finish rotate D0, store in data memory 20
+            ---------------
+            lw $0, $10, 21      get D1 after swap, store in $0
+            lw $1, $10, 116     get 16, store in $1
+            srr $1, $5, $1  
+            and $3, $2, $1      get r1, store in $3
+
+            slr $0, $0, $3
+            sw $0, $10, 21      
+
+            ---------------
+            finish rotate D1, store in data memory 21
+            ---------------
+
+            lw $0, $10, 22      get D2 after swap, store in $0
+            lw $1, $10, 119     get 19, store in $1
+            srr $1, $5, $1  
+            and $3, $2, $1      get r2, store in $3
+
+            slr $0, $0, $3
+            sw $0, $10, 22     
+
+            ---------------
+            finish rotate D2, store in data memory 22
+            ---------------
+
+            
+            lw $0, $10, 23      get D3 after swap, store in $0
+            lw $1, $10, 122     get 22, store in $1
+            srr $1, $5, $1  
+            and $3, $2, $1      get r3, store in $3
+
+            slr $0, $0, $3
+            sw $0, $10, 23   
+            ---------------
+            finish rotate D3, store in data memory 23
+            ---------------
+
+            lw $0, $10, 20
+            lw $1, $10, 21
+            lw $2, $10, 22
+            lw $3, $10, 23
+
+            xor $0, $0, $1
+            xor $0, $0, $2
+            xor $0, $0, $3
+            
+            sw $0, $10, 512   ----- store generated tag in data memory 512
+            
+
+
+
+
+
+
+
+
+
+
+
+            
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+    data memory
+    0 : 0 
+    1 : 1
+    2 : 3
+    3 : 7
+    4 : 15 
+    5 : 31
+    6 : 63
+    7 : 127
+    8 : 255
+    9 : secret ( 25 bit)
+
+    100 : 0
+    101 : 1
+    102 : 2
+    103 : 3
+    104 : 4
+    105 : 5
+    106 : 6
+    107 : 7
+    108 : 8
+    109 : 9
+    110 : 10
+    111 : 11
+    112 : 12
+    113 : 13
+    114 : 14
+    115 : 15
+    116 : 16
+    117 : 17
+    118 : 18
+    119 : 19
+    120 : 20
+    121 ；21
+    122 : 22
+    123 : 23
+    124 : 24
+    
