@@ -45,7 +45,7 @@ begin
     process
     begin
         wait until (clk'event and clk = '1');
-        if resetn = '1' then
+        if resetn = '1'then
             Q <= X"0000";
         elsif enable = '1' then
             Q <= data;

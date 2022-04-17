@@ -61,7 +61,7 @@ begin
             var_insn_mem(4)  := X"8000"; -- no-op
             var_insn_mem(5)  := X"A124"; -- xor $4, $1, $2 --4
             var_insn_mem(6)  := X"A465"; -- xor $5, $4, $6 --4
-            var_insn_mem(7)  := X"A346"; -- xor $6, $3, $4 -- 1
+            var_insn_mem(7)  := X"A347"; -- xor $7, $3, $4 -- 1
             --var_insn_mem(8)  := X"A424"; -- xor $4, $4, $2
             --var_insn_mem(9)  := X"0000";
             --var_insn_mem(10) := X"0000";

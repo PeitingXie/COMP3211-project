@@ -57,6 +57,7 @@ architecture structural of single_cycle_core is
 component program_counter is
     port ( reset    : in  std_logic;
            clk      : in  std_logic;
+           pc_write : in  std_logic;
            addr_in  : in  std_logic_vector(3 downto 0);
            addr_out : out std_logic_vector(3 downto 0) );
 end component;
@@ -65,12 +66,21 @@ component instruction_memory is
     port ( reset    : in  std_logic;
            clk      : in  std_logic;
            addr_in  : in  std_logic_vector(3 downto 0);
+           is_flush : in std_logic;
+           pc_write : in std_logic;
            insn_out : out std_logic_vector(15 downto 0) );
 end component;
 
 component sign_extend_4to16 is
     port ( data_in  : in  std_logic_vector(3 downto 0);
            data_out : out std_logic_vector(15 downto 0) );
+end component;
+
+component mux_2to1_1b is
+    Port ( mux_select : in STD_LOGIC;
+           data_a : in STD_LOGIC;
+           data_b : in STD_LOGIC;
+           data_out : out STD_LOGIC);
 end component;
 
 component mux_2to1_4b is
@@ -98,13 +108,19 @@ end component;
 
 component control_unit is
     port ( opcode     : in  std_logic_vector(3 downto 0);
+           branch_ctrl: in std_logic;
+           imm_value  : in std_logic_vector(3 downto 0);
            reg_dst    : out std_logic;
            reg_write  : out std_logic;
            alu_src    : out std_logic;
            mem_write  : out std_logic;
            mem_to_reg : out std_logic_vector(1 downto 0);
            read_byte  : out std_logic;
-           alu_ctr    : out std_logic_vector(1 downto 0));
+           alu_ctr    : out std_logic_vector(2 downto 0);
+           if_flush   : out std_logic;
+           mem_read   : out std_logic;
+           beq        : out std_logic;
+           ctrl_beq_op: out std_logic);
 end component;
 
 component register_file is
@@ -119,6 +135,23 @@ component register_file is
            read_data_b     : out std_logic_vector(15 downto 0) );
 end component;
 
+component xor_com is
+    Port ( data_a : in STD_LOGIC_VECTOR (15 downto 0);
+           data_b : in STD_LOGIC_VECTOR (15 downto 0);
+           is_beq : in std_logic;
+           imm : in std_logic_vector(3 downto 0);
+           ctrl : out STD_LOGIC);
+end component;
+
+component forwarding_branch is
+    Port ( if_id_regs : in STD_LOGIC_VECTOR (3 downto 0);
+           if_id_regt : in STD_LOGIC_VECTOR (3 downto 0);
+           ex_mem_regd : in STD_LOGIC_VECTOR (3 downto 0);
+           ex_mem_regWrite : in STD_LOGIC;
+           forwarding_br_ctrls : out STD_LOGIC;
+           forwarding_br_ctrlt : out STD_LOGIC);
+end component;
+
 component adder_4b is
     port ( src_a     : in  std_logic_vector(3 downto 0);
            src_b     : in  std_logic_vector(3 downto 0);
@@ -129,7 +162,7 @@ end component;
 component adder_16b is
     port ( src_a     : in  std_logic_vector(15 downto 0);
            src_b     : in  std_logic_vector(15 downto 0);
-           alu_ctr   : in std_logic_vector(1 downto 0);
+           alu_ctr   : in std_logic_vector(2 downto 0);
            sum       : out std_logic_vector(15 downto 0);
            carry_out : out std_logic;
            load_msb  : out std_logic );
@@ -181,7 +214,11 @@ end component;
 component if_id_pipeline_stage is
   Port ( clk : in std_logic;
          reset : in std_logic;
+         if_flush : in std_logic;
+         ifid_write: in std_logic;
+         if_curr_pc: in std_logic_vector(3 downto 0);
          ifid_instr_in : in std_logic_vector(15 downto 0);
+         id_curr_pc: out std_logic_vector(3 downto 0);
          ifid_instr_out : out std_logic_vector(15 downto 0));
 end component;
 
@@ -198,12 +235,18 @@ component id_ex_pipeline_stage is
          immed_out : out std_logic_vector(15 downto 0);
          reg_write_in, read_byte_in, alu_src_in, mem_to_write_in, reg_dst_in : in std_logic;
          reg_write_out, read_byte_out, alu_src_out, mem_to_write_out, reg_dst_out : out std_logic;
-         alu_ctr_in, mem_to_reg_in : in std_logic_vector(1 downto 0);
-         alu_ctr_out, mem_to_reg_out : out std_logic_vector(1 downto 0);
+         alu_ctr_in  : in std_logic_vector(2 downto 0);
+         mem_to_reg_in : in std_logic_vector(1 downto 0);
+         alu_ctr_out : out std_logic_vector(2 downto 0);
+         mem_to_reg_out : out std_logic_vector(1 downto 0);
          insn_in : in std_logic_vector(15 downto 0);
          insn_out : out std_logic_vector(15 downto 0);
          forwarded_write_register_in : in std_logic_vector(3 downto 0);
-         forwarded_write_register_out : out std_logic_vector(3 downto 0));
+         forwarded_write_register_out : out std_logic_vector(3 downto 0);
+         mem_read_in : in std_logic;
+         mem_read_out: out std_logic;
+         ctrl_beq_op_in : in std_logic;
+         ctrl_beq_op_out : out std_logic);
 
 end component;
 
@@ -255,6 +298,31 @@ component mem_wb_pipeline_stage is
          
 end component;
 
+
+component hazard_detection_unit is
+    Port (  ifid_reg_a : in std_logic_vector(3 downto 0);
+            ifid_reg_b : in std_logic_vector(3 downto 0);
+            idex_reg_b : in std_logic_vector(3 downto 0);
+            idex_reg_d : in std_logic_vector(3 downto 0);
+            idex_op  : in std_logic;
+            ifid_beq   : in std_logic;
+            idex_mem_read : in std_logic;
+            ctr_sig_sel : out std_logic;
+            ifid_write : out std_logic;
+            pc_write : out std_logic
+             );
+end component;
+
+component mux_ctr_unit
+    Port ( ctr_sig_sel : in std_logic;
+        mem_write_in : in std_logic;
+        mem_write_out : out std_logic;
+        reg_write_in : in std_logic;
+        reg_write_out : out std_logic;
+        alu_ctr_in : in std_logic_vector(2 downto 0);
+        alu_ctr_out : out std_logic_vector(2 downto 0) );
+end component;
+
 -- forwarding unit --
 component forwarding_unit is
   Port ( exmem_reg_write : in std_logic;
@@ -289,12 +357,32 @@ signal sig_alu_carry_out        : std_logic;
 signal sig_data_mem_out         : std_logic_vector(15 downto 0);
 signal sig_read_byte            : std_logic;
 signal sig_load_msb             : std_logic;
-signal sig_alu_ctr              : std_logic_vector(1 downto 0);
+signal sig_alu_ctr              : std_logic_vector(2 downto 0);
 signal sig_slt_result           : std_logic_vector(15 downto 0); 
 signal sig_srr_result           : std_logic_vector(15 downto 0); 
 signal sig_byte_data            : std_logic_vector(15 downto 0);
 signal sig_data_out             : std_logic_vector(15 downto 0);
 signal sig_data_to_extend       : std_logic_vector(7 downto 0);
+
+-- branch signals --
+signal sig_if_flush             : std_logic;
+signal sig_xor_com              : std_logic;
+signal sig_id_curr_pc           : std_logic_vector(3 downto 0);
+signal sig_branch_addr          : std_logic_vector(3 downto 0);
+signal sig_branch_carry_out     : std_logic;
+signal sig_next_pc_branch       : std_logic_vector(3 downto 0);
+
+-- branch forwarding signals --
+signal sig_forwarding_br_ctrls  : std_logic;
+signal sig_forwarding_br_ctrlt  : std_logic;
+signal sig_forwarded_br_read_data_a: std_logic_vector(15 downto 0);
+signal sig_forwarded_br_read_data_b: std_logic_vector(15 downto 0);
+
+-- stalling branch --
+signal sig_ifid_beq: std_logic;
+signal sig_ifid_ctrl_beq_op: std_logic;
+signal sig_idex_ctrl_beq_op: std_logic;
+
 
 -- pipeline signals --
 signal sig_ifid_insn            : std_logic_vector(15 downto 0);
@@ -303,7 +391,7 @@ signal sig_idex_read_data_a     : std_logic_vector(15 downto 0);
 signal sig_idex_read_data_b     : std_logic_vector(15 downto 0);
 signal sig_idex_immed           : std_logic_vector(15 downto 0);
 signal sig_idex_reg_write       : std_logic;
-signal sig_idex_alu_ctr         : std_logic_vector(1 downto 0);
+signal sig_idex_alu_ctr         : std_logic_vector(2 downto 0);
 signal sig_idex_read_byte       : std_logic;
 signal sig_idex_mem_to_reg      : std_logic_vector(1 downto 0);
 signal sig_idex_alu_src         : std_logic;
@@ -342,6 +430,17 @@ signal sig_alu_src_b_forward_sel : std_logic_vector(1 downto 0);
 signal sig_alu_b_src_b : std_logic_vector(15 downto 0);
 signal sig_alu_src_a : std_logic_vector(15 downto 0);
 
+-- stalling signals--
+signal sig_pc_write: std_logic;
+signal sig_ifid_write: std_logic;
+signal sig_mem_read: std_logic; 
+signal sig_idex_mem_read: std_logic;
+signal sig_ctr_sig_sel: std_logic;
+signal sig_mux_ctr_mem_write: std_logic; 
+signal sig_mux_ctr_reg_write: std_logic;
+signal sig_mux_ctr_alu_ctr: std_logic_vector(2 downto 0);
+
+signal tmp_curr_pc : std_logic_vector(3 downto 0);
 
 begin
 
@@ -350,19 +449,28 @@ begin
     pc : program_counter
     port map ( reset    => reset,
                clk      => clk,
-               addr_in  => sig_next_pc,
-               addr_out => sig_curr_pc ); 
+               pc_write => sig_pc_write,
+               addr_in  => sig_next_pc_branch,
+               addr_out => sig_curr_pc); 
 
     next_pc : adder_4b 
     port map ( src_a     => sig_curr_pc, 
                src_b     => sig_one_4b,
                sum       => sig_next_pc,   
                carry_out => sig_pc_carry_out );
+               
+    branch_mux: mux_2to1_4b
+    port map(mux_select => sig_if_flush,
+             data_a => sig_next_pc,
+             data_b => sig_branch_addr,
+             data_out => sig_next_pc_branch);
     
     insn_mem : instruction_memory 
     port map ( reset    => reset,
                clk      => clk,
                addr_in  => sig_curr_pc,
+               is_flush => sig_xor_com,
+               pc_write => sig_pc_write,
                insn_out => sig_insn );
 
     sign_extend : sign_extend_4to16 
@@ -371,13 +479,28 @@ begin
 
     ctrl_unit : control_unit 
     port map ( opcode     => sig_ifid_insn(15 downto 12),
+               branch_ctrl => sig_xor_com,
+               imm_value => sig_ifid_insn(3 downto 0),
                reg_dst    => sig_reg_dst,
                reg_write  => sig_reg_write,
                alu_src    => sig_alu_src,
                mem_write  => sig_mem_write,
                mem_to_reg => sig_mem_to_reg,
                read_byte  => sig_read_byte,
-               alu_ctr    => sig_alu_ctr );
+               alu_ctr    => sig_alu_ctr,
+               if_flush   => sig_if_flush,
+               mem_read   => sig_mem_read,
+               beq        => sig_ifid_beq,
+               ctrl_beq_op => sig_ifid_ctrl_beq_op );
+               
+    mux_ctr : mux_ctr_unit
+        port map( ctr_sig_sel => sig_ctr_sig_sel,
+                mem_write_in => sig_mem_write,
+                mem_write_out => sig_mux_ctr_mem_write,
+                reg_write_in => sig_reg_write,
+                reg_write_out => sig_mux_ctr_reg_write,
+                alu_ctr_in => sig_alu_ctr,
+                alu_ctr_out => sig_mux_ctr_alu_ctr );
 
     mux_reg_dst : mux_2to1_4b 
     port map ( mux_select => sig_memwb_reg_dst,
@@ -402,6 +525,40 @@ begin
                read_data_a     => sig_read_data_a,
                read_data_b     => sig_read_data_b );
 
+    xor_unit : xor_com
+    port map ( data_a    => sig_forwarded_br_read_data_a,
+               data_b    => sig_forwarded_br_read_data_b,
+               is_beq    => sig_ifid_beq,
+               imm       => sig_ifid_insn(3 downto 0),
+               ctrl      => sig_xor_com);
+
+    forwarding_br_unit: forwarding_branch 
+    port map ( if_id_regs => sig_ifid_insn(11 downto 8),
+           if_id_regt => sig_ifid_insn(7 downto 4),
+           ex_mem_regd => sig_exmem_forwarded_write_register,
+           ex_mem_regWrite => sig_exmem_reg_write,
+           forwarding_br_ctrls => sig_forwarding_br_ctrls,
+           forwarding_br_ctrlt => sig_forwarding_br_ctrlt);
+    
+    forward_br_rs_mux: mux_2to1_16b
+    port map ( mux_select => sig_forwarding_br_ctrls,
+               data_a     => sig_read_data_a,
+               data_b     => sig_exmem_alu_result,
+               data_out   => sig_forwarded_br_read_data_a);
+    
+    forward_br_rt_mux: mux_2to1_16b
+    port map ( mux_select => sig_forwarding_br_ctrlt,
+               data_a     => sig_read_data_b,
+               data_b     => sig_exmem_alu_result,
+               data_out   => sig_forwarded_br_read_data_b);
+    
+    tmp_curr_pc <= sig_id_curr_pc - 1;
+    branch_adder: adder_4b
+    port map( src_a => tmp_curr_pc,
+              src_b => sig_ifid_insn(3 downto 0),
+              sum => sig_branch_addr,
+              carry_out => sig_branch_carry_out);
+    
     mux_alu_src_b : mux_2to1_16b 
     port map ( mux_select => sig_idex_alu_src,
                data_a     => sig_alu_b_src_b,
@@ -477,7 +634,12 @@ begin
     if_id_stage : if_id_pipeline_stage 
     port map ( clk => clk,
                reset => reset,
+               if_flush => sig_if_flush,
+               ifid_write => sig_ifid_write,
+               if_curr_pc => sig_next_pc,
+               --if_curr_pc => sig_curr_pc,
                ifid_instr_in => sig_insn,
+               id_curr_pc => sig_id_curr_pc,
                ifid_instr_out => sig_ifid_insn );
 
     id_ex_stage: id_ex_pipeline_stage
@@ -506,7 +668,11 @@ begin
               insn_in => sig_ifid_insn,
               insn_out => sig_idex_insn,
               forwarded_write_register_in => sig_forwarded_write_register,
-              forwarded_write_register_out => sig_idex_forwarded_write_register);
+              forwarded_write_register_out => sig_idex_forwarded_write_register,
+              mem_read_in => sig_mem_read,
+              mem_read_out => sig_idex_mem_read,
+              ctrl_beq_op_in => sig_ifid_ctrl_beq_op,
+              ctrl_beq_op_out => sig_idex_ctrl_beq_op);
 
     ex_mem_stage: ex_mem_pipeline_stage
     port map ( reset => reset,
@@ -570,5 +736,20 @@ begin
         aluSrc_a_sel => sig_alu_src_a_forward_sel,
         aluSrc_b_sel => sig_alu_src_b_forward_sel
     );
+    
+    -- hazard detection unit --
+    hazard_dt_unit : hazard_detection_unit
+        port map (  ifid_reg_a => sig_ifid_insn(11 downto 8),
+                    ifid_reg_b => sig_ifid_insn(7 downto 4),
+                    idex_reg_b => sig_idex_insn(7 downto 4),
+                    idex_reg_d => sig_idex_forwarded_write_register,
+                    idex_op    => sig_idex_ctrl_beq_op,
+                    ifid_beq   => sig_ifid_beq,
+                    idex_mem_read => sig_idex_mem_read,
+                    ctr_sig_sel => sig_ctr_sig_sel,
+                    ifid_write => sig_ifid_write,
+                    pc_write => sig_pc_write
+                    );
+
     
 end structural;

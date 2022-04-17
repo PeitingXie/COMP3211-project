@@ -43,13 +43,19 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity control_unit is
     port ( opcode     : in  std_logic_vector(3 downto 0);
+           branch_ctrl: in std_logic;
+           imm_value  : in std_logic_vector(3 downto 0);
            reg_dst    : out std_logic;
            reg_write  : out std_logic;
            alu_src    : out std_logic;
            mem_write  : out std_logic;
            mem_to_reg : out std_logic_vector(1 downto 0);
            read_byte  : out std_logic;
-           alu_ctr    : out std_logic_vector(1 downto 0));
+           alu_ctr    : out std_logic_vector(2 downto 0);
+           if_flush   : out std_logic;
+           mem_read   : out std_logic;
+           beq        : out std_logic;
+           ctrl_beq_op: out std_logic);
 end control_unit;
 
 architecture behavioural of control_unit is
@@ -60,22 +66,28 @@ constant OP_STORE : std_logic_vector(3 downto 0) := "0011";
 constant OP_SLT   : std_logic_vector(3 downto 0) := "0100";
 constant OP_SRR   : std_logic_vector(3 downto 0) := "0101";
 constant OP_ADD   : std_logic_vector(3 downto 0) := "1000";
+constant OP_AND   : std_logic_vector(3 downto 0) := "1001";
+constant OP_XOR   : std_logic_vector(3 downto 0) := "1010";
+constant OP_BEQ   : std_logic_vector(3 downto 0) := "1011";
 
 signal sig_alu_ctr_l : std_logic;
 signal sig_alu_ctr_r : std_logic;
 
 begin
-
+    if_flush <= '1' when (branch_ctrl = '1' and opcode = OP_BEQ and imm_value /= x"0000") else '0';
+    beq <= '1' when opcode = OP_BEQ else '0';  
+    ctrl_beq_op <= '1' when opcode /= OP_BEQ else '0';
+    
     reg_dst    <= '1' when (opcode = OP_ADD
                             or opcode = OP_SLT
-                            or opcode = OP_SRR) else
+                            or opcode = OP_SRR or opcode = OP_AND or opcode = OP_XOR) else
                   '0';
 
     reg_write  <= '1' when (opcode = OP_ADD 
                             or opcode = OP_LOAD
                             or opcode = OP_LOADB
                             or opcode = OP_SLT
-                            or opcode = OP_SRR) else
+                            or opcode = OP_SRR or opcode = OP_AND or opcode = OP_XOR) else
                   '0';
     
     alu_src    <= '1' when (opcode = OP_LOAD 
@@ -85,6 +97,8 @@ begin
                  
     mem_write  <= '1' when opcode = OP_STORE else
                   '0';
+    
+    mem_read    <= '1' when (opcode = OP_LOAD or opcode = OP_LOADB) else '0';
                  
     with opcode select
         mem_to_reg <= "01" when OP_LOAD,
@@ -97,8 +111,10 @@ begin
                   '0';
                   
     with opcode select
-        alu_ctr    <= "01" when OP_LOADB,
-                      "10" when OP_SLT,
-                      "00" when others;
+        alu_ctr    <= "001" when OP_LOADB,
+                      "010" when OP_SLT,
+                      "011" when OP_AND,
+                      "100" when OP_XOR,
+                      "000" when others;
 
 end behavioural;
