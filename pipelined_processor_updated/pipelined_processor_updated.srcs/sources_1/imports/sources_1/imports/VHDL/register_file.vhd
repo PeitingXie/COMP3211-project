@@ -73,12 +73,12 @@ begin
             var_regfile := (others => X"00000000");
             
         elsif (send = '1') then
-            var_regfile(1) := X"000000" & D0;
-            var_regfile(2) := X"000000" & D1;
-            var_regfile(3) := X"000000" & D2;
-            var_regfile(4) := X"000000" & D3;
-            var_regfile(5) := X"000000" & tag;
-            i := 6;
+            var_regfile(0) := X"000000" & D0;
+            var_regfile(1) := X"000000" & D1;
+            var_regfile(2) := X"000000" & D2;
+            var_regfile(3) := X"000000" & D3;
+            var_regfile(4) := X"000000" & tag;
+            i := 5;
             while i <= 15 loop
                 var_regfile(i) := X"00000000";
                 i := i + 1;
@@ -90,7 +90,7 @@ begin
         end if;
 
         -- enforces value zero for register $0
-        var_regfile(0) := X"00000000";
+        --var_regfile(0) := X"00000000";
 
         -- continuous read of the registers at location read_register_a
         -- and read_register_b

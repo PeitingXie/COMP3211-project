@@ -41,7 +41,7 @@ begin
     update_process: process ( reset, 
                               clk, pc_write, send, addr_in ) is
     begin
-       if (reset = '1' or addr_in > "0000001111") then
+       if (reset = '1' or addr_in > "0100000000") then
            addr_out <= (others => '0'); 
            busy <= '0';
        elsif send = '1' then

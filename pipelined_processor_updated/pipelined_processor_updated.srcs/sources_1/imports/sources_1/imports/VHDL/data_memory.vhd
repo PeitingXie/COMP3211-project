@@ -50,8 +50,50 @@ begin
         
         if (reset = '1') then
             -- initial values of the data memory : reset to zero 
-            var_data_mem(0)  := X"0000000f"; -- secret
-            i := 1;
+            var_data_mem(0)  := X"00000000"; --0
+            var_data_mem(1)  := X"00000001"; --1
+            var_data_mem(2)  := X"00000011"; --3
+            var_data_mem(3)  := X"00000111"; --7
+            var_data_mem(4)  := X"00001111"; --15
+            var_data_mem(5)  := X"00011111"; --31
+            var_data_mem(6)  := X"00111111"; --63
+            var_data_mem(7)  := X"01111111"; --127
+            var_data_mem(8)  := X"11111111"; --255
+            var_data_mem(9)  := X"0124B6CB"; --secret
+            
+            i := 10;
+            while i <= 99 loop
+                var_data_mem(i) := X"00000000";
+                i := i + 1;
+            end loop;
+            
+            var_data_mem(100)  := X"00000000";
+            var_data_mem(101)  := X"00000001"; 
+            var_data_mem(102)  := X"00000010";
+            var_data_mem(103)  := X"00000011";
+            var_data_mem(104)  := X"00000100";
+            var_data_mem(105)  := X"00000101";
+            var_data_mem(106)  := X"00000110";
+            var_data_mem(107)  := X"00000111";
+            var_data_mem(108)  := X"00001000";
+            var_data_mem(109)  := X"00001001";
+            var_data_mem(110)  := X"00001010";
+            var_data_mem(111)  := X"00001011";
+            var_data_mem(112)  := X"00001100";
+            var_data_mem(113)  := X"00001101";
+            var_data_mem(114)  := X"00001110";
+            var_data_mem(115)  := X"00001111";
+            var_data_mem(116)  := X"00010000";
+            var_data_mem(117)  := X"00010001";
+            var_data_mem(118)  := X"00010010";
+            var_data_mem(119)  := X"00010011";
+            var_data_mem(120)  := X"00010100";
+            var_data_mem(121)  := X"00010101";
+            var_data_mem(122)  := X"00010110";
+            var_data_mem(123)  := X"00010111";
+            var_data_mem(124)  := X"00011000";
+            
+            i := 125;
             while i <= 1023 loop
                 var_data_mem(i) := X"00000000";
                 i := i + 1;
