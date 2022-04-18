@@ -42,6 +42,10 @@ entity ex_mem_pipeline_stage is
          read_data_b_out : out std_logic_vector(31 downto 0);
          read_data_a_out : out std_logic_vector(31 downto 0);
          carry_out, lmsb_out : out std_logic;
+         ex_result_in : in std_logic_vector(31 downto 0);
+         ex_result_out : out std_logic_vector(31 downto 0);
+         shift_result_in : in std_logic_vector(31 downto 0);
+         shift_result_out : out std_logic_vector(31 downto 0);
          
          -- ctr signals --
          reg_write_in, read_byte_in, mem_write_in, reg_dst_in : in std_logic;
@@ -51,143 +55,48 @@ entity ex_mem_pipeline_stage is
          insn_in : in std_logic_vector(31 downto 0);
          insn_out : out std_logic_vector(31 downto 0);
          forwarded_write_register_in : in std_logic_vector(3 downto 0);
-         forwarded_write_register_out : out std_logic_vector(3 downto 0) );
+         forwarded_write_register_out : out std_logic_vector(3 downto 0);
+         shift_sel_in : in std_logic_vector(1 downto 0);
+         shift_sel_out : out std_logic_vector(1 downto 0) );
                   
 end ex_mem_pipeline_stage;
 
 architecture Behavioral of ex_mem_pipeline_stage is
-    component pipeline_register is
-        Port ( data : in std_logic_vector (31 downto 0);
-             enable : in std_logic;
-             resetn : in std_logic;
-             clk : in std_logic;
-             Q : out std_logic_vector(31 downto 0));
-    end component;
-    
-    component pipeline_bit_register is
-        Port ( data : in std_logic;
-             enable : in std_logic;
-             resetn : in std_logic;
-             clk : in std_logic;
-             Q : out std_logic );
-    end component;
-    
-    component pipeline_2bit_register is
-        Port ( data : in std_logic_vector(1 downto 0);
-             enable : in std_logic;
-             resetn : in std_logic;
-             clk : in std_logic;
-             Q : out std_logic_vector(1 downto 0));
-    end component;
-    
-    component pipeline_4bit_register is
-    Port ( data : in std_logic_vector(3 downto 0);
-             enable : in std_logic;
-             resetn : in std_logic;
-             clk : in std_logic;
-             Q : out std_logic_vector(3 downto 0));
-    end component;
     
 begin
-    pipe_reg_alu_result : pipeline_register 
-        port map ( data => alu_result_in,
-                   enable => '1',
-                   resetn => reset,
-                   clk => clk,
-                   Q => alu_result_out );
-
-    pipe_reg_read_data_b : pipeline_register
-        port map ( data => read_data_b_in,
-                   enable => '1',
-                   resetn => reset,
-                   clk => clk,
-                   Q => read_data_b_out );
-    
-    pipe_reg_read_data_a : pipeline_register
-        port map ( data => read_data_a_in,
-                   enable => '1',
-                   resetn => reset,
-                   clk => clk,
-                   Q => read_data_a_out );
-                   
-    pipe_reg_carry : pipeline_bit_register
-        port map ( data => carry_in,
-                   enable => '1',
-                   resetn => reset,
-                   clk => clk,
-                   Q => carry_out );
-                   
-    pipe_reg_lmsb : pipeline_bit_register
-        port map ( data => lmsb_in,
-                   enable => '1',
-                   resetn => reset,
-                   clk => clk,
-                   Q => lmsb_out );
-                   
-                   
-    -- control signals --
-    -- reg_write, read_byte, mem_to_reg, memWrite --
-    pipe_reg_write : pipeline_bit_register
-        port map (
-            data => reg_write_in,
-            enable => '1',
-            resetn => reset,
-            clk => clk,
-            Q => reg_write_out
-        );
-        
-    pipe_read_byte : pipeline_bit_register
-        port map (
-            data => read_byte_in,
-            enable => '1',
-            resetn => reset,
-            clk => clk,
-            Q => read_byte_out
-        );        
-                   
-    pipe_mem_to_reg : pipeline_2bit_register
-        port map (
-            data => mem_to_reg_in,
-            enable => '1',
-            resetn => reset,
-            clk => clk,
-            Q => mem_to_reg_out
-        );
-        
-    pipe_mem_write : pipeline_bit_register
-        port map (
-            data => mem_write_in,
-            enable => '1',
-            resetn => reset,
-            clk => clk,
-            Q => mem_write_out
-        );
-               
-   pipe_reg_dst : pipeline_bit_register
-        port map (
-            data => reg_dst_in,
-            enable => '1',
-            resetn => reset,
-            clk => clk,
-            Q => reg_dst_out
-        );
-        
-   pipe_insn : pipeline_register
-        port map (
-            data => insn_in,
-            enable => '1',
-            resetn => reset,
-            clk => clk,
-            Q => insn_out
-        );
-   
-   pipe_forward_write_reg : pipeline_4bit_register
-        port map (
-            data => forwarded_write_register_in,
-            enable => '1',
-            resetn => reset,
-            clk => clk,
-            Q => forwarded_write_register_out
-        );
-                        
+    stage_registers_proc : process (reset, clk) 
+    begin
+        if reset = '1' then
+            alu_result_out <= X"00000000";
+            read_data_b_out <= X"00000000";
+            read_data_a_out <= X"00000000";
+            lmsb_out <= '0';
+            reg_write_out <= '0';
+            read_byte_out <= '0';
+            mem_write_out <= '0';
+            reg_dst_out <= '0';
+            mem_to_reg_out <= "00";
+            insn_out <= X"00000000";
+            forwarded_write_register_out <= "0000";
+            shift_sel_out <= "00";
+            ex_result_out <= X"00000000";
+            shift_result_out <= X"00000000";
+        elsif clk'event and clk = '1' then
+            alu_result_out <= alu_result_in;
+            read_data_b_out <= read_data_b_in;
+            read_data_a_out <= read_data_a_in;
+            lmsb_out <= lmsb_in;
+            reg_write_out <= reg_write_in;
+            read_byte_out <= read_byte_in;
+            mem_write_out <= mem_write_in;
+            reg_dst_out <= reg_dst_in;
+            mem_to_reg_out <= mem_to_reg_in;
+            insn_out <= insn_in;
+            forwarded_write_register_out <= forwarded_write_register_in;
+            shift_sel_out <= shift_sel_in;
+            ex_result_out <= ex_result_in;
+            shift_result_out <= shift_result_in;
+        end if;
+    end process;
+          
 end Behavioral;

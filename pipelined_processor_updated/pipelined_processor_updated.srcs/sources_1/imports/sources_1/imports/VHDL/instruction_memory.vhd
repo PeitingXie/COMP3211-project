@@ -161,23 +161,123 @@ begin
 --           var_insn_mem(14) := X"0000";
 --            var_insn_mem(15) := X"0000";
 
-              var_insn_mem(0)  := X"10100000"; -- $1 = 15
-              var_insn_mem(1)  := X"10200001"; -- $2 = 15
-              var_insn_mem(2)  := X"00000000"; 
-              var_insn_mem(3)  := X"00000000"; 
-              var_insn_mem(4)  := X"80100003"; 
-              var_insn_mem(5)  := X"b3100002"; 
-              var_insn_mem(6)  := X"81200006"; 
-              var_insn_mem(7)  := X"00000000"; 
-              var_insn_mem(8)  := X"81200005"; 
-              var_insn_mem(9)  := X"81200004"; 
-              var_insn_mem(10) := X"b31ffffc"; 
-              var_insn_mem(11) := X"00000000"; 
-              var_insn_mem(12) := X"00000000"; 
-              var_insn_mem(13) := X"00000000"; 
-              var_insn_mem(14) := X"00000000";
-              var_insn_mem(15) := X"00000000";
+--              var_insn_mem(0)  := X"10100000"; -- $1 = 15
+--              var_insn_mem(1)  := X"10200001"; -- $2 = 15
+--              var_insn_mem(2)  := X"00000000"; 
+--              var_insn_mem(3)  := X"00000000"; 
+--              var_insn_mem(4)  := X"80100003"; 
+--              var_insn_mem(5)  := X"b3100002"; 
+--              var_insn_mem(6)  := X"81200006"; 
+--              var_insn_mem(7)  := X"00000000"; 
+--              var_insn_mem(8)  := X"81200005"; 
+--              var_insn_mem(9)  := X"81200004"; 
+--              var_insn_mem(10) := X"b31ffffc"; 
+--              var_insn_mem(11) := X"00000000"; 
+--              var_insn_mem(12) := X"00000000"; 
+--              var_insn_mem(13) := X"00000000"; 
+--              var_insn_mem(14) := X"00000000";
+--              var_insn_mem(15) := X"00000000";
        
+--============================== SHIFT TESTS =====================================
+            -- load $1, $0, 0
+            -- load $2, $0, 1
+            -- load $3, $0, 2
+            -- srr $1, $1, $3
+            -- srr $1, $1, $0     
+            -- srr $2, $2, $3
+            -- store $2, $0, 3
+            
+--            var_insn_mem(0)  := X"10100000"; -- $1 = FFFFFF01
+--            var_insn_mem(1)  := X"10200001"; -- $2 = FFFFFF27
+--            var_insn_mem(2)  := X"10300002"; -- $3 = 00000006
+--            var_insn_mem(3)  := X"51300001"; -- $1 = FFFFFF04
+--            var_insn_mem(4)  := X"51000001"; -- $1 = FFFFFF04
+--            var_insn_mem(5)  := X"52300002"; -- $2 = FFFFFF9c
+--            var_insn_mem(6)  := X"30200003"; -- data_mem(3) = FFFFFF9C
+--            var_insn_mem(7)  := X"00000000"; 
+--            var_insn_mem(8)  := X"00000000"; 
+--            var_insn_mem(9)  := X"00000000"; 
+--            var_insn_mem(10) := X"00000000"; 
+--            var_insn_mem(11) := X"00000000"; 
+--            var_insn_mem(12) := X"00000000"; 
+--            var_insn_mem(13) := X"00000000"; 
+--            var_insn_mem(14) := X"00000000";
+--            var_insn_mem(15) := X"00000000";
+
+            -- load $1, $0, 0
+            -- load $2, $0, 1
+            -- load $3, $0, 2
+            -- srl $1, $1, $3
+            -- srl $1, $1, $0     
+            -- srl $2, $2, $3
+            -- store $2, $0, 3
+            
+--            var_insn_mem(0)  := X"10100000"; -- $1 = FFFFFF01
+--            var_insn_mem(1)  := X"10200001"; -- $2 = FFFFFF27
+--            var_insn_mem(2)  := X"10300002"; -- $3 = 00000006
+--            var_insn_mem(3)  := X"61300001"; -- $1 = FFFFFF40
+--            var_insn_mem(4)  := X"61000001"; -- $1 = FFFFFF40
+--            var_insn_mem(5)  := X"62300002"; -- $2 = FFFFFFd9
+--            var_insn_mem(6)  := X"30200003"; -- data_mem(3) = FFFFFFd9
+--            var_insn_mem(7)  := X"00000000"; 
+--            var_insn_mem(8)  := X"00000000"; 
+--            var_insn_mem(9)  := X"00000000"; 
+--            var_insn_mem(10) := X"00000000"; 
+--            var_insn_mem(11) := X"00000000"; 
+--            var_insn_mem(12) := X"00000000"; 
+--            var_insn_mem(13) := X"00000000"; 
+--            var_insn_mem(14) := X"00000000";
+--            var_insn_mem(15) := X"00000000";
+            
+            -- load $1, $0, 0
+            -- load $2, $0, 1
+            -- load $3, $0, 2
+            -- lsr $1, $1, $3
+            -- lsr $1, $1, $0     
+            -- lsr $2, $2, $3
+            -- store $2, $0, 3
+--            var_insn_mem(0)  := X"10100000"; -- $1 = FFFFFF01
+--            var_insn_mem(1)  := X"10200001"; -- $2 = FFFFFF27
+--            var_insn_mem(2)  := X"10300002"; -- $3 = 00000004
+--            var_insn_mem(3)  := X"71300001"; -- $1 = 0FFFFFF0
+--            var_insn_mem(4)  := X"71000001"; -- $1 = 0FFFFFF0
+--            var_insn_mem(5)  := X"72300002"; -- $2 = 0FFFFFF2
+--            var_insn_mem(6)  := X"30200003"; -- data_mem(3) = 0FFFFFF2
+--            var_insn_mem(7)  := X"00000000"; 
+--            var_insn_mem(8)  := X"00000000"; 
+--            var_insn_mem(9)  := X"00000000"; 
+--            var_insn_mem(10) := X"00000000"; 
+--            var_insn_mem(11) := X"00000000"; 
+--            var_insn_mem(12) := X"00000000"; 
+--            var_insn_mem(13) := X"00000000"; 
+--            var_insn_mem(14) := X"00000000";
+--            var_insn_mem(15) := X"00000000";
+
+            -- load $1, $0, 0
+            -- load $2, $0, 1
+            -- load $3, $0, 2
+            -- lsl $1, $1, $3
+            -- lsl $1, $1, $0     
+            -- lsl $2, $2, $3
+            -- store $2, $0, 3
+            var_insn_mem(0)  := X"10100000"; -- $1 = FFFFFF01
+            var_insn_mem(1)  := X"10200001"; -- $2 = FFFFFF27
+            var_insn_mem(2)  := X"10300002"; -- $3 = 00000004
+            var_insn_mem(3)  := X"c1300001"; -- $1 = FFFFF010
+            var_insn_mem(4)  := X"c1000001"; -- $1 = FFFFF010
+            var_insn_mem(5)  := X"c2300002"; -- $2 = FFFFF270
+            var_insn_mem(6)  := X"30200003"; -- data_mem(3) = FFFFF270
+            var_insn_mem(7)  := X"00000000"; 
+            var_insn_mem(8)  := X"00000000"; 
+            var_insn_mem(9)  := X"00000000"; 
+            var_insn_mem(10) := X"00000000"; 
+            var_insn_mem(11) := X"00000000"; 
+            var_insn_mem(12) := X"00000000"; 
+            var_insn_mem(13) := X"00000000"; 
+            var_insn_mem(14) := X"00000000";
+            var_insn_mem(15) := X"00000000";
+--============================== SHIFT TESTS =====================================
+
        elsif (rising_edge(clk) and pc_write = '1') then
            -- read instructions on the rising clock edge
             var_addr := conv_integer(addr_in);

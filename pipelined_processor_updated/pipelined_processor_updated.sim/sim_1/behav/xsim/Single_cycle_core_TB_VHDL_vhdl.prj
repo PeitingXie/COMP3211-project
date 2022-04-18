@@ -12,6 +12,7 @@ vhdl xil_defaultlib  \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/id_ex_pipeline_stage.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/if_id_pipeline_stage.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd" \
+"../../../../pipelined_processor_updated.srcs/sources_1/new/left_shifter.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/load_byte_unit.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/mem_wb_pipeline_stage.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/mux_2to1_10b.vhd" \
@@ -28,6 +29,8 @@ vhdl xil_defaultlib  \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/pipeline_register.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/program_counter.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/register_file.vhd" \
+"../../../../pipelined_processor_updated.srcs/sources_1/new/right_shifter_32b.vhd" \
+"../../../../pipelined_processor_updated.srcs/sources_1/new/rotate_left_shifter_32b8.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/rotate_right_shifter_16b.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/sign_extend_4to16.vhd" \
 "../../../../pipelined_processor_updated.srcs/sources_1/new/sign_extend_8to16.vhd" \

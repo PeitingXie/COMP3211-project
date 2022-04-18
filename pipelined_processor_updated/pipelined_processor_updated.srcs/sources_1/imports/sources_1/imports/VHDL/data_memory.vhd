@@ -50,23 +50,40 @@ begin
         
         if (reset = '1') then
             -- initial values of the data memory : reset to zero 
-            var_data_mem(0)  := X"0000000f";
-            var_data_mem(1)  := X"0000000f";
-            var_data_mem(2)  := X"66550000";
-            var_data_mem(3)  := X"88770000";
-            var_data_mem(4)  := X"AA990000";
-            var_data_mem(5)  := X"CCBB0000";
-            var_data_mem(6)  := X"EEDD0000";
-            var_data_mem(7)  := X"00FF0000";
-            var_data_mem(8)  := X"FFF00000";
-            var_data_mem(9)  := X"00030000";
-            var_data_mem(10) := X"00040000";
-            var_data_mem(11) := X"00050000";
-            var_data_mem(12) := X"00060000";
-            var_data_mem(13) := X"00070000";
-            var_data_mem(14) := X"00080000";
-            var_data_mem(15) := X"000b0000";
+--            var_data_mem(0)  := X"0000000f";
+--            var_data_mem(1)  := X"0000000f";
+--            var_data_mem(2)  := X"66550000";
+--            var_data_mem(3)  := X"88770000";
+--            var_data_mem(4)  := X"AA990000";
+--            var_data_mem(5)  := X"CCBB0000";
+--            var_data_mem(6)  := X"EEDD0000";
+--            var_data_mem(7)  := X"00FF0000";
+--            var_data_mem(8)  := X"FFF00000";
+--            var_data_mem(9)  := X"00030000";
+--            var_data_mem(10) := X"00040000";
+--            var_data_mem(11) := X"00050000";
+--            var_data_mem(12) := X"00060000";
+--            var_data_mem(13) := X"00070000";
+--            var_data_mem(14) := X"00080000";
+--            var_data_mem(15) := X"000b0000";
 
+            var_data_mem(0)  := X"FFFFFF01";
+            var_data_mem(1)  := X"FFFFFF27";
+            var_data_mem(2)  := X"00000004";
+            var_data_mem(3)  := X"00000000";
+            var_data_mem(4)  := X"00000000";
+            var_data_mem(5)  := X"00000000";
+            var_data_mem(6)  := X"00000000";
+            var_data_mem(7)  := X"00000000";
+            var_data_mem(8)  := X"00000000";
+            var_data_mem(9)  := X"00000000";
+            var_data_mem(10) := X"00000000";
+            var_data_mem(11) := X"00000000";
+            var_data_mem(12) := X"00000000";
+            var_data_mem(13) := X"00000000";
+            var_data_mem(14) := X"00000000";
+            var_data_mem(15) := X"00000000";
+            
         elsif (falling_edge(clk) and write_enable = '1') then
             -- memory writes on the falling clock edge
             var_data_mem(var_addr) := write_data;

@@ -120,12 +120,14 @@ component control_unit is
            alu_src    : out std_logic;
            mem_write  : out std_logic;
            mem_to_reg : out std_logic_vector(1 downto 0);
+           shift_sel  : out std_logic_vector(1 downto 0);
            read_byte  : out std_logic;
            alu_ctr    : out std_logic_vector(2 downto 0);
            if_flush   : out std_logic;
            mem_read   : out std_logic;
            beq        : out std_logic;
-           ctrl_beq_op: out std_logic);
+           ctrl_beq_op: out std_logic;
+           ex_result_sel : out std_logic_vector(1 downto 0));
 end component;
 
 component register_file is
@@ -199,10 +201,28 @@ component slt_result_calc is
            slt_result : out std_logic_vector(31 downto 0));
 end component;
 
-component rotate_right_shifter_32b is
+component rotate_right_shifter_32b8 is
     Port ( src_a : in STD_LOGIC_VECTOR (31 downto 0);
            result : out STD_LOGIC_VECTOR (31 downto 0);
            rotations : in STD_LOGIC_VECTOR (3 downto 0));
+end component;
+
+component rotate_left_shifter_32b8 is
+    Port ( src_a : in STD_LOGIC_VECTOR (31 downto 0);
+           rotations : in STD_LOGIC_VECTOR (3 downto 0);
+           result : out STD_LOGIC_VECTOR (31 downto 0));
+end component;
+
+component right_shifter_32b is
+  Port ( src_a : in STD_LOGIC_VECTOR (31 downto 0);
+       rotations : in STD_LOGIC_VECTOR (3 downto 0);
+       result : out STD_LOGIC_VECTOR (31 downto 0));
+end component;
+
+component left_shifter_32b is
+    Port ( src_a : in STD_LOGIC_VECTOR (31 downto 0);
+           rotations : in STD_LOGIC_VECTOR (3 downto 0);
+           result : out STD_LOGIC_VECTOR (31 downto 0));
 end component;
 
 component load_byte_unit is
@@ -239,8 +259,6 @@ component if_id_pipeline_stage is
          ifid_instr_out : out std_logic_vector(31 downto 0));
 end component;
 
-
-
 component id_ex_pipeline_stage is
   Port ( reset : in std_logic;
          clk : in std_logic;
@@ -263,7 +281,11 @@ component id_ex_pipeline_stage is
          mem_read_in : in std_logic;
          mem_read_out: out std_logic;
          ctrl_beq_op_in : in std_logic;
-         ctrl_beq_op_out : out std_logic);
+         ctrl_beq_op_out : out std_logic;
+         shift_sel_in : in std_logic_vector(1 downto 0);
+         shift_sel_out : out std_logic_vector(1 downto 0);
+         ex_result_sel_in : in std_logic_vector(1 downto 0);
+         ex_result_sel_out : out std_logic_vector(1 downto 0) );
 
 end component;
 
@@ -278,6 +300,10 @@ component ex_mem_pipeline_stage is
          read_data_b_out : out std_logic_vector(31 downto 0);
          read_data_a_out : out std_logic_vector(31 downto 0);
          carry_out, lmsb_out : out std_logic;
+         ex_result_in : in std_logic_vector(31 downto 0);
+         ex_result_out : out std_logic_vector(31 downto 0);
+         shift_result_in : in std_logic_vector(31 downto 0);
+         shift_result_out : out std_logic_vector(31 downto 0);
          
          -- ctr signals --
          reg_write_in, read_byte_in, mem_write_in, reg_dst_in : in std_logic;
@@ -287,7 +313,9 @@ component ex_mem_pipeline_stage is
          insn_in : in std_logic_vector(31 downto 0);
          insn_out : out std_logic_vector(31 downto 0);
          forwarded_write_register_in : in std_logic_vector(3 downto 0);
-         forwarded_write_register_out : out std_logic_vector(3 downto 0) );
+         forwarded_write_register_out : out std_logic_vector(3 downto 0);
+         shift_sel_in : in std_logic_vector(1 downto 0);
+         shift_sel_out : out std_logic_vector(1 downto 0) );
                   
 end component;
 
@@ -296,11 +324,11 @@ component mem_wb_pipeline_stage is
          clk : in std_logic;
          read_data_in : in std_logic_vector (31 downto 0);
          slt_data_in : in std_logic_vector (31 downto 0);
-         srr_data_in : in std_logic_vector (31 downto 0);
+         shift_data_in : in std_logic_vector (31 downto 0);
          alu_result_in : in std_logic_vector (31 downto 0);
          read_data_out : out std_logic_vector (31 downto 0);
          slt_data_out : out std_logic_vector (31 downto 0);
-         srr_data_out : out std_logic_vector (31 downto 0);
+         shift_data_out : out std_logic_vector (31 downto 0);
          alu_result_out : out std_logic_vector (31 downto 0);
          
          -- ctr signals --
@@ -364,6 +392,7 @@ signal sig_reg_write            : std_logic;
 signal sig_alu_src              : std_logic;
 signal sig_mem_write            : std_logic;
 signal sig_mem_to_reg           : std_logic_vector(1 downto 0);
+signal sig_shift_sel            : std_logic_vector(1 downto 0);
 signal sig_write_register       : std_logic_vector(3 downto 0);
 signal sig_write_data           : std_logic_vector(31 downto 0);
 signal sig_read_data_a          : std_logic_vector(31 downto 0);
@@ -377,6 +406,12 @@ signal sig_load_msb             : std_logic;
 signal sig_alu_ctr              : std_logic_vector(2 downto 0);
 signal sig_slt_result           : std_logic_vector(31 downto 0); 
 signal sig_srr_result           : std_logic_vector(31 downto 0); 
+signal sig_srl_result           : std_logic_vector(31 downto 0); 
+signal sig_lsr_result           : std_logic_vector(31 downto 0); 
+signal sig_lsl_result           : std_logic_vector(31 downto 0); 
+signal sig_shift_result         : std_logic_vector(31 downto 0); 
+signal sig_ex_result_sel        : std_logic_vector(1 downto 0);
+signal sig_ex_result            : std_logic_vector(31 downto 0);
 signal sig_byte_data            : std_logic_vector(31 downto 0);
 signal sig_data_out             : std_logic_vector(31 downto 0);
 signal sig_data_to_extend       : std_logic_vector(15 downto 0);
@@ -412,10 +447,12 @@ signal sig_idex_reg_write       : std_logic;
 signal sig_idex_alu_ctr         : std_logic_vector(2 downto 0);
 signal sig_idex_read_byte       : std_logic;
 signal sig_idex_mem_to_reg      : std_logic_vector(1 downto 0);
+signal sig_idex_shift_sel            : std_logic_vector(1 downto 0);
 signal sig_idex_alu_src         : std_logic;
 signal sig_idex_mem_write       : std_logic;
 signal sig_idex_reg_dst         : std_logic;
 signal sig_idex_insn            : std_logic_vector(31 downto 0);
+signal sig_idex_ex_result_sel   : std_logic_vector(1 downto 0);
 
 signal sig_exmem_alu_result     : std_logic_vector(31 downto 0);
 signal sig_exmem_read_data_b    : std_logic_vector(31 downto 0);
@@ -426,13 +463,16 @@ signal sig_exmem_reg_write      : std_logic;
 signal sig_exmem_read_byte      : std_logic;
 signal sig_exmem_mem_write      : std_logic;
 signal sig_exmem_mem_to_reg     : std_logic_vector(1 downto 0);
+signal sig_exmem_shift_sel            : std_logic_vector(1 downto 0);
 signal sig_exmem_reg_dst        : std_logic;
 signal sig_exmem_insn           : std_logic_vector(31 downto 0);
+signal sig_exmem_ex_result      : std_logic_vector(31 downto 0);
+signal sig_exmem_shift_result   : std_logic_vector(31 downto 0);
 
 signal sig_memwb_alu_result     : std_logic_vector(31 downto 0);
 signal sig_memwb_read_data      : std_logic_vector(31 downto 0);
 signal sig_memwb_slt_data       : std_logic_vector(31 downto 0);
-signal sig_memwb_srr_data       : std_logic_vector(31 downto 0);
+signal sig_memwb_shift_data     : std_logic_vector(31 downto 0);
 signal sig_memwb_reg_write      : std_logic;
 signal sig_memwb_mem_to_reg     : std_logic_vector(1 downto 0);
 signal sig_memwb_reg_dst        : std_logic;
@@ -501,12 +541,14 @@ begin
                alu_src    => sig_alu_src,
                mem_write  => sig_mem_write,
                mem_to_reg => sig_mem_to_reg,
+               shift_sel  => sig_shift_sel,
                read_byte  => sig_read_byte,
                alu_ctr    => sig_alu_ctr,
                if_flush   => sig_if_flush,
                mem_read   => sig_mem_read,
                beq        => sig_ifid_beq,
-               ctrl_beq_op => sig_ifid_ctrl_beq_op );
+               ctrl_beq_op => sig_ifid_ctrl_beq_op,
+               ex_result_sel => sig_ex_result_sel );
                
     mux_ctr : mux_ctr_unit
         port map( ctr_sig_sel => sig_ctr_sig_sel,
@@ -582,7 +624,7 @@ begin
     port map ( mux_select => sig_alu_src_a_forward_sel,
                data_a     => sig_idex_read_data_a,
                data_b     => sig_write_data,
-               data_c     => sig_exmem_alu_result,
+               data_c     => sig_exmem_ex_result,
                data_d     => sig_idex_read_data_a,
                data_out   => sig_alu_src_a );
     
@@ -590,7 +632,7 @@ begin
     port map ( mux_select => sig_alu_src_b_forward_sel,
                data_a     => sig_idex_read_data_b,
                data_b     => sig_write_data,
-               data_c     => sig_exmem_alu_result,
+               data_c     => sig_exmem_ex_result,
                data_d     => sig_idex_read_data_b,
                data_out   => sig_alu_b_src_b );
     
@@ -601,7 +643,44 @@ begin
                sum       => sig_alu_result,
                carry_out => sig_alu_carry_out,
                load_msb  => sig_load_msb );
-
+               
+    rotate_right_shifter : rotate_right_shifter_32b8
+    port map ( src_a      => sig_alu_src_a,
+               result     => sig_srr_result,
+               rotations  => sig_alu_b_src_b(3 downto 0));
+               
+    rotate_left_shifter : rotate_left_shifter_32b8
+    port map ( src_a      => sig_alu_src_a,
+               result     => sig_srl_result,
+               rotations  => sig_alu_b_src_b(3 downto 0));
+    
+    right_shifter : right_shifter_32b
+    port map ( src_a => sig_alu_src_a,
+       rotations => sig_alu_b_src_b(3 downto 0),
+       result => sig_lsr_result);
+       
+    left_shifter : left_shifter_32b
+    port map ( src_a => sig_alu_src_a,
+       rotations => sig_alu_b_src_b(3 downto 0),
+       result => sig_lsl_result);
+             
+    mux_shift_results : mux_4to1_32b
+    port map ( mux_select => sig_idex_shift_sel,
+               data_a => sig_srr_result,
+               data_b => sig_srl_result,
+               data_c => sig_lsr_result,
+               data_d => sig_lsl_result,
+               data_out => sig_shift_result
+    );
+    
+    mux_ex_result : mux_4to1_32b
+    port map ( mux_select => sig_idex_ex_result_sel,
+               data_a => sig_alu_result,
+               data_b => sig_shift_result,
+               data_c => sig_slt_result,
+               data_d => X"00000000",
+               data_out => sig_ex_result );
+               
     data_mem : data_memory 
     port map ( reset        => reset,
                clk          => clk,
@@ -610,22 +689,9 @@ begin
                addr_in      => sig_exmem_alu_result(9 downto 0),
                data_out     => sig_data_mem_out );
                
-    mux_mem_to_reg : mux_4to1_32b 
-    port map ( mux_select => sig_memwb_mem_to_reg,
-               data_a     => sig_memwb_alu_result,
-               data_b     => sig_memwb_read_data,
-               data_c     => sig_memwb_slt_data,
-               data_d     => sig_memwb_srr_data,
-               data_out   => sig_write_data );
-               
     slt_result_comp : slt_result_calc
     port map ( msb        => sig_exmem_carry,
                slt_result => sig_slt_result);
-               
-    rotate_right_shifter : rotate_right_shifter_32b
-    port map ( src_a      => sig_exmem_read_data_a,
-               result     => sig_srr_result,
-               rotations  => sig_exmem_read_data_b(3 downto 0));
            
     load_byte : load_byte_unit
     port map ( data_in          => sig_data_mem_out,
@@ -642,7 +708,15 @@ begin
     byte_sign_extend : sign_extend_16to32 
     port map ( data_in => sig_data_to_extend,
                data_out => sig_byte_data );
-
+    
+    mux_mem_to_reg : mux_4to1_32b 
+    port map ( mux_select => sig_memwb_mem_to_reg,
+               data_a     => sig_memwb_alu_result,
+               data_b     => sig_memwb_read_data,
+               data_c     => sig_memwb_slt_data,
+               data_d     => sig_memwb_shift_data,
+               data_out   => sig_write_data );
+               
     -- pipeline stages --
     if_id_stage : if_id_pipeline_stage 
     port map ( clk => clk,
@@ -664,7 +738,7 @@ begin
               read_data_a_out => sig_idex_read_data_a,
               read_data_b_out => sig_idex_read_data_b,
               immed_out => sig_idex_immed,
-              reg_write_in => sig_reg_write,
+              reg_write_in => sig_mux_ctr_reg_write,
               reg_write_out => sig_idex_reg_write,
               alu_ctr_in => sig_alu_ctr,
               alu_ctr_out => sig_idex_alu_ctr,
@@ -685,14 +759,18 @@ begin
               mem_read_in => sig_mem_read,
               mem_read_out => sig_idex_mem_read,
               ctrl_beq_op_in => sig_ifid_ctrl_beq_op,
-              ctrl_beq_op_out => sig_idex_ctrl_beq_op);
+              ctrl_beq_op_out => sig_idex_ctrl_beq_op,
+              shift_sel_in => sig_shift_sel,
+              shift_sel_out => sig_idex_shift_sel,
+              ex_result_sel_in => sig_ex_result_sel,
+              ex_result_sel_out => sig_idex_ex_result_sel);
 
     ex_mem_stage: ex_mem_pipeline_stage
     port map ( reset => reset,
                clk => clk,
                alu_result_in => sig_alu_result,
-               read_data_b_in => sig_idex_read_data_b,
-               read_data_a_in => sig_idex_read_data_a,
+               read_data_b_in => sig_alu_b_src_b,
+               read_data_a_in => sig_alu_src_a,
                carry_in => sig_alu_carry_out,
                lmsb_in => sig_load_msb,
                alu_result_out => sig_exmem_alu_result,
@@ -713,18 +791,24 @@ begin
                insn_in => sig_idex_insn,
                insn_out => sig_exmem_insn,
                forwarded_write_register_in => sig_idex_forwarded_write_register,
-               forwarded_write_register_out => sig_exmem_forwarded_write_register );
+               forwarded_write_register_out => sig_exmem_forwarded_write_register,
+               shift_sel_in => sig_idex_shift_sel,
+               shift_sel_out => sig_exmem_shift_sel,
+               ex_result_in => sig_ex_result,
+               ex_result_out => sig_exmem_ex_result,
+               shift_result_in => sig_shift_result,
+               shift_result_out => sig_exmem_shift_result );
 
     mem_wb_stage: mem_wb_pipeline_stage
     port map ( reset => reset,
                clk => clk,
                read_data_in => sig_data_out,
                slt_data_in => sig_slt_result,
-               srr_data_in => sig_srr_result,
+               shift_data_in => sig_exmem_shift_result,
                alu_result_in => sig_exmem_alu_result,
                read_data_out => sig_memwb_read_data,
                slt_data_out => sig_memwb_slt_data,
-               srr_data_out => sig_memwb_srr_data,
+               shift_data_out => sig_memwb_shift_data,
                alu_result_out => sig_memwb_alu_result,
                reg_write_in => sig_exmem_reg_write,
                reg_write_out => sig_memwb_reg_write,

@@ -36,11 +36,11 @@ entity mem_wb_pipeline_stage is
          clk : in std_logic;
          read_data_in : in std_logic_vector (31 downto 0);
          slt_data_in : in std_logic_vector (31 downto 0);
-         srr_data_in : in std_logic_vector (31 downto 0);
+         shift_data_in : in std_logic_vector (31 downto 0);
          alu_result_in : in std_logic_vector (31 downto 0);
          read_data_out : out std_logic_vector (31 downto 0);
          slt_data_out : out std_logic_vector (31 downto 0);
-         srr_data_out : out std_logic_vector (31 downto 0);
+         shift_data_out : out std_logic_vector (31 downto 0);
          alu_result_out : out std_logic_vector (31 downto 0);
          
          -- ctr signals --
@@ -111,11 +111,11 @@ begin
                    Q => slt_data_out );
     
     pipe_reg_srr_data : pipeline_register
-        port map ( data => srr_data_in,
+        port map ( data => shift_data_in,
                    enable => '1',
                    resetn => reset,
                    clk => clk,
-                   Q => srr_data_out );
+                   Q => shift_data_out );
     
     -- control signals --
     -- reg_write, mem_to_reg --     

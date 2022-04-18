@@ -39,7 +39,7 @@ entity if_id_pipeline_stage is
          if_curr_pc: in std_logic_vector(9 downto 0);
          ifid_instr_in : in std_logic_vector(31 downto 0);
          id_curr_pc: out std_logic_vector(9 downto 0);
-         ifid_instr_out : out std_logic_vector(31 downto 0));
+         ifid_instr_out : out std_logic_vector(31 downto 0) );
 end if_id_pipeline_stage;
 
 architecture Behavioral of if_id_pipeline_stage is

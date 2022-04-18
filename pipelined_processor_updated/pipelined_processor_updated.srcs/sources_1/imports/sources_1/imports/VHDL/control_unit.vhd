@@ -49,12 +49,14 @@ entity control_unit is
            alu_src    : out std_logic;
            mem_write  : out std_logic;
            mem_to_reg : out std_logic_vector(1 downto 0);
+           shift_sel  : out std_logic_vector(1 downto 0);
            read_byte  : out std_logic;
            alu_ctr    : out std_logic_vector(2 downto 0);
            if_flush   : out std_logic;
            mem_read   : out std_logic;
            beq        : out std_logic;
-           ctrl_beq_op: out std_logic);
+           ctrl_beq_op: out std_logic;
+           ex_result_sel : out std_logic_vector(1 downto 0) );
 end control_unit;
 
 architecture behavioural of control_unit is
@@ -64,6 +66,9 @@ constant OP_LOADB : std_logic_vector(3 downto 0) := "0010";
 constant OP_STORE : std_logic_vector(3 downto 0) := "0011";
 constant OP_SLT   : std_logic_vector(3 downto 0) := "0100";
 constant OP_SRR   : std_logic_vector(3 downto 0) := "0101";
+constant OP_SRL   : std_logic_vector(3 downto 0) := "0110";
+constant OP_LSR   : std_logic_vector(3 downto 0) := "0111";
+constant OP_LSL   : std_logic_vector(3 downto 0) := "1100";
 constant OP_ADD   : std_logic_vector(3 downto 0) := "1000";
 constant OP_AND   : std_logic_vector(3 downto 0) := "1001";
 constant OP_XOR   : std_logic_vector(3 downto 0) := "1010";
@@ -79,14 +84,24 @@ begin
     
     reg_dst    <= '1' when (opcode = OP_ADD
                             or opcode = OP_SLT
-                            or opcode = OP_SRR or opcode = OP_AND or opcode = OP_XOR) else
+                            or opcode = OP_SRR
+                            or opcode = OP_SRL
+                            or opcode = OP_LSL
+                            or opcode = OP_LSR 
+                            or opcode = OP_AND 
+                            or opcode = OP_XOR) else
                   '0';
 
     reg_write  <= '1' when (opcode = OP_ADD 
                             or opcode = OP_LOAD
                             or opcode = OP_LOADB
                             or opcode = OP_SLT
-                            or opcode = OP_SRR or opcode = OP_AND or opcode = OP_XOR) else
+                            or opcode = OP_SRR
+                            or opcode = OP_SRL
+                            or opcode = OP_LSR
+                            or opcode = OP_LSL 
+                            or opcode = OP_AND 
+                            or opcode = OP_XOR) else
                   '0';
     
     alu_src    <= '1' when (opcode = OP_LOAD 
@@ -104,6 +119,9 @@ begin
                       "01" when OP_LOADB,
                       "10" when OP_SLT,
                       "11" when OP_SRR,
+                      "11" when OP_SRL,
+                      "11" when OP_LSR,
+                      "11" when OP_LSL,
                       "00" when others;
                                
     read_byte  <= '1' when opcode = OP_LOADB else
@@ -115,5 +133,21 @@ begin
                       "011" when OP_AND,
                       "100" when OP_XOR,
                       "000" when others;
-
+    with opcode select
+        shift_sel  <= "00" when OP_SRR,
+                      "01" when OP_SRL,
+                      "10" when OP_LSR,
+                      "11" when OP_LSL,
+                      "00" when others;
+                      
+    with opcode select
+        ex_result_sel <= "00" when OP_ADD,
+                         "00" when OP_AND,
+                         "00" when OP_XOR,
+                         "01" when OP_SRR,
+                         "01" when OP_SRL,
+                         "01" when OP_LSR,
+                         "01" when OP_LSL,
+                         "10" when OP_SLT,
+                         "11" when others;              
 end behavioural;
