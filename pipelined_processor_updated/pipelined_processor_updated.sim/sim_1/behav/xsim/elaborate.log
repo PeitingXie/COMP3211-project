@@ -1,7 +1,51 @@
 Vivado Simulator 2020.2
 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
-Running: F:/Taozi/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto b71789dcab584d7b9eca3c6be0bb098d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Testbench_behav xil_defaultlib.Testbench -log elaborate.log 
+Running: F:/COMP3211/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto b71789dcab584d7b9eca3c6be0bb098d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Testbench_behav xil_defaultlib.Testbench -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_textio
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.program_counter [program_counter_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_10b [adder_10b_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_2to1_1b [mux_2to1_1b_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_10b [mux_2to1_10b_default]
+Compiling architecture behavioral of entity xil_defaultlib.instruction_memory [instruction_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.sign_extend_20to32 [sign_extend_20to32_default]
+Compiling architecture behavioural of entity xil_defaultlib.control_unit [control_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_ctr_unit [mux_ctr_unit_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_4b [mux_2to1_4b_default]
+Compiling architecture behavioral of entity xil_defaultlib.register_file [register_file_default]
+Compiling architecture behavioral of entity xil_defaultlib.xor_com [xor_com_default]
+Compiling architecture behavioral of entity xil_defaultlib.forwarding_branch [forwarding_branch_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_32b [mux_2to1_32b_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_20b [adder_20b_default]
+Compiling architecture behaviour of entity xil_defaultlib.mux_4to1_1b [mux_4to1_1b_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_4to1_32b [mux_4to1_32b_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_32b [adder_32b_default]
+Compiling architecture behavioral of entity xil_defaultlib.data_memory [data_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.slt_result_calc [slt_result_calc_default]
+Compiling architecture behavioral of entity xil_defaultlib.rotate_right_shifter_32b [rotate_right_shifter_32b_default]
+Compiling architecture behavioral of entity xil_defaultlib.load_byte_unit [load_byte_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_data_to_mem_to_reg [mux_data_to_mem_to_reg_default]
+Compiling architecture behavioral of entity xil_defaultlib.sign_extend_16to32 [sign_extend_16to32_default]
+Compiling architecture behavioral of entity xil_defaultlib.if_id_pipeline_stage [if_id_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.id_ex_pipeline_stage [id_ex_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_register [pipeline_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_bit_register [pipeline_bit_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_2bit_register [pipeline_2bit_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_4bit_register [pipeline_4bit_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.ex_mem_pipeline_stage [ex_mem_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.mem_wb_pipeline_stage [mem_wb_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.forwarding_unit [forwarding_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.hazard_detection_unit [hazard_detection_unit_default]
+Compiling architecture structural of entity xil_defaultlib.single_cycle_core [single_cycle_core_default]
+Compiling architecture behavioral of entity xil_defaultlib.testbench
+Built simulation snapshot Testbench_behav
