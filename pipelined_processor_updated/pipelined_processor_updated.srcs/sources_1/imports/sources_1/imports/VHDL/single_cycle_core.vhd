@@ -621,13 +621,13 @@ begin
     forward_br_rs_mux: mux_2to1_32b
     port map ( mux_select => sig_forwarding_br_ctrls,
                data_a     => sig_read_data_a,
-               data_b     => sig_exmem_alu_result,
+               data_b     => sig_exmem_ex_result,
                data_out   => sig_forwarded_br_read_data_a);
     
     forward_br_rt_mux: mux_2to1_32b
     port map ( mux_select => sig_forwarding_br_ctrlt,
                data_a     => sig_read_data_b,
-               data_b     => sig_exmem_alu_result,
+               data_b     => sig_exmem_ex_result,
                data_out   => sig_forwarded_br_read_data_b);
 
     sig_extended_id_curr_pc <= "0000000000" & sig_id_curr_pc;

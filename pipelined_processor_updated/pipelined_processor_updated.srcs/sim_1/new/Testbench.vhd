@@ -88,13 +88,13 @@ begin
         variable tag_data   : std_logic_vector(7 downto 0);
         variable space      : character;
     begin
-        --r_reset <= '0';
-        --wait for 2*c_CLOCK_PERIOD ;
+        r_reset <= '0';
+        wait for 2*c_CLOCK_PERIOD ;
         r_reset <= '1';
         wait for 2*c_CLOCK_PERIOD ;
         r_reset <= '0';         
           
-        --wait for 10 sec;
+        --wait for 2 ns;
         -- Open test file
         file_open(file_txt, "name.txt", read_mode);
     
