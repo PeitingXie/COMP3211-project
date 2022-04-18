@@ -26,6 +26,12 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity register_file is
     port ( reset           : in  std_logic;
            clk             : in  std_logic;
+           send            : in std_logic;
+           D0              : in std_logic_vector(7 downto 0);
+           D1              : in std_logic_vector(7 downto 0);
+           D2              : in std_logic_vector(7 downto 0);
+           D3              : in std_logic_vector(7 downto 0);
+           tag             : in std_logic_vector(7 downto 0);
            read_register_a : in  std_logic_vector(3 downto 0);
            read_register_b : in  std_logic_vector(3 downto 0);
            write_enable    : in  std_logic;
@@ -48,7 +54,7 @@ begin
                             read_register_b,
                             write_enable,
                             write_register,
-                            write_data ) is
+                            write_data, send ) is
 
     variable var_regfile     : reg_file;
     variable var_read_addr_a : integer;
@@ -64,7 +70,14 @@ begin
         if (reset = '1') then
             -- initial values of the registers - reset to zeroes
             var_regfile := (others => X"00000000");
-
+            
+        elsif (send = '1') then
+            var_regfile(1) := X"000000" & D0;
+            var_regfile(2) := X"000000" & D1;
+            var_regfile(3) := X"000000" & D2;
+            var_regfile(4) := X"000000" & D3;
+            var_regfile(5) := X"000000" & tag;
+            
         elsif (falling_edge(clk) and write_enable = '1') then
             -- register write on the falling clock edge
             var_regfile(var_write_addr) := write_data;

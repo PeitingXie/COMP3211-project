@@ -29,7 +29,7 @@ entity instruction_memory is
            clk      : in  std_logic;
            addr_in  : in  std_logic_vector(9 downto 0);
            pc_write : in std_logic;
-           insn_out : out std_logic_vector(31 downto 0) );
+           insn_out : out std_logic_vector(31 downto 0));
 end instruction_memory;
 
 architecture behavioral of instruction_memory is

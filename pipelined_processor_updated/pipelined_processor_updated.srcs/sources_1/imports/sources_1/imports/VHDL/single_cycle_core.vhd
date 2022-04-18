@@ -49,7 +49,15 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity single_cycle_core is
     port ( reset  : in  std_logic;
-           clk    : in  std_logic );
+           clk    : in  std_logic;
+           send   : in  std_logic;
+           D0     : in std_logic_vector(7 downto 0);
+           D1     : in std_logic_vector(7 downto 0);
+           D2     : in std_logic_vector(7 downto 0);
+           D3     : in std_logic_vector(7 downto 0);
+           tag    : in std_logic_vector(7 downto 0);
+           busy   : out std_logic
+);
 end single_cycle_core;
 
 architecture structural of single_cycle_core is
@@ -59,7 +67,8 @@ component program_counter is
            clk      : in  std_logic;
            pc_write : in  std_logic;
            addr_in  : in  std_logic_vector(9 downto 0);
-           addr_out : out std_logic_vector(9 downto 0) );
+           addr_out : out std_logic_vector(9 downto 0);
+           busy     : out std_logic );
 end component;
 
 component instruction_memory is
@@ -67,7 +76,7 @@ component instruction_memory is
            clk      : in  std_logic;
            addr_in  : in  std_logic_vector(9 downto 0);
            pc_write : in std_logic;
-           insn_out : out std_logic_vector(31 downto 0) );
+           insn_out : out std_logic_vector(31 downto 0));
 end component;
 
 component sign_extend_20to32 is
@@ -131,6 +140,12 @@ end component;
 component register_file is
     port ( reset           : in  std_logic;
            clk             : in  std_logic;
+           send            : in std_logic;
+           D0              : in std_logic_vector(7 downto 0);
+           D1              : in std_logic_vector(7 downto 0);
+           D2              : in std_logic_vector(7 downto 0);
+           D3              : in std_logic_vector(7 downto 0);
+           tag             : in std_logic_vector(7 downto 0);
            read_register_a : in  std_logic_vector(3 downto 0);
            read_register_b : in  std_logic_vector(3 downto 0);
            write_enable    : in  std_logic;
@@ -468,7 +483,8 @@ begin
                clk      => clk,
                pc_write => sig_pc_write,
                addr_in  => sig_next_pc_branch,
-               addr_out => sig_curr_pc); 
+               addr_out => sig_curr_pc,
+                busy    => busy ); 
 
     next_pc : adder_10b 
     port map ( src_a     => sig_curr_pc, 
@@ -487,7 +503,7 @@ begin
                clk      => clk,
                addr_in  => sig_curr_pc,
                pc_write => sig_pc_write,
-               insn_out => sig_insn );
+               insn_out => sig_insn);
 
     sign_extend : sign_extend_20to32 
     port map ( data_in  => sig_ifid_insn(19 downto 0),
@@ -532,6 +548,12 @@ begin
     reg_file : register_file 
     port map ( reset           => reset, 
                clk             => clk,
+               send            => send,
+               D0              => D0,
+               D1              => D1,
+               D2              => D2,
+               D3              => D3,
+               tag             => tag,
                read_register_a => sig_ifid_insn(27 downto 24),
                read_register_b => sig_ifid_insn(23 downto 20),
                write_enable    => sig_memwb_reg_write,
