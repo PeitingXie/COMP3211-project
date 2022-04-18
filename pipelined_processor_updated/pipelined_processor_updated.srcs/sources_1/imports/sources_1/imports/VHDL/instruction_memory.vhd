@@ -66,42 +66,46 @@ begin
                
               var_insn_mem(13)  := X"16600000"; --lw $6, $6, 0
               var_insn_mem(14)  := X"1af00002"; --lw $15, $10, 2 get 0b11, store in $15
---              var_insn_mem(15)  := X"95f00007"; --and $7, $5, $15    get b1, store in $7
---              var_insn_mem(16)  := X"1af00068"; --lw $15, $10, 104  get 4, store in $15
---              var_insn_mem(17)  := X"55f00008"; --srr $8, $5, $15
---              var_insn_mem(18)  := X"98e00008"; --and $8, $8, $14    get p1, store in $8
---              var_insn_mem(19)  := X"17900014"; --lw $9, $7, 20      get b1 related block, store in $9
---              var_insn_mem(20)  := X"59800009"; --srr $9, $9, $8     shift b1 block for p1 bits
---              var_insn_mem(21)  := X"9960000b"; --and $11, $9, $6    get given size of bits in block b1, ready for swap, store in $11
---              var_insn_mem(22)  := X"1ac00066"; --lw $12, $10, 102    get value 2, store in $7
---              var_insn_mem(23)  := X"55c0000c"; --srr $12, $5, $12
---              var_insn_mem(24)  := X"1af00002"; --lw $15, $10, 2    get 0b11, store in $15
---              var_insn_mem(25)  := X"9cf0000c"; --and $12, $12, $15   get b2, store in $12
---              var_insn_mem(26)  := X"1af0006b"; --lw $15, $10, 107    get 7, store in $15
---              var_insn_mem(27)  := X"55f0000d"; --srr $13, $5, $15 
---              var_insn_mem(28)  := X"9de0000d"; --and $13, $13, $14   get p2, store in  $13
---              var_insn_mem(29)  := X"1ce00014"; --lw $14, $12, 20     get b2 related block, store in $14
---              var_insn_mem(30)  := X"5ed0000e"; --srr $14, $14, $13 
---              var_insn_mem(31)  := X"9e60000f"; --and $15, $14, $6    get given size of bits in block b2, ready for swap, store in $15  
+              var_insn_mem(15)  := X"95f00007"; --and $7, $5, $15    get b1, store in $7
+              var_insn_mem(16)  := X"1af00068"; --lw $15, $10, 104  get 4, store in $15
+              var_insn_mem(17)  := X"75f00008"; --srr $8, $5, $15
+              var_insn_mem(18)  := X"98e00008"; --and $8, $8, $14    get p1, store in $8
+              var_insn_mem(19)  := X"17900014"; --lw $9, $7, 20      get b1 related block, store in $9
+              var_insn_mem(20)  := X"79800009"; --srr $9, $9, $8     shift b1 block for p1 bits
+              var_insn_mem(21)  := X"9960000b"; --and $11, $9, $6    get given size of bits in block b1, ready for swap, store in $11
+              var_insn_mem(22)  := X"1ac00066"; --lw $12, $10, 102    get value 2, store in $7
+              var_insn_mem(23)  := X"75c0000c"; --srr $12, $5, $12
+              var_insn_mem(24)  := X"1af00002"; --lw $15, $10, 2    get 0b11, store in $15
+              var_insn_mem(25)  := X"9cf0000c"; --and $12, $12, $15   get b2, store in $12
+              var_insn_mem(26)  := X"1af0006b"; --lw $15, $10, 107    get 7, store in $15
+              var_insn_mem(27)  := X"75f0000d"; --srr $13, $5, $15 
+              var_insn_mem(28)  := X"9de0000d"; --and $13, $13, $14   get p2, store in  $13
+              var_insn_mem(29)  := X"1ce00014"; --lw $14, $12, 20     get b2 related block, store in $14
+              var_insn_mem(30)  := X"7ed0000e"; --srr $14, $14, $13 
+              var_insn_mem(31)  := X"9e60000f"; --and $15, $14, $6    get given size of bits in block b2, ready for swap, store in $15  
               
---              var_insn_mem(32)  := X"1ae0006e"; --lw $14, $10, 110
---              var_insn_mem(33)  := X"55e0000e"; --srr $14, $5, $14  
---              var_insn_mem(34)  := X"1a900003"; --lw $9, $10, 3     get 0b111, store in $14 
---              var_insn_mem(35)  := X"9e90000e"; --and $14, $14, $9 ----  get size in decimal
+              var_insn_mem(32)  := X"1ae0006e"; --lw $14, $10, 110
+              var_insn_mem(33)  := X"75e0000e"; --srr $14, $5, $14  
+              var_insn_mem(34)  := X"1a900003"; --lw $9, $10, 3     get 0b111, store in $9 
+              var_insn_mem(35)  := X"9e90000e"; --and $14, $14, $9 ----  get size in decimal
               
---              var_insn_mem(36)  := X"17900014"; --lw $9, $7, 20      get b1 related block, store in $9
---              var_insn_mem(37)  := X"88e00000"; --add $0, $8, $14
---              var_insn_mem(38)  := X"59000001"; --srr $1, $9, $0
---              var_insn_mem(39)  := X"C1000001"; --sll $1, $1, $0       get bits left from p1 + s, shift to right position, store in $1 
---              var_insn_mem(40)  := X"18000000"; --lw $0, $8, 0        get transfer p1 as binary, store in $0
---              var_insn_mem(41)  := X"99000000"; --and $0, $9, $0      get bits right from bit p1, store in $0
---              var_insn_mem(42)  := X"CF800002"; --sll $2, $15, $8
---              var_insn_mem(43)  := X"80100003"; --add $3, $0, $1
+              var_insn_mem(36)  := X"17900014"; --lw $9, $7, 20      get b1 related block, store in $9
+              var_insn_mem(37)  := X"88e00000"; --add $0, $8, $14
+              var_insn_mem(38)  := X"00000000";
+              var_insn_mem(39)  := X"00000000";
+              var_insn_mem(40)  := X"79000001"; --srr $1, $9, $0
+              var_insn_mem(41)  := X"C1000001"; --sll $1, $1, $0       get bits left from p1 + s, shift to right position, store in $1 
+              var_insn_mem(42)  := X"18000000"; --lw $0, $8, 0        get transfer p1 as binary, store in $0
+              var_insn_mem(43)  := X"00000000";
+              --var_insn_mem(44)  := X"00000000";
+              var_insn_mem(44)  := X"99000000"; --and $0, $9, $0      get bits right from bit p1, store in $0
+              var_insn_mem(45)  := X"CF800002"; --sll $2, $15, $8 shift left
+              --var_insn_mem(46)  := X"80100003"; --add $3, $0, $1
 --              var_insn_mem(44)  := X"83200003"; --add $3, $3, $2
 --              var_insn_mem(45)  := X"37300014"; --sw $3, $7, 20 
 --              var_insn_mem(46)  := X"1c900014"; --lw $9, $12, 20
 --              var_insn_mem(47)  := X"80d0000e"; --add $0, $13, $14
---              var_insn_mem(48)  := X"59000001"; --srr $1, $9, $0
+--              var_insn_mem(48)  := X"79000001"; --srr $1, $9, $0
 --              var_insn_mem(49)  := X"C1000001"; --sll $1, $1, $0      get bits left from p2 + s, shift to right position, store in $1 
 --              var_insn_mem(50)  := X"1d000000"; --lw $0, $13, 0
 --              var_insn_mem(51)  := X"99000000"; --and $0, $9, $0
@@ -111,7 +115,7 @@ begin
 --              var_insn_mem(55)  := X"3c300014"; -- sw $3, $12, 20
 --              var_insn_mem(56)  := X"1a000014"; --lw $0, $10, 20   get D0 after swap, store in $0
 --              var_insn_mem(57)  := X"1a100071"; --lw $1, $10, 113     get 13, store in $1
---              var_insn_mem(58)  := X"55100001"; --srr $1, $5, $1
+--              var_insn_mem(58)  := X"75100001"; --srr $1, $5, $1
 --              var_insn_mem(59)  := X"1a200003"; --lw $2, $10, 3       get 0b111, store in $2
 --              var_insn_mem(60)  := X"92100003"; --and $3, $2, $1      get r0, store in $3
 --              var_insn_mem(61)  := X"60300000"; --slr $0, $0, $3
@@ -119,21 +123,21 @@ begin
               
 --              var_insn_mem(63)  := X"1a000015"; --lw $0, $10, 21      get D1 after swap, store in $0
 --              var_insn_mem(64)  := X"1a100074"; --lw $1, $10, 116     get 16, store in $1
---              var_insn_mem(65)  := X"55100001"; --srr $1, $5, $1
+--              var_insn_mem(65)  := X"75100001"; --srr $1, $5, $1
 --              var_insn_mem(66)  := X"92100003"; --and $3, $2, $1      get r1, store in $3
 --              var_insn_mem(67)  := X"60300000"; --slr $0, $0, $3
 --              var_insn_mem(68)  := X"3a000015"; --sw $0, $10, 21 
               
 --              var_insn_mem(69)  := X"1a000016"; --lw $0, $10, 22      get D2 after swap, store in $0
 --              var_insn_mem(70)  := X"1a100077"; --lw $1, $10, 119     get 19, store in $1
---              var_insn_mem(71)  := X"55100001"; --srr $1, $5, $1
+--              var_insn_mem(71)  := X"75100001"; --srr $1, $5, $1
 --              var_insn_mem(72)  := X"92100003"; --and $3, $2, $1      get r2, store in $3
 --              var_insn_mem(73)  := X"60300000"; --slr $0, $0, $3
 --              var_insn_mem(74)  := X"3a000016"; --sw $0, $10, 22 
               
 --              var_insn_mem(75)  := X"1a000017"; --lw $0, $10, 23      get D3 after swap, store in $0
 --              var_insn_mem(76)  := X"1a10007a"; --lw $1, $10, 122     get 22, store in $1
---              var_insn_mem(77)  := X"55100001"; --srr $1, $5, $1
+--              var_insn_mem(77)  := X"75100001"; --srr $1, $5, $1
 --              var_insn_mem(78)  := X"92100003"; --and $3, $2, $1      get r3, store in $3
 --              var_insn_mem(79)  := X"60300000"; --slr $0, $0, $3
 --              var_insn_mem(80)  := X"3a000017"; --sw $0, $10, 23 
@@ -149,7 +153,7 @@ begin
              
 --              var_insn_mem(88)  := X"3a000096"; --sw $0, $10, 150
               -- Put mips code here
-              i := 13;
+              i := 46;
               while i <= 1023 loop
                 var_insn_mem(i) := X"00000000";
                 i := i + 1;
