@@ -60,6 +60,7 @@ begin
     variable var_read_addr_a : integer;
     variable var_read_addr_b : integer;
     variable var_write_addr  : integer;
+    variable i               : integer range 1 to 16;
     
     begin
     
@@ -77,6 +78,11 @@ begin
             var_regfile(3) := X"000000" & D2;
             var_regfile(4) := X"000000" & D3;
             var_regfile(5) := X"000000" & tag;
+            i := 6;
+            while i <= 15 loop
+                var_regfile(i) := X"00000000";
+                i := i + 1;
+            end loop;
             
         elsif (falling_edge(clk) and write_enable = '1') then
             -- register write on the falling clock edge

@@ -41,7 +41,7 @@ begin
     update_process: process ( reset, 
                               clk, pc_write, send, addr_in ) is
     begin
-       if (reset = '1' or addr_in > "1111111110") then
+       if (reset = '1' or addr_in > "0000001111") then
            addr_out <= (others => '0'); 
            busy <= '0';
        elsif send = '1' then
@@ -50,7 +50,7 @@ begin
        elsif (rising_edge(clk)) and pc_write = '1' then
            addr_out <= addr_in; 
            busy <= '1';
-           
+         --"1111111110"  
        end if;
        
        

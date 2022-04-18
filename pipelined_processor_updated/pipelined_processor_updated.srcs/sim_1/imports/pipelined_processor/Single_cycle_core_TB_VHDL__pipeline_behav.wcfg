@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="42995fs"></ZoomStartTime>
-      <ZoomEndTime time="43001fs"></ZoomEndTime>
-      <Cursor1Time time="42997fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="184001fs"></ZoomEndTime>
+      <Cursor1Time time="2fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="159"></NameColumnWidth>
+      <NameColumnWidth column_width="154"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="10" />
+   <WVObjectSize size="11" />
    <wvobject fp_name="/Testbench/r_CLOCK" type="logic">
       <obj_property name="ElementShortName">r_CLOCK</obj_property>
       <obj_property name="ObjectShortName">r_CLOCK</obj_property>
@@ -58,5 +58,9 @@
    <wvobject fp_name="/Testbench/c_CLOCK_PERIOD" type="other">
       <obj_property name="ElementShortName">c_CLOCK_PERIOD</obj_property>
       <obj_property name="ObjectShortName">c_CLOCK_PERIOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Testbench/UUT/reg_file/sig_regfile" type="array">
+      <obj_property name="ElementShortName">sig_regfile[0:15][31:0]</obj_property>
+      <obj_property name="ObjectShortName">sig_regfile[0:15][31:0]</obj_property>
    </wvobject>
 </wave_config>
