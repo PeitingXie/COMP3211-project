@@ -1,0 +1,526 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Apr 18 23:38:41 2022
+# Process ID: 18216
+# Current directory: F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent23112 F:\COMP3211\project\debug\COMP3211-project\pipelined_processor_updated\pipelined_processor_updated.xpr
+# Log file: F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/vivado.log
+# Journal file: F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.xpr
+INFO: [Project 1-313] Project file moved from 'D:/UNSW/2022 term1/COMP3211/backup/COMP3211-project/pipelined_processor_updated' since last save.
+WARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.gen/sources_1', nor could it be found using path 'D:/UNSW/2022 term1/COMP3211/backup/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/COMP3211/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:06 . Memory (MB): peak = 1015.230 ; gain = 0.000
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_10b.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'adder_10b'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_20b.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'adder_20b'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_32b.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'adder_32b'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/control_unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'control_unit'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/data_memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'data_memory'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/ex_mem_pipeline_stage.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ex_mem_pipeline_stage'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/forwarding_branch.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'forwarding_branch'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/forwarding_unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'forwarding_unit'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/hazard_detection_unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'hazard_detection_unit'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/id_ex_pipeline_stage.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'id_ex_pipeline_stage'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/if_id_pipeline_stage.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'if_id_pipeline_stage'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'instruction_memory'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/left_shifter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'left_shifter_32b'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/load_byte_unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'load_byte_unit'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mem_wb_pipeline_stage.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mem_wb_pipeline_stage'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_10b.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mux_2to1_10b'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_1b.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mux_2to1_1b'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_32b.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mux_2to1_32b'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mux_2to1_4b'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/mux_4to1_16b.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mux_4to1_16b'
+INFO: [VRFC 10-3107] analyzing entity 'mux_4to1_1b'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_4to1_32b.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mux_4to1_32b'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_ctr_unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mux_ctr_unit'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_data_to_mem_to_reg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mux_data_to_mem_to_reg'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_2bit_register.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'pipeline_2bit_register'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_4bit_register.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'pipeline_4bit_register'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_bit_register.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'pipeline_bit_register'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_register.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'pipeline_register'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/program_counter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'program_counter'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/register_file.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'register_file'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/right_shifter_32b.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'right_shifter_32b'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/rotate_left_shifter_32b8.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'rotate_left_shifter_32b8'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/rotate_right_shifter_16b.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'rotate_right_shifter_32b8'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/sign_extend_4to16.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sign_extend_20to32'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/sign_extend_8to16.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'sign_extend_16to32'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'single_cycle_core'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/slt_result.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'slt_result_calc'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/xor_com.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'xor_com'
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/new/Testbench.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Testbench'
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1015.230 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+"xelab -wto b71789dcab584d7b9eca3c6be0bb098d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Testbench_behav xil_defaultlib.Testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: F:/COMP3211/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto b71789dcab584d7b9eca3c6be0bb098d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Testbench_behav xil_defaultlib.Testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_textio
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.program_counter [program_counter_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_10b [adder_10b_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_2to1_1b [mux_2to1_1b_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_10b [mux_2to1_10b_default]
+Compiling architecture behavioral of entity xil_defaultlib.instruction_memory [instruction_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.sign_extend_20to32 [sign_extend_20to32_default]
+Compiling architecture behavioural of entity xil_defaultlib.control_unit [control_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_ctr_unit [mux_ctr_unit_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_4b [mux_2to1_4b_default]
+Compiling architecture behavioral of entity xil_defaultlib.register_file [register_file_default]
+Compiling architecture behavioral of entity xil_defaultlib.xor_com [xor_com_default]
+Compiling architecture behavioral of entity xil_defaultlib.forwarding_branch [forwarding_branch_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_32b [mux_2to1_32b_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_20b [adder_20b_default]
+Compiling architecture behaviour of entity xil_defaultlib.mux_4to1_1b [mux_4to1_1b_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_4to1_32b [mux_4to1_32b_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_32b [adder_32b_default]
+Compiling architecture behavioral of entity xil_defaultlib.rotate_right_shifter_32b8 [rotate_right_shifter_32b8_defaul...]
+Compiling architecture behavioral of entity xil_defaultlib.rotate_left_shifter_32b8 [rotate_left_shifter_32b8_default]
+Compiling architecture behavioral of entity xil_defaultlib.right_shifter_32b [right_shifter_32b_default]
+Compiling architecture behavioral of entity xil_defaultlib.left_shifter_32b [left_shifter_32b_default]
+Compiling architecture behavioral of entity xil_defaultlib.data_memory [data_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.slt_result_calc [slt_result_calc_default]
+Compiling architecture behavioral of entity xil_defaultlib.load_byte_unit [load_byte_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_data_to_mem_to_reg [mux_data_to_mem_to_reg_default]
+Compiling architecture behavioral of entity xil_defaultlib.sign_extend_16to32 [sign_extend_16to32_default]
+Compiling architecture behavioral of entity xil_defaultlib.if_id_pipeline_stage [if_id_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.id_ex_pipeline_stage [id_ex_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.ex_mem_pipeline_stage [ex_mem_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_register [pipeline_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_bit_register [pipeline_bit_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_2bit_register [pipeline_2bit_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_4bit_register [pipeline_4bit_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.mem_wb_pipeline_stage [mem_wb_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.forwarding_unit [forwarding_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.hazard_detection_unit [hazard_detection_unit_default]
+Compiling architecture structural of entity xil_defaultlib.single_cycle_core [single_cycle_core_default]
+Compiling architecture behavioral of entity xil_defaultlib.testbench
+Built simulation snapshot Testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Testbench_behav -key {Behavioral:sim_1:Functional:Testbench} -tclbatch {Testbench.tcl} -view {F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg
+source Testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 1015.230 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'instruction_memory'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+"xelab -wto b71789dcab584d7b9eca3c6be0bb098d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Testbench_behav xil_defaultlib.Testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: F:/COMP3211/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto b71789dcab584d7b9eca3c6be0bb098d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Testbench_behav xil_defaultlib.Testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_textio
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.program_counter [program_counter_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_10b [adder_10b_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_2to1_1b [mux_2to1_1b_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_10b [mux_2to1_10b_default]
+Compiling architecture behavioral of entity xil_defaultlib.instruction_memory [instruction_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.sign_extend_20to32 [sign_extend_20to32_default]
+Compiling architecture behavioural of entity xil_defaultlib.control_unit [control_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_ctr_unit [mux_ctr_unit_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_4b [mux_2to1_4b_default]
+Compiling architecture behavioral of entity xil_defaultlib.register_file [register_file_default]
+Compiling architecture behavioral of entity xil_defaultlib.xor_com [xor_com_default]
+Compiling architecture behavioral of entity xil_defaultlib.forwarding_branch [forwarding_branch_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_32b [mux_2to1_32b_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_20b [adder_20b_default]
+Compiling architecture behaviour of entity xil_defaultlib.mux_4to1_1b [mux_4to1_1b_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_4to1_32b [mux_4to1_32b_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_32b [adder_32b_default]
+Compiling architecture behavioral of entity xil_defaultlib.rotate_right_shifter_32b8 [rotate_right_shifter_32b8_defaul...]
+Compiling architecture behavioral of entity xil_defaultlib.rotate_left_shifter_32b8 [rotate_left_shifter_32b8_default]
+Compiling architecture behavioral of entity xil_defaultlib.right_shifter_32b [right_shifter_32b_default]
+Compiling architecture behavioral of entity xil_defaultlib.left_shifter_32b [left_shifter_32b_default]
+Compiling architecture behavioral of entity xil_defaultlib.data_memory [data_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.slt_result_calc [slt_result_calc_default]
+Compiling architecture behavioral of entity xil_defaultlib.load_byte_unit [load_byte_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_data_to_mem_to_reg [mux_data_to_mem_to_reg_default]
+Compiling architecture behavioral of entity xil_defaultlib.sign_extend_16to32 [sign_extend_16to32_default]
+Compiling architecture behavioral of entity xil_defaultlib.if_id_pipeline_stage [if_id_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.id_ex_pipeline_stage [id_ex_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.ex_mem_pipeline_stage [ex_mem_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_register [pipeline_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_bit_register [pipeline_bit_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_2bit_register [pipeline_2bit_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_4bit_register [pipeline_4bit_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.mem_wb_pipeline_stage [mem_wb_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.forwarding_unit [forwarding_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.hazard_detection_unit [hazard_detection_unit_default]
+Compiling architecture structural of entity xil_defaultlib.single_cycle_core [single_cycle_core_default]
+Compiling architecture behavioral of entity xil_defaultlib.testbench
+Built simulation snapshot Testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Testbench_behav -key {Behavioral:sim_1:Functional:Testbench} -tclbatch {Testbench.tcl} -view {F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg
+source Testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1015.230 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'instruction_memory'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+"xelab -wto b71789dcab584d7b9eca3c6be0bb098d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Testbench_behav xil_defaultlib.Testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: F:/COMP3211/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto b71789dcab584d7b9eca3c6be0bb098d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Testbench_behav xil_defaultlib.Testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_textio
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.program_counter [program_counter_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_10b [adder_10b_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_2to1_1b [mux_2to1_1b_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_10b [mux_2to1_10b_default]
+Compiling architecture behavioral of entity xil_defaultlib.instruction_memory [instruction_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.sign_extend_20to32 [sign_extend_20to32_default]
+Compiling architecture behavioural of entity xil_defaultlib.control_unit [control_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_ctr_unit [mux_ctr_unit_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_4b [mux_2to1_4b_default]
+Compiling architecture behavioral of entity xil_defaultlib.register_file [register_file_default]
+Compiling architecture behavioral of entity xil_defaultlib.xor_com [xor_com_default]
+Compiling architecture behavioral of entity xil_defaultlib.forwarding_branch [forwarding_branch_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_32b [mux_2to1_32b_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_20b [adder_20b_default]
+Compiling architecture behaviour of entity xil_defaultlib.mux_4to1_1b [mux_4to1_1b_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_4to1_32b [mux_4to1_32b_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_32b [adder_32b_default]
+Compiling architecture behavioral of entity xil_defaultlib.rotate_right_shifter_32b8 [rotate_right_shifter_32b8_defaul...]
+Compiling architecture behavioral of entity xil_defaultlib.rotate_left_shifter_32b8 [rotate_left_shifter_32b8_default]
+Compiling architecture behavioral of entity xil_defaultlib.right_shifter_32b [right_shifter_32b_default]
+Compiling architecture behavioral of entity xil_defaultlib.left_shifter_32b [left_shifter_32b_default]
+Compiling architecture behavioral of entity xil_defaultlib.data_memory [data_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.slt_result_calc [slt_result_calc_default]
+Compiling architecture behavioral of entity xil_defaultlib.load_byte_unit [load_byte_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_data_to_mem_to_reg [mux_data_to_mem_to_reg_default]
+Compiling architecture behavioral of entity xil_defaultlib.sign_extend_16to32 [sign_extend_16to32_default]
+Compiling architecture behavioral of entity xil_defaultlib.if_id_pipeline_stage [if_id_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.id_ex_pipeline_stage [id_ex_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.ex_mem_pipeline_stage [ex_mem_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_register [pipeline_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_bit_register [pipeline_bit_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_2bit_register [pipeline_2bit_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_4bit_register [pipeline_4bit_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.mem_wb_pipeline_stage [mem_wb_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.forwarding_unit [forwarding_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.hazard_detection_unit [hazard_detection_unit_default]
+Compiling architecture structural of entity xil_defaultlib.single_cycle_core [single_cycle_core_default]
+Compiling architecture behavioral of entity xil_defaultlib.testbench
+Built simulation snapshot Testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Testbench_behav -key {Behavioral:sim_1:Functional:Testbench} -tclbatch {Testbench.tcl} -view {F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg
+source Testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1015.230 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Testbench_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+"xelab -wto b71789dcab584d7b9eca3c6be0bb098d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Testbench_behav xil_defaultlib.Testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: F:/COMP3211/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto b71789dcab584d7b9eca3c6be0bb098d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Testbench_behav xil_defaultlib.Testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Testbench_behav -key {Behavioral:sim_1:Functional:Testbench} -tclbatch {Testbench.tcl} -view {F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg
+source Testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1015.230 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj Testbench_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'instruction_memory'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+"xelab -wto b71789dcab584d7b9eca3c6be0bb098d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Testbench_behav xil_defaultlib.Testbench -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: F:/COMP3211/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto b71789dcab584d7b9eca3c6be0bb098d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot Testbench_behav xil_defaultlib.Testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_textio
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.program_counter [program_counter_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_10b [adder_10b_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_2to1_1b [mux_2to1_1b_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_10b [mux_2to1_10b_default]
+Compiling architecture behavioral of entity xil_defaultlib.instruction_memory [instruction_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.sign_extend_20to32 [sign_extend_20to32_default]
+Compiling architecture behavioural of entity xil_defaultlib.control_unit [control_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_ctr_unit [mux_ctr_unit_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_4b [mux_2to1_4b_default]
+Compiling architecture behavioral of entity xil_defaultlib.register_file [register_file_default]
+Compiling architecture behavioral of entity xil_defaultlib.xor_com [xor_com_default]
+Compiling architecture behavioral of entity xil_defaultlib.forwarding_branch [forwarding_branch_default]
+Compiling architecture structural of entity xil_defaultlib.mux_2to1_32b [mux_2to1_32b_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_20b [adder_20b_default]
+Compiling architecture behaviour of entity xil_defaultlib.mux_4to1_1b [mux_4to1_1b_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_4to1_32b [mux_4to1_32b_default]
+Compiling architecture behavioural of entity xil_defaultlib.adder_32b [adder_32b_default]
+Compiling architecture behavioral of entity xil_defaultlib.rotate_right_shifter_32b8 [rotate_right_shifter_32b8_defaul...]
+Compiling architecture behavioral of entity xil_defaultlib.rotate_left_shifter_32b8 [rotate_left_shifter_32b8_default]
+Compiling architecture behavioral of entity xil_defaultlib.right_shifter_32b [right_shifter_32b_default]
+Compiling architecture behavioral of entity xil_defaultlib.left_shifter_32b [left_shifter_32b_default]
+Compiling architecture behavioral of entity xil_defaultlib.data_memory [data_memory_default]
+Compiling architecture behavioral of entity xil_defaultlib.slt_result_calc [slt_result_calc_default]
+Compiling architecture behavioral of entity xil_defaultlib.load_byte_unit [load_byte_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux_data_to_mem_to_reg [mux_data_to_mem_to_reg_default]
+Compiling architecture behavioral of entity xil_defaultlib.sign_extend_16to32 [sign_extend_16to32_default]
+Compiling architecture behavioral of entity xil_defaultlib.if_id_pipeline_stage [if_id_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.id_ex_pipeline_stage [id_ex_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.ex_mem_pipeline_stage [ex_mem_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_register [pipeline_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_bit_register [pipeline_bit_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_2bit_register [pipeline_2bit_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.pipeline_4bit_register [pipeline_4bit_register_default]
+Compiling architecture behavioral of entity xil_defaultlib.mem_wb_pipeline_stage [mem_wb_pipeline_stage_default]
+Compiling architecture behavioral of entity xil_defaultlib.forwarding_unit [forwarding_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.hazard_detection_unit [hazard_detection_unit_default]
+Compiling architecture structural of entity xil_defaultlib.single_cycle_core [single_cycle_core_default]
+Compiling architecture behavioral of entity xil_defaultlib.testbench
+Built simulation snapshot Testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Testbench_behav -key {Behavioral:sim_1:Functional:Testbench} -tclbatch {Testbench.tcl} -view {F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/imports/pipelined_processor/Single_cycle_core_TB_VHDL__pipeline_behav.wcfg
+source Testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1015.230 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 18 23:51:11 2022...
