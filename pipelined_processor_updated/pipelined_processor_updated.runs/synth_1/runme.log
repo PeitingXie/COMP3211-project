@@ -16,20 +16,20 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 23876
+INFO: [Synth 8-7075] Helper process launched with PID 28000
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1014.438 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Single_cycle_core_TB_VHDL' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core_TB_VHDL.vhd:11]
 INFO: [Synth 8-3491] module 'single_cycle_core' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:50' bound to instance 'UUT' of component 'single_cycle_core' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core_TB_VHDL.vhd:32]
 INFO: [Synth 8-638] synthesizing module 'single_cycle_core' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:55]
-INFO: [Synth 8-3491] module 'program_counter' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/program_counter.vhd:28' bound to instance 'pc' of component 'program_counter' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:494]
+INFO: [Synth 8-3491] module 'program_counter' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/program_counter.vhd:28' bound to instance 'pc' of component 'program_counter' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:506]
 INFO: [Synth 8-638] synthesizing module 'program_counter' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/program_counter.vhd:36]
 INFO: [Synth 8-256] done synthesizing module 'program_counter' (1#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/program_counter.vhd:36]
-INFO: [Synth 8-3491] module 'adder_10b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_10b.vhd:25' bound to instance 'next_pc' of component 'adder_10b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:501]
+INFO: [Synth 8-3491] module 'adder_10b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_10b.vhd:25' bound to instance 'next_pc' of component 'adder_10b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:513]
 INFO: [Synth 8-638] synthesizing module 'adder_10b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_10b.vhd:32]
 INFO: [Synth 8-256] done synthesizing module 'adder_10b' (2#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_10b.vhd:32]
-INFO: [Synth 8-3491] module 'mux_2to1_10b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_10b.vhd:25' bound to instance 'branch_mux' of component 'mux_2to1_10b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:507]
+INFO: [Synth 8-3491] module 'mux_2to1_10b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_10b.vhd:25' bound to instance 'branch_mux' of component 'mux_2to1_10b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:519]
 INFO: [Synth 8-638] synthesizing module 'mux_2to1_10b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_10b.vhd:32]
 INFO: [Synth 8-3491] module 'mux_2to1_1b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_1b.vhd:34' bound to instance 'bit_mux' of component 'mux_2to1_1b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_10b.vhd:45]
 INFO: [Synth 8-638] synthesizing module 'mux_2to1_1b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_1b.vhd:41]
@@ -44,37 +44,37 @@ INFO: [Synth 8-3491] module 'mux_2to1_1b' declared at 'D:/Users/Katelyn Temp/Doc
 INFO: [Synth 8-3491] module 'mux_2to1_1b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_1b.vhd:34' bound to instance 'bit_mux' of component 'mux_2to1_1b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_10b.vhd:45]
 INFO: [Synth 8-3491] module 'mux_2to1_1b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_1b.vhd:34' bound to instance 'bit_mux' of component 'mux_2to1_1b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_10b.vhd:45]
 INFO: [Synth 8-256] done synthesizing module 'mux_2to1_10b' (4#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_10b.vhd:32]
-INFO: [Synth 8-3491] module 'instruction_memory' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:27' bound to instance 'insn_mem' of component 'instruction_memory' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:513]
+INFO: [Synth 8-3491] module 'instruction_memory' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:27' bound to instance 'insn_mem' of component 'instruction_memory' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:525]
 INFO: [Synth 8-638] synthesizing module 'instruction_memory' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:35]
 INFO: [Synth 8-256] done synthesizing module 'instruction_memory' (5#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:35]
-INFO: [Synth 8-3491] module 'sign_extend_20to32' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/sign_extend_4to16.vhd:25' bound to instance 'sign_extend' of component 'sign_extend_20to32' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:520]
+INFO: [Synth 8-3491] module 'sign_extend_20to32' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/sign_extend_4to16.vhd:25' bound to instance 'sign_extend' of component 'sign_extend_20to32' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:532]
 INFO: [Synth 8-638] synthesizing module 'sign_extend_20to32' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/sign_extend_4to16.vhd:30]
 INFO: [Synth 8-256] done synthesizing module 'sign_extend_20to32' (6#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/sign_extend_4to16.vhd:30]
-INFO: [Synth 8-3491] module 'control_unit' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/control_unit.vhd:44' bound to instance 'ctrl_unit' of component 'control_unit' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:524]
+INFO: [Synth 8-3491] module 'control_unit' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/control_unit.vhd:44' bound to instance 'ctrl_unit' of component 'control_unit' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:536]
 INFO: [Synth 8-638] synthesizing module 'control_unit' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/control_unit.vhd:62]
 INFO: [Synth 8-256] done synthesizing module 'control_unit' (7#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/control_unit.vhd:62]
-INFO: [Synth 8-3491] module 'mux_ctr_unit' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_ctr_unit.vhd:27' bound to instance 'mux_ctr' of component 'mux_ctr_unit' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:541]
+INFO: [Synth 8-3491] module 'mux_ctr_unit' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_ctr_unit.vhd:27' bound to instance 'mux_ctr' of component 'mux_ctr_unit' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:553]
 INFO: [Synth 8-638] synthesizing module 'mux_ctr_unit' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_ctr_unit.vhd:37]
 INFO: [Synth 8-226] default block is never used [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_ctr_unit.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'mux_ctr_unit' (8#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_ctr_unit.vhd:37]
-INFO: [Synth 8-3491] module 'mux_2to1_4b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd:25' bound to instance 'mux_reg_dst' of component 'mux_2to1_4b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:550]
+INFO: [Synth 8-3491] module 'mux_2to1_4b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd:25' bound to instance 'mux_reg_dst' of component 'mux_2to1_4b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:562]
 INFO: [Synth 8-638] synthesizing module 'mux_2to1_4b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd:32]
 INFO: [Synth 8-3491] module 'mux_2to1_1b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_1b.vhd:34' bound to instance 'bit_mux' of component 'mux_2to1_1b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd:45]
 INFO: [Synth 8-3491] module 'mux_2to1_1b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_1b.vhd:34' bound to instance 'bit_mux' of component 'mux_2to1_1b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd:45]
 INFO: [Synth 8-3491] module 'mux_2to1_1b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_1b.vhd:34' bound to instance 'bit_mux' of component 'mux_2to1_1b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd:45]
 INFO: [Synth 8-3491] module 'mux_2to1_1b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_1b.vhd:34' bound to instance 'bit_mux' of component 'mux_2to1_1b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd:45]
 INFO: [Synth 8-256] done synthesizing module 'mux_2to1_4b' (9#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd:32]
-INFO: [Synth 8-3491] module 'mux_2to1_4b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd:25' bound to instance 'mux_forward_reg_dst' of component 'mux_2to1_4b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:556]
-INFO: [Synth 8-3491] module 'register_file' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/register_file.vhd:26' bound to instance 'reg_file' of component 'register_file' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:562]
+INFO: [Synth 8-3491] module 'mux_2to1_4b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd:25' bound to instance 'mux_forward_reg_dst' of component 'mux_2to1_4b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:568]
+INFO: [Synth 8-3491] module 'register_file' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/register_file.vhd:26' bound to instance 'reg_file' of component 'register_file' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:574]
 INFO: [Synth 8-638] synthesizing module 'register_file' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/register_file.vhd:38]
 INFO: [Synth 8-256] done synthesizing module 'register_file' (10#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/register_file.vhd:38]
-INFO: [Synth 8-3491] module 'xor_com' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/xor_com.vhd:34' bound to instance 'xor_unit' of component 'xor_com' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:573]
+INFO: [Synth 8-3491] module 'xor_com' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/xor_com.vhd:34' bound to instance 'xor_unit' of component 'xor_com' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:585]
 INFO: [Synth 8-638] synthesizing module 'xor_com' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/xor_com.vhd:40]
 INFO: [Synth 8-256] done synthesizing module 'xor_com' (11#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/xor_com.vhd:40]
-INFO: [Synth 8-3491] module 'forwarding_branch' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/forwarding_branch.vhd:34' bound to instance 'forwarding_br_unit' of component 'forwarding_branch' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:578]
+INFO: [Synth 8-3491] module 'forwarding_branch' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/forwarding_branch.vhd:34' bound to instance 'forwarding_br_unit' of component 'forwarding_branch' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:590]
 INFO: [Synth 8-638] synthesizing module 'forwarding_branch' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/forwarding_branch.vhd:43]
 INFO: [Synth 8-256] done synthesizing module 'forwarding_branch' (12#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/forwarding_branch.vhd:43]
-INFO: [Synth 8-3491] module 'mux_2to1_32b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_32b.vhd:25' bound to instance 'forward_br_rs_mux' of component 'mux_2to1_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:586]
+INFO: [Synth 8-3491] module 'mux_2to1_32b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_32b.vhd:25' bound to instance 'forward_br_rs_mux' of component 'mux_2to1_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:598]
 INFO: [Synth 8-638] synthesizing module 'mux_2to1_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_32b.vhd:32]
 INFO: [Synth 8-3491] module 'mux_2to1_1b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_1b.vhd:34' bound to instance 'bit_mux' of component 'mux_2to1_1b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_32b.vhd:45]
 INFO: [Synth 8-3491] module 'mux_2to1_1b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_1b.vhd:34' bound to instance 'bit_mux' of component 'mux_2to1_1b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_32b.vhd:45]
@@ -109,12 +109,12 @@ INFO: [Synth 8-3491] module 'mux_2to1_1b' declared at 'D:/Users/Katelyn Temp/Doc
 INFO: [Synth 8-3491] module 'mux_2to1_1b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_1b.vhd:34' bound to instance 'bit_mux' of component 'mux_2to1_1b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_32b.vhd:45]
 INFO: [Synth 8-3491] module 'mux_2to1_1b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_1b.vhd:34' bound to instance 'bit_mux' of component 'mux_2to1_1b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_32b.vhd:45]
 INFO: [Synth 8-256] done synthesizing module 'mux_2to1_32b' (13#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_32b.vhd:32]
-INFO: [Synth 8-3491] module 'mux_2to1_32b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_32b.vhd:25' bound to instance 'forward_br_rt_mux' of component 'mux_2to1_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:592]
-INFO: [Synth 8-3491] module 'adder_20b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_20b.vhd:25' bound to instance 'branch_adder' of component 'adder_20b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:599]
+INFO: [Synth 8-3491] module 'mux_2to1_32b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_32b.vhd:25' bound to instance 'forward_br_rt_mux' of component 'mux_2to1_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:604]
+INFO: [Synth 8-3491] module 'adder_20b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_20b.vhd:25' bound to instance 'branch_adder' of component 'adder_20b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:611]
 INFO: [Synth 8-638] synthesizing module 'adder_20b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_20b.vhd:32]
 INFO: [Synth 8-256] done synthesizing module 'adder_20b' (14#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_20b.vhd:32]
-INFO: [Synth 8-3491] module 'mux_2to1_32b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_32b.vhd:25' bound to instance 'mux_alu_src_b' of component 'mux_2to1_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:605]
-INFO: [Synth 8-3491] module 'mux_4to1_32b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_4to1_32b.vhd:34' bound to instance 'mux_alu_src_a' of component 'mux_4to1_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:611]
+INFO: [Synth 8-3491] module 'mux_2to1_32b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_32b.vhd:25' bound to instance 'mux_alu_src_b' of component 'mux_2to1_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:617]
+INFO: [Synth 8-3491] module 'mux_4to1_32b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_4to1_32b.vhd:34' bound to instance 'mux_alu_src_a' of component 'mux_4to1_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:623]
 INFO: [Synth 8-638] synthesizing module 'mux_4to1_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_4to1_32b.vhd:43]
 INFO: [Synth 8-3491] module 'mux_4to1_1b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/mux_4to1_16b.vhd:64' bound to instance 'bit_mux' of component 'mux_4to1_1b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_4to1_32b.vhd:56]
 INFO: [Synth 8-638] synthesizing module 'mux_4to1_1b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/mux_4to1_16b.vhd:74]
@@ -151,82 +151,83 @@ INFO: [Synth 8-3491] module 'mux_4to1_1b' declared at 'D:/Users/Katelyn Temp/Doc
 INFO: [Synth 8-3491] module 'mux_4to1_1b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/mux_4to1_16b.vhd:64' bound to instance 'bit_mux' of component 'mux_4to1_1b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_4to1_32b.vhd:56]
 INFO: [Synth 8-3491] module 'mux_4to1_1b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/mux_4to1_16b.vhd:64' bound to instance 'bit_mux' of component 'mux_4to1_1b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_4to1_32b.vhd:56]
 INFO: [Synth 8-256] done synthesizing module 'mux_4to1_32b' (16#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_4to1_32b.vhd:43]
-INFO: [Synth 8-3491] module 'mux_4to1_32b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_4to1_32b.vhd:34' bound to instance 'mux_alu_b_src_b' of component 'mux_4to1_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:619]
-INFO: [Synth 8-3491] module 'adder_32b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_32b.vhd:25' bound to instance 'alu' of component 'adder_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:627]
+INFO: [Synth 8-3491] module 'mux_4to1_32b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_4to1_32b.vhd:34' bound to instance 'mux_alu_b_src_b' of component 'mux_4to1_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:631]
+INFO: [Synth 8-3491] module 'adder_32b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_32b.vhd:25' bound to instance 'alu' of component 'adder_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:639]
 INFO: [Synth 8-638] synthesizing module 'adder_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_32b.vhd:34]
 INFO: [Synth 8-256] done synthesizing module 'adder_32b' (17#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_32b.vhd:34]
-INFO: [Synth 8-3491] module 'rotate_right_shifter_32b8' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/rotate_right_shifter_16b.vhd:36' bound to instance 'rotate_right_shifter' of component 'rotate_right_shifter_32b8' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:635]
+INFO: [Synth 8-3491] module 'rotate_right_shifter_32b8' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/rotate_right_shifter_16b.vhd:36' bound to instance 'rotate_right_shifter' of component 'rotate_right_shifter_32b8' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:647]
 INFO: [Synth 8-638] synthesizing module 'rotate_right_shifter_32b8' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/rotate_right_shifter_16b.vhd:43]
 INFO: [Synth 8-3491] module 'mux_2to1_32b' declared at 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_32b.vhd:25' bound to instance 'bit_0_mux' of component 'mux_2to1_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/rotate_right_shifter_16b.vhd:107]
 INFO: [Common 17-14] Message 'Synth 8-3491' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-256] done synthesizing module 'rotate_right_shifter_32b8' (18#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/rotate_right_shifter_16b.vhd:43]
 INFO: [Synth 8-638] synthesizing module 'rotate_left_shifter_32b8' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/rotate_left_shifter_32b8.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'rotate_left_shifter_32b8' (19#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/rotate_left_shifter_32b8.vhd:41]
+INFO: [Synth 8-638] synthesizing module 'right_shifter_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/right_shifter_32b.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'right_shifter_32b' (20#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/right_shifter_32b.vhd:40]
+INFO: [Synth 8-638] synthesizing module 'left_shifter_32b' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/left_shifter.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'left_shifter_32b' (21#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/left_shifter.vhd:40]
 INFO: [Synth 8-638] synthesizing module 'data_memory' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/data_memory.vhd:35]
 WARNING: [Synth 8-614] signal 'reset' is read in the process but is not in the sensitivity list [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/data_memory.vhd:40]
-INFO: [Synth 8-256] done synthesizing module 'data_memory' (20#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/data_memory.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'data_memory' (22#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/data_memory.vhd:35]
 INFO: [Synth 8-638] synthesizing module 'slt_result_calc' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/slt_result.vhd:39]
-INFO: [Synth 8-256] done synthesizing module 'slt_result_calc' (21#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/slt_result.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'slt_result_calc' (23#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/slt_result.vhd:39]
 INFO: [Synth 8-638] synthesizing module 'load_byte_unit' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/load_byte_unit.vhd:42]
-INFO: [Synth 8-256] done synthesizing module 'load_byte_unit' (22#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/load_byte_unit.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'load_byte_unit' (24#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/load_byte_unit.vhd:42]
 INFO: [Synth 8-638] synthesizing module 'mux_data_to_mem_to_reg' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_data_to_mem_to_reg.vhd:43]
-INFO: [Synth 8-256] done synthesizing module 'mux_data_to_mem_to_reg' (23#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_data_to_mem_to_reg.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'mux_data_to_mem_to_reg' (25#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_data_to_mem_to_reg.vhd:43]
 INFO: [Synth 8-638] synthesizing module 'sign_extend_16to32' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/sign_extend_8to16.vhd:30]
-INFO: [Synth 8-256] done synthesizing module 'sign_extend_16to32' (24#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/sign_extend_8to16.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'sign_extend_16to32' (26#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/sign_extend_8to16.vhd:30]
 INFO: [Synth 8-638] synthesizing module 'if_id_pipeline_stage' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/if_id_pipeline_stage.vhd:45]
-INFO: [Synth 8-256] done synthesizing module 'if_id_pipeline_stage' (25#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/if_id_pipeline_stage.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'if_id_pipeline_stage' (27#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/if_id_pipeline_stage.vhd:45]
 INFO: [Synth 8-638] synthesizing module 'id_ex_pipeline_stage' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/id_ex_pipeline_stage.vhd:64]
-INFO: [Synth 8-256] done synthesizing module 'id_ex_pipeline_stage' (26#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/id_ex_pipeline_stage.vhd:64]
+INFO: [Synth 8-256] done synthesizing module 'id_ex_pipeline_stage' (28#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/id_ex_pipeline_stage.vhd:64]
 INFO: [Synth 8-638] synthesizing module 'ex_mem_pipeline_stage' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/ex_mem_pipeline_stage.vhd:64]
-INFO: [Synth 8-256] done synthesizing module 'ex_mem_pipeline_stage' (27#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/ex_mem_pipeline_stage.vhd:64]
+INFO: [Synth 8-256] done synthesizing module 'ex_mem_pipeline_stage' (29#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/ex_mem_pipeline_stage.vhd:64]
 INFO: [Synth 8-638] synthesizing module 'mem_wb_pipeline_stage' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mem_wb_pipeline_stage.vhd:58]
 INFO: [Synth 8-638] synthesizing module 'pipeline_register' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_register.vhd:42]
-INFO: [Synth 8-256] done synthesizing module 'pipeline_register' (28#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_register.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'pipeline_register' (30#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_register.vhd:42]
 INFO: [Synth 8-638] synthesizing module 'pipeline_bit_register' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_bit_register.vhd:42]
-INFO: [Synth 8-256] done synthesizing module 'pipeline_bit_register' (29#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_bit_register.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'pipeline_bit_register' (31#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_bit_register.vhd:42]
 INFO: [Synth 8-638] synthesizing module 'pipeline_2bit_register' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_2bit_register.vhd:42]
-INFO: [Synth 8-256] done synthesizing module 'pipeline_2bit_register' (30#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_2bit_register.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'pipeline_2bit_register' (32#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_2bit_register.vhd:42]
 INFO: [Synth 8-638] synthesizing module 'pipeline_4bit_register' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_4bit_register.vhd:42]
-INFO: [Synth 8-256] done synthesizing module 'pipeline_4bit_register' (31#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_4bit_register.vhd:42]
-INFO: [Synth 8-256] done synthesizing module 'mem_wb_pipeline_stage' (32#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mem_wb_pipeline_stage.vhd:58]
+INFO: [Synth 8-256] done synthesizing module 'pipeline_4bit_register' (33#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_4bit_register.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'mem_wb_pipeline_stage' (34#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mem_wb_pipeline_stage.vhd:58]
 INFO: [Synth 8-638] synthesizing module 'forwarding_unit' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/forwarding_unit.vhd:46]
 WARNING: [Synth 8-614] signal 'memwb_reg_write' is read in the process but is not in the sensitivity list [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/forwarding_unit.vhd:49]
 WARNING: [Synth 8-614] signal 'memwb_reg_dst_addr' is read in the process but is not in the sensitivity list [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/forwarding_unit.vhd:49]
-INFO: [Synth 8-256] done synthesizing module 'forwarding_unit' (33#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/forwarding_unit.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'forwarding_unit' (35#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/forwarding_unit.vhd:46]
 INFO: [Synth 8-638] synthesizing module 'hazard_detection_unit' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/hazard_detection_unit.vhd:57]
 WARNING: [Synth 8-614] signal 'idex_op' is read in the process but is not in the sensitivity list [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/hazard_detection_unit.vhd:62]
-INFO: [Synth 8-256] done synthesizing module 'hazard_detection_unit' (34#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/hazard_detection_unit.vhd:57]
-INFO: [Synth 8-256] done synthesizing module 'single_cycle_core' (35#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:55]
+INFO: [Synth 8-256] done synthesizing module 'hazard_detection_unit' (36#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/hazard_detection_unit.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'single_cycle_core' (37#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core.vhd:55]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: wait statement with no conditon [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core_TB_VHDL.vhd:41]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: wait statement with no conditon [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core_TB_VHDL.vhd:49]
 WARNING: [Synth 8-312] ignoring unsynthesizable construct: wait statement with no conditon [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core_TB_VHDL.vhd:52]
-INFO: [Synth 8-256] done synthesizing module 'Single_cycle_core_TB_VHDL' (36#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core_TB_VHDL.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'Single_cycle_core_TB_VHDL' (38#1) [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/single_cycle_core_TB_VHDL.vhd:11]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1014.438 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1014.438 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k70tfbv676-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1014.438 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7k70tfbv676-1
-WARNING: [Synth 8-327] inferring latch for variable 'mem_process.var_insn_mem_reg[0]' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:189]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_process.var_insn_mem_reg[1]' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:189]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_process.var_insn_mem_reg[2]' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:189]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_process.var_insn_mem_reg[3]' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:189]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_process.var_insn_mem_reg[4]' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:189]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_process.var_insn_mem_reg[5]' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:189]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_process.var_insn_mem_reg[6]' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:189]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_process.var_insn_mem_reg[7]' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:189]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_process.var_insn_mem_reg[0]' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:281]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_process.var_insn_mem_reg[1]' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:281]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_process.var_insn_mem_reg[2]' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:281]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_process.var_insn_mem_reg[3]' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:281]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_process.var_insn_mem_reg[4]' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd:281]
 WARNING: [Synth 8-327] inferring latch for variable 'sig_result_reg' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_32b.vhd:63]
 WARNING: [Synth 8-327] inferring latch for variable 'carry_out_reg' [D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/adder_32b.vhd:64]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1014.438 ; gain = 0.000
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -248,18 +249,16 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 14    
 +---Muxes : 
 	   6 Input   33 Bit        Muxes := 1     
-	   8 Input   32 Bit        Muxes := 1     
 	   6 Input   32 Bit        Muxes := 1     
 	   2 Input   32 Bit        Muxes := 1     
 	   2 Input   16 Bit        Muxes := 1     
-	  16 Input    3 Bit        Muxes := 1     
 	   5 Input    3 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 4     
-	   6 Input    2 Bit        Muxes := 1     
-	   3 Input    2 Bit        Muxes := 1     
-	   7 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 1347  
+	   8 Input    2 Bit        Muxes := 1     
+	   5 Input    2 Bit        Muxes := 1     
+	   9 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 1603  
 	   4 Input    1 Bit        Muxes := 160   
 	   6 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
@@ -279,20 +278,20 @@ No constraint files found.
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1014.438 ; gain = 0.000
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1014.438 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1014.438 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -310,37 +309,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1014.438 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1014.438 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1014.438 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1014.438 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1014.438 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1014.438 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -365,23 +364,23 @@ Report Instance Areas:
 |1     |top      |       |     0|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1014.438 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 17 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1017.223 ; gain = 0.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Synthesis finished with 0 errors, 0 critical warnings and 14 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1014.438 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 1014.438 ; gain = 0.000
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1014.438 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1017.223 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1014.438 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-184 Infos, 17 Warnings, 0 Critical Warnings and 0 Errors encountered.
+188 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1017.223 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 1014.438 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.runs/synth_1/Single_cycle_core_TB_VHDL.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Single_cycle_core_TB_VHDL_utilization_synth.rpt -pb Single_cycle_core_TB_VHDL_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 18 18:09:13 2022...
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 18 21:18:40 2022...

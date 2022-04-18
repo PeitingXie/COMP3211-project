@@ -260,13 +260,31 @@ begin
             -- lsl $1, $1, $0     
             -- lsl $2, $2, $3
             -- store $2, $0, 3
+--            var_insn_mem(0)  := X"10100000"; -- $1 = FFFFFF01
+--            var_insn_mem(1)  := X"10200001"; -- $2 = FFFFFF27
+--            var_insn_mem(2)  := X"10300002"; -- $3 = 00000004
+--            var_insn_mem(3)  := X"c1300001"; -- $1 = FFFFF010
+--            var_insn_mem(4)  := X"c1000001"; -- $1 = FFFFF010
+--            var_insn_mem(5)  := X"c2300002"; -- $2 = FFFFF270
+--            var_insn_mem(6)  := X"30200003"; -- data_mem(3) = FFFFF270
+--            var_insn_mem(7)  := X"00000000"; 
+--            var_insn_mem(8)  := X"00000000"; 
+--            var_insn_mem(9)  := X"00000000"; 
+--            var_insn_mem(10) := X"00000000"; 
+--            var_insn_mem(11) := X"00000000"; 
+--            var_insn_mem(12) := X"00000000"; 
+--            var_insn_mem(13) := X"00000000"; 
+--            var_insn_mem(14) := X"00000000";
+--            var_insn_mem(15) := X"00000000";
+--============================== SHIFT TESTS =====================================
+            
             var_insn_mem(0)  := X"10100000"; -- $1 = FFFFFF01
-            var_insn_mem(1)  := X"10200001"; -- $2 = FFFFFF27
-            var_insn_mem(2)  := X"10300002"; -- $3 = 00000004
-            var_insn_mem(3)  := X"c1300001"; -- $1 = FFFFF010
-            var_insn_mem(4)  := X"c1000001"; -- $1 = FFFFF010
-            var_insn_mem(5)  := X"c2300002"; -- $2 = FFFFF270
-            var_insn_mem(6)  := X"30200003"; -- data_mem(3) = FFFFF270
+            var_insn_mem(1)  := X"10200002"; -- $2 = 00000004
+            var_insn_mem(2)  := X"10300005"; -- $3 = 0000000b
+            var_insn_mem(3)  := X"12400001"; -- $4 = 0000000b
+            var_insn_mem(4)  := X"00000000"; 
+            var_insn_mem(5)  := X"00000000"; 
+            var_insn_mem(6)  := X"00000000"; 
             var_insn_mem(7)  := X"00000000"; 
             var_insn_mem(8)  := X"00000000"; 
             var_insn_mem(9)  := X"00000000"; 
@@ -276,8 +294,7 @@ begin
             var_insn_mem(13) := X"00000000"; 
             var_insn_mem(14) := X"00000000";
             var_insn_mem(15) := X"00000000";
---============================== SHIFT TESTS =====================================
-
+            
        elsif (rising_edge(clk) and pc_write = '1') then
            -- read instructions on the rising clock edge
             var_addr := conv_integer(addr_in);

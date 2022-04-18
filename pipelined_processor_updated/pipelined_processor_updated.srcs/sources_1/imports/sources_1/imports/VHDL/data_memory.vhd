@@ -71,8 +71,8 @@ begin
             var_data_mem(1)  := X"FFFFFF27";
             var_data_mem(2)  := X"00000004";
             var_data_mem(3)  := X"00000000";
-            var_data_mem(4)  := X"00000000";
-            var_data_mem(5)  := X"00000000";
+            var_data_mem(4)  := X"0000000a";
+            var_data_mem(5)  := X"0000000b";
             var_data_mem(6)  := X"00000000";
             var_data_mem(7)  := X"00000000";
             var_data_mem(8)  := X"00000000";

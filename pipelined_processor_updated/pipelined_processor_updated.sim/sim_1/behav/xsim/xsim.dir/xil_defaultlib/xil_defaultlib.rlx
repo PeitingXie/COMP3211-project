@@ -3,8 +3,8 @@
 Nov 18 2020
 09:47:47
 D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/control_unit.vhd,1650272105,vhdl,,,,control_unit,,,,,,,,
-D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/data_memory.vhd,1650271272,vhdl,,,,data_memory,,,,,,,,
-D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd,1650272585,vhdl,,,,instruction_memory,,,,,,,,
+D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/data_memory.vhd,1650280526,vhdl,,,,data_memory,,,,,,,,
+D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd,1650280644,vhdl,,,,instruction_memory,,,,,,,,
 D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd,1153804950,vhdl,,,,mux_2to1_4b,,,,,,,,
 D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/program_counter.vhd,1650258721,vhdl,,,,program_counter,,,,,,,,
 D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/register_file.vhd,1650258721,vhdl,,,,register_file,,,,,,,,

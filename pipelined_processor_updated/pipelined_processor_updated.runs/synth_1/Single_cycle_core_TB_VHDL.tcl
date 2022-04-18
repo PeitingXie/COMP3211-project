@@ -97,6 +97,7 @@ read_vhdl -library xil_defaultlib {
   {D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/id_ex_pipeline_stage.vhd}
   {D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/if_id_pipeline_stage.vhd}
   {D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd}
+  {D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/left_shifter.vhd}
   {D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/load_byte_unit.vhd}
   {D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mem_wb_pipeline_stage.vhd}
   {D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/mux_2to1_10b.vhd}
@@ -113,6 +114,7 @@ read_vhdl -library xil_defaultlib {
   {D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/pipeline_register.vhd}
   {D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/program_counter.vhd}
   {D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/register_file.vhd}
+  {D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/right_shifter_32b.vhd}
   {D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/new/rotate_left_shifter_32b8.vhd}
   {D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/new/rotate_right_shifter_16b.vhd}
   {D:/Users/Katelyn Temp/Documents/GitHub/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/sign_extend_4to16.vhd}
