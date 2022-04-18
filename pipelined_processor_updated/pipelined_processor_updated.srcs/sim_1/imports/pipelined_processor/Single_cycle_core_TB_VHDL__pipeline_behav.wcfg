@@ -3,148 +3,76 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="Single_cycle_core_TB_VHDL_behav.wdb" id="1">
+      <db_ref path="Testbench_behav.wdb" id="1">
          <top_modules>
-            <top_module name="Single_cycle_core_TB_VHDL" />
+            <top_module name="Testbench" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="11681fs"></ZoomEndTime>
-      <Cursor1Time time="19000fs"></Cursor1Time>
+      <ZoomEndTime time="18301fs"></ZoomEndTime>
+      <Cursor1Time time="3220fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="169"></NameColumnWidth>
+      <NameColumnWidth column_width="159"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="30" />
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
+   <WVObjectSize size="14" />
+   <wvobject fp_name="/Testbench/r_CLOCK" type="logic">
+      <obj_property name="ElementShortName">r_CLOCK</obj_property>
+      <obj_property name="ObjectShortName">r_CLOCK</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
+   <wvobject fp_name="/Testbench/r_reset" type="logic">
+      <obj_property name="ElementShortName">r_reset</obj_property>
+      <obj_property name="ObjectShortName">r_reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/pc/addr_in" type="array">
-      <obj_property name="ElementShortName">addr_in[3:0]</obj_property>
-      <obj_property name="ObjectShortName">addr_in[3:0]</obj_property>
+   <wvobject fp_name="/Testbench/r_send" type="logic">
+      <obj_property name="ElementShortName">r_send</obj_property>
+      <obj_property name="ObjectShortName">r_send</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/insn_mem/addr_in" type="array">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">addr_in[3:0]</obj_property>
-      <obj_property name="ObjectShortName">addr_in[3:0]</obj_property>
-      <obj_property name="label">curr_pc</obj_property>
+   <wvobject fp_name="/Testbench/r_D0" type="array">
+      <obj_property name="ElementShortName">r_D0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">r_D0[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_insn" type="array">
-      <obj_property name="ElementShortName">sig_insn[15:0]</obj_property>
-      <obj_property name="ObjectShortName">sig_insn[15:0]</obj_property>
+   <wvobject fp_name="/Testbench/r_D1" type="array">
+      <obj_property name="ElementShortName">r_D1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">r_D1[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/sig_ifid_insn" type="array">
-      <obj_property name="ElementShortName">sig_ifid_insn[15:0]</obj_property>
-      <obj_property name="ObjectShortName">sig_ifid_insn[15:0]</obj_property>
+   <wvobject fp_name="/Testbench/r_D2" type="array">
+      <obj_property name="ElementShortName">r_D2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">r_D2[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/branch_mux/mux_select" type="logic">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">mux_select</obj_property>
-      <obj_property name="ObjectShortName">mux_select</obj_property>
-      <obj_property name="label">br_mux_select</obj_property>
+   <wvobject fp_name="/Testbench/r_D3" type="array">
+      <obj_property name="ElementShortName">r_D3[7:0]</obj_property>
+      <obj_property name="ObjectShortName">r_D3[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/branch_mux/data_a" type="array">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">data_a[3:0]</obj_property>
-      <obj_property name="ObjectShortName">data_a[3:0]</obj_property>
-      <obj_property name="label">brcurr_data_a[3:0]</obj_property>
+   <wvobject fp_name="/Testbench/r_tag" type="array">
+      <obj_property name="ElementShortName">r_tag[7:0]</obj_property>
+      <obj_property name="ObjectShortName">r_tag[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/branch_mux/data_b" type="array">
-      <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="ElementShortName">data_b[3:0]</obj_property>
-      <obj_property name="ObjectShortName">data_b[3:0]</obj_property>
-      <obj_property name="label">br_data_b[3:0]</obj_property>
+   <wvobject fp_name="/Testbench/r_busy" type="logic">
+      <obj_property name="ElementShortName">r_busy</obj_property>
+      <obj_property name="ObjectShortName">r_busy</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/branch_mux/data_out" type="array">
-      <obj_property name="ElementShortName">data_out[3:0]</obj_property>
-      <obj_property name="ObjectShortName">data_out[3:0]</obj_property>
+   <wvobject fp_name="/Testbench/c_CLOCK_PERIOD" type="other">
+      <obj_property name="ElementShortName">c_CLOCK_PERIOD</obj_property>
+      <obj_property name="ObjectShortName">c_CLOCK_PERIOD</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/reg_file/sig_regfile" type="array">
-      <obj_property name="ElementShortName">sig_regfile[0:15][15:0]</obj_property>
-      <obj_property name="ObjectShortName">sig_regfile[0:15][15:0]</obj_property>
+   <wvobject fp_name="/Testbench/UUT/if_id_stage/ifid_instr_out" type="array">
+      <obj_property name="ElementShortName">ifid_instr_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ifid_instr_out[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/xor_unit/data_a" type="array">
-      <obj_property name="ElementShortName">data_a[15:0]</obj_property>
-      <obj_property name="ObjectShortName">data_a[15:0]</obj_property>
+   <wvobject fp_name="/Testbench/UUT/reg_file/sig_regfile" type="array">
+      <obj_property name="ElementShortName">sig_regfile[0:15][31:0]</obj_property>
+      <obj_property name="ObjectShortName">sig_regfile[0:15][31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/xor_unit/data_b" type="array">
-      <obj_property name="ElementShortName">data_b[15:0]</obj_property>
-      <obj_property name="ObjectShortName">data_b[15:0]</obj_property>
+   <wvobject fp_name="/Testbench/UUT/data_mem/sig_data_mem" type="array">
+      <obj_property name="ElementShortName">sig_data_mem[0:1023][31:0]</obj_property>
+      <obj_property name="ObjectShortName">sig_data_mem[0:1023][31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/xor_unit/ctrl" type="logic">
-      <obj_property name="ElementShortName">ctrl</obj_property>
-      <obj_property name="ObjectShortName">ctrl</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/ctrl_unit/opcode" type="array">
-      <obj_property name="ElementShortName">opcode[3:0]</obj_property>
-      <obj_property name="ObjectShortName">opcode[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/if_id_stage/ifid_instr_out" type="array">
-      <obj_property name="ElementShortName">ifid_instr_out[15:0]</obj_property>
-      <obj_property name="ObjectShortName">ifid_instr_out[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/ctrl_unit/branch_ctrl" type="logic">
-      <obj_property name="ElementShortName">branch_ctrl</obj_property>
-      <obj_property name="ObjectShortName">branch_ctrl</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/ctrl_unit/if_flush" type="logic">
-      <obj_property name="ElementShortName">if_flush</obj_property>
-      <obj_property name="ObjectShortName">if_flush</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/if_id_stage/if_curr_pc" type="array">
-      <obj_property name="ElementShortName">if_curr_pc[3:0]</obj_property>
-      <obj_property name="ObjectShortName">if_curr_pc[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/if_id_stage/id_curr_pc" type="array">
-      <obj_property name="ElementShortName">id_curr_pc[3:0]</obj_property>
-      <obj_property name="ObjectShortName">id_curr_pc[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/branch_mux/mux_select" type="logic">
-      <obj_property name="ElementShortName">mux_select</obj_property>
-      <obj_property name="ObjectShortName">mux_select</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/hazard_dt_unit/ifid_beq" type="logic">
-      <obj_property name="ElementShortName">ifid_beq</obj_property>
-      <obj_property name="ObjectShortName">ifid_beq</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/hazard_dt_unit/idex_reg_b" type="array">
-      <obj_property name="ElementShortName">idex_reg_b[3:0]</obj_property>
-      <obj_property name="ObjectShortName">idex_reg_b[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/hazard_dt_unit/ifid_reg_a" type="array">
-      <obj_property name="ElementShortName">ifid_reg_a[3:0]</obj_property>
-      <obj_property name="ObjectShortName">ifid_reg_a[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/hazard_dt_unit/ifid_reg_b" type="array">
-      <obj_property name="ElementShortName">ifid_reg_b[3:0]</obj_property>
-      <obj_property name="ObjectShortName">ifid_reg_b[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/hazard_dt_unit/idex_reg_d" type="array">
-      <obj_property name="ElementShortName">idex_reg_d[3:0]</obj_property>
-      <obj_property name="ObjectShortName">idex_reg_d[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/hazard_dt_unit/ctr_sig_sel" type="logic">
-      <obj_property name="ElementShortName">ctr_sig_sel</obj_property>
-      <obj_property name="ObjectShortName">ctr_sig_sel</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/hazard_dt_unit/ifid_write" type="logic">
-      <obj_property name="ElementShortName">ifid_write</obj_property>
-      <obj_property name="ObjectShortName">ifid_write</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/hazard_dt_unit/pc_write" type="logic">
-      <obj_property name="ElementShortName">pc_write</obj_property>
-      <obj_property name="ObjectShortName">pc_write</obj_property>
-   </wvobject>
-   <wvobject fp_name="/Single_cycle_core_TB_VHDL/UUT/hazard_dt_unit/idex_mem_read" type="logic">
-      <obj_property name="ElementShortName">idex_mem_read</obj_property>
-      <obj_property name="ObjectShortName">idex_mem_read</obj_property>
+   <wvobject fp_name="/Testbench/UUT/insn_mem/sig_insn_mem" type="array">
+      <obj_property name="ElementShortName">sig_insn_mem[0:1023][31:0]</obj_property>
+      <obj_property name="ObjectShortName">sig_insn_mem[0:1023][31:0]</obj_property>
    </wvobject>
 </wave_config>
