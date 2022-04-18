@@ -109,7 +109,7 @@ begin
                 r_tag <= tag_data;
                 
                 r_send <= '1';
-                wait for c_CLOCK_PERIOD * 10;
+                wait for 10 ns;
                 r_send <= '0';
             end if;
         end loop;

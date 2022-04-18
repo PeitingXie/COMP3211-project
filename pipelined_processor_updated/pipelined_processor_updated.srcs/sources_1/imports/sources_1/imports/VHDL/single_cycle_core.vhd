@@ -65,6 +65,7 @@ architecture structural of single_cycle_core is
 component program_counter is
     port ( reset    : in  std_logic;
            clk      : in  std_logic;
+           send   : in  std_logic;
            pc_write : in  std_logic;
            addr_in  : in  std_logic_vector(9 downto 0);
            addr_out : out std_logic_vector(9 downto 0);
@@ -481,6 +482,7 @@ begin
     pc : program_counter
     port map ( reset    => reset,
                clk      => clk,
+               send     => send,
                pc_write => sig_pc_write,
                addr_in  => sig_next_pc_branch,
                addr_out => sig_curr_pc,

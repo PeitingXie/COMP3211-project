@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/UNSW/2022 term1/COMP3211/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.runs/synth_1'
+HD_PWD='D:/UNSW/2022 term1/COMP3211/backup/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
