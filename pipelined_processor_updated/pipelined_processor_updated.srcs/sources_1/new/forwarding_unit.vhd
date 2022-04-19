@@ -52,15 +52,19 @@ begin
         aluSrc_b_sel <= "00";
 
 
-        if (exmem_reg_write = '1') and (exmem_reg_dst_addr /= X"0") and (exmem_reg_dst_addr = idex_reg_a_addr) then
+        --if (exmem_reg_write = '1') and (exmem_reg_dst_addr /= X"0") and (exmem_reg_dst_addr = idex_reg_a_addr) then
+        if (exmem_reg_write = '1') and (exmem_reg_dst_addr = idex_reg_a_addr) then
             aluSrc_a_sel <= "10";
-        elsif (memwb_reg_write = '1') and (memwb_reg_dst_addr /= X"0") and (memwb_reg_dst_addr = idex_reg_a_addr) then
+        --elsif (memwb_reg_write = '1') and (memwb_reg_dst_addr /= X"0") and (memwb_reg_dst_addr = idex_reg_a_addr) then
+        elsif (memwb_reg_write = '1') and (memwb_reg_dst_addr = idex_reg_a_addr) then
             aluSrc_a_sel <= "01";
         end if;
         
-        if (exmem_reg_write = '1') and (exmem_reg_dst_addr /= X"0") and (exmem_reg_dst_addr = idex_reg_b_addr) then
+        --if (exmem_reg_write = '1') and (exmem_reg_dst_addr /= X"0") and (exmem_reg_dst_addr = idex_reg_b_addr) then
+        if (exmem_reg_write = '1') and (exmem_reg_dst_addr = idex_reg_b_addr) then
             aluSrc_b_sel <= "10";
-        elsif (memwb_reg_write = '1') and (memwb_reg_dst_addr /= X"0") and (memwb_reg_dst_addr = idex_reg_b_addr) then
+        --elsif (memwb_reg_write = '1') and (memwb_reg_dst_addr /= X"0") and (memwb_reg_dst_addr = idex_reg_b_addr) then
+        elsif (memwb_reg_write = '1') and (memwb_reg_dst_addr = idex_reg_b_addr) then
             aluSrc_b_sel <= "01";
         end if;
     end process;

@@ -48,6 +48,7 @@ begin
         if (reset = '1') then
            
 
+              
               var_insn_mem(0)  := X"3a000014"; -- sw $10, $0, 20
               var_insn_mem(1)  := X"3a100015"; -- sw $10. $1, 21
               var_insn_mem(2)  := X"3a200016"; -- sw $10. $2, 22
@@ -132,20 +133,20 @@ begin
               var_insn_mem(75)  := X"1a000015"; --lw $0, $10, 21      get D1 after swap, store in $0
               var_insn_mem(76)  := X"1a100074"; --lw $1, $10, 116     get 16, store in $1
               var_insn_mem(77)  := X"75100001"; --srr $1, $5, $1
---              var_insn_mem(66)  := X"92100003"; --and $3, $2, $1      get r1, store in $3
---              var_insn_mem(67)  := X"60300000"; --slr $0, $0, $3
---              var_insn_mem(68)  := X"3a000015"; --sw $0, $10, 21 
+              var_insn_mem(66)  := X"92100003"; --and $3, $2, $1      get r1, store in $3
+              var_insn_mem(67)  := X"60300000"; --slr $0, $0, $3
+              var_insn_mem(68)  := X"3a000015"; --sw $0, $10, 21 
               
---              var_insn_mem(69)  := X"1a000016"; --lw $0, $10, 22      get D2 after swap, store in $0
---              var_insn_mem(70)  := X"1a100077"; --lw $1, $10, 119     get 19, store in $1
---              var_insn_mem(71)  := X"75100001"; --srr $1, $5, $1
---              var_insn_mem(72)  := X"92100003"; --and $3, $2, $1      get r2, store in $3
---              var_insn_mem(73)  := X"60300000"; --slr $0, $0, $3
---              var_insn_mem(74)  := X"3a000016"; --sw $0, $10, 22 
+              var_insn_mem(69)  := X"1a000016"; --lw $0, $10, 22      get D2 after swap, store in $0
+              var_insn_mem(70)  := X"1a100077"; --lw $1, $10, 119     get 19, store in $1
+              var_insn_mem(71)  := X"75100001"; --srr $1, $5, $1
+              var_insn_mem(72)  := X"92100003"; --and $3, $2, $1      get r2, store in $3
+              var_insn_mem(73)  := X"60300000"; --slr $0, $0, $3
+              var_insn_mem(74)  := X"3a000016"; --sw $0, $10, 22 
               
---              var_insn_mem(75)  := X"1a000017"; --lw $0, $10, 23      get D3 after swap, store in $0
---              var_insn_mem(76)  := X"1a10007a"; --lw $1, $10, 122     get 22, store in $1
---              var_insn_mem(77)  := X"75100001"; --srr $1, $5, $1
+              var_insn_mem(75)  := X"1a000017"; --lw $0, $10, 23      get D3 after swap, store in $0
+              var_insn_mem(76)  := X"1a10007a"; --lw $1, $10, 122     get 22, store in $1
+              var_insn_mem(77)  := X"75100001"; --srr $1, $5, $1
 --              var_insn_mem(78)  := X"92100003"; --and $3, $2, $1      get r3, store in $3
 --              var_insn_mem(79)  := X"60300000"; --slr $0, $0, $3
 --              var_insn_mem(80)  := X"3a000017"; --sw $0, $10, 23 

@@ -45,13 +45,15 @@ architecture Behavioral of forwarding_branch is
 begin
     process(ex_mem_regWrite, ex_mem_regd, if_id_regs, if_id_regt)
     begin
-        if (ex_mem_regWrite = '1' and ex_mem_regd = if_id_regs and ex_mem_regd /= "0000") then
+        --if (ex_mem_regWrite = '1' and ex_mem_regd = if_id_regs and ex_mem_regd /= "0000") then
+        if (ex_mem_regWrite = '1' and ex_mem_regd = if_id_regs) then
             forwarding_br_ctrls <= '1';
         else
             forwarding_br_ctrls <= '0';
         end if;
         
-        if (ex_mem_regWrite = '1' and ex_mem_regd = if_id_regt and ex_mem_regd /= "0000") then
+        --if (ex_mem_regWrite = '1' and ex_mem_regd = if_id_regt and ex_mem_regd /= "0000") then
+        if (ex_mem_regWrite = '1' and ex_mem_regd = if_id_regt) then
             forwarding_br_ctrlt <= '1';
         else
             forwarding_br_ctrlt <= '0';
