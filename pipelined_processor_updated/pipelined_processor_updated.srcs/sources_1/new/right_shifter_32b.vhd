@@ -33,7 +33,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity right_shifter_32b is
   Port ( src_a : in STD_LOGIC_VECTOR (31 downto 0);
-       rotations : in STD_LOGIC_VECTOR (3 downto 0);
+       rotations : in STD_LOGIC_VECTOR (4 downto 0);
        result : out STD_LOGIC_VECTOR (31 downto 0));
 end right_shifter_32b;
 
@@ -49,6 +49,7 @@ architecture Behavioral of right_shifter_32b is
     signal bit_1_shift, bit_1_out : std_logic_vector(31 downto 0);
     signal bit_2_shift, bit_2_out : std_logic_vector(31 downto 0);
     signal bit_3_shift, bit_3_out : std_logic_vector(31 downto 0);
+    signal bit_4_shift, bit_4_out : std_logic_vector(31 downto 0);
 begin
     rotate_1_proc: process (src_a)
     begin
@@ -89,12 +90,23 @@ begin
     
     rotate_8_proc: process (bit_2_out)
     begin
-        -- rotate shift right 4 --
+        -- rotate shift right 8 --
         for i in 0 to 23 loop
             bit_3_shift(i) <= bit_2_out(i + 8);
         end loop;
         for i in 24 to 31 loop
             bit_3_shift(i) <= '0';
+        end loop;
+    end process;
+    
+    rotate_16_proc: process (bit_3_out)
+    begin
+        -- rotate shift right 16 --
+        for i in 0 to 15 loop
+            bit_4_shift(i) <= bit_3_out(i + 16);
+        end loop;
+        for i in 16 to 31 loop
+            bit_4_shift(i) <= '0';
         end loop;
     end process;
     
@@ -121,8 +133,14 @@ begin
                data_a => bit_2_out,
                data_b => bit_3_shift,
                data_out => bit_3_out );
+               
+    bit_4_mux : mux_2to1_32b
+    port map ( mux_select => rotations(4),
+               data_a => bit_3_out,
+               data_b => bit_4_shift,
+               data_out => bit_4_out );
     
-    result <= bit_3_out;
+    result <= bit_4_out;
     
 end Behavioral;
 
