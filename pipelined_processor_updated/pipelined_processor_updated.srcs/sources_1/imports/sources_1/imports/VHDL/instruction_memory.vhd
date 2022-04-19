@@ -223,14 +223,20 @@ begin
 
               var_insn_mem(152)  := X"30100000";--sw $1, $0, 0        store total count
               var_insn_mem(153)  := X"80900000";--add $0, $0, $9       add position by 1
-              var_insn_mem(154)  := X"30E00000";--sw $14, $0, 0       store new candicate name
-              var_insn_mem(155)  := X"3aE0000C";--sw $14, $10, 12     update curr candicate number
-              var_insn_mem(156)  := X"3aF0000E";--sw $15, $10, 14
-              var_insn_mem(157)  := X"80900000";--add $0, $0, $9       add position by 1
-              var_insn_mem(158)  := X"30F00000";--sw $15, $0, 0
-              var_insn_mem(159)  := X"3a00000D";--sw $0, $10, 13          store next position back
+              
+              var_insn_mem(154)  := X"1a80000b";----lw $8, $10, 11
+              var_insn_mem(155)  := X"30800000";----sw $8, $0, 0
+              var_insn_mem(156)  := X"80900000";--add $0, $0, $9       add position by 1
+              
+              
+              var_insn_mem(157)  := X"30E00000";--sw $14, $0, 0       store new candicate name
+              var_insn_mem(158)  := X"3aE0000C";--sw $14, $10, 12     update curr candicate number
+              var_insn_mem(169)  := X"3aF0000E";--sw $15, $10, 14
+              var_insn_mem(160)  := X"80900000";--add $0, $0, $9       add position by 1
+              var_insn_mem(161)  := X"30F00000";--sw $15, $0, 0
+              var_insn_mem(162)  := X"3a00000D";--sw $0, $10, 13          store next position back
               -- Put mips code here
-              i := 160;
+              i := 163;
               while i <= 1023 loop
                 var_insn_mem(i) := X"00000000";
                 i := i + 1;

@@ -61,7 +61,7 @@ begin
             var_data_mem(8)  := X"000000ff"; --255
             var_data_mem(9)  := X"012ee99c"; --secret
             var_data_mem(10)  := X"000000ff";
-            var_data_mem(11)  := X"000000c8";
+            var_data_mem(11)  := X"ffffffff";
             i := 12;
             while i <= 99 loop
                 var_data_mem(i) := X"00000000";
