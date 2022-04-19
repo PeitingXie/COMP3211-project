@@ -236,7 +236,7 @@ end component;
 
 component left_shifter_32b is
     Port ( src_a : in STD_LOGIC_VECTOR (31 downto 0);
-           rotations : in STD_LOGIC_VECTOR (3 downto 0);
+           rotations : in STD_LOGIC_VECTOR (4 downto 0);
            result : out STD_LOGIC_VECTOR (31 downto 0));
 end component;
 
@@ -685,7 +685,7 @@ begin
        
     left_shifter : left_shifter_32b
     port map ( src_a => sig_alu_src_a,
-       rotations => sig_alu_b_src_b(3 downto 0),
+       rotations => sig_alu_b_src_b(4 downto 0),
        result => sig_lsl_result);
              
     mux_shift_results : mux_4to1_32b

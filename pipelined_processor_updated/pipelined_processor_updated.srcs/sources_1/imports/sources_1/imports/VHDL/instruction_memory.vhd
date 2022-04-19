@@ -47,8 +47,6 @@ begin
     begin
         if (reset = '1') then
            
-
-              
               var_insn_mem(0)  := X"3a000014"; -- sw $10, $0, 20
               var_insn_mem(1)  := X"3a100015"; -- sw $10. $1, 21
               var_insn_mem(2)  := X"3a200016"; -- sw $10. $2, 22
@@ -192,9 +190,7 @@ begin
               var_insn_mem(126)  := X"8010000F";--add $15, $0, $1
               var_insn_mem(127)  := X"8F20000F";--add $15, $15, $2
               
-              
-             
-              
+       
               -- Put mips code here
               i := 119;
               while i <= 1023 loop

@@ -50,6 +50,7 @@ architecture Behavioral of right_shifter_32b is
     signal bit_2_shift, bit_2_out : std_logic_vector(31 downto 0);
     signal bit_3_shift, bit_3_out : std_logic_vector(31 downto 0);
     signal bit_4_shift, bit_4_out : std_logic_vector(31 downto 0);
+
 begin
     rotate_1_proc: process (src_a)
     begin
