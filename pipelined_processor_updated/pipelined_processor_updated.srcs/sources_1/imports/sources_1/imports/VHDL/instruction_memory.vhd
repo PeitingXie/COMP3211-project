@@ -161,6 +161,9 @@ begin
               var_insn_mem(99)  := X"A0300000"; --xor $0, $0, $3
              
               var_insn_mem(100)  := X"3a000096"; --sw $0, $10, 150
+              
+              
+              
               -- Put mips code here
               i := 101;
               while i <= 1023 loop
