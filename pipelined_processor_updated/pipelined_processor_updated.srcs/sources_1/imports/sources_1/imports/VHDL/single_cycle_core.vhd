@@ -512,7 +512,8 @@ signal sig_ctr_sig_sel: std_logic;
 signal sig_mux_ctr_mem_write: std_logic; 
 signal sig_mux_ctr_reg_write: std_logic;
 signal sig_mux_ctr_alu_ctr: std_logic_vector(2 downto 0);
-
+attribute dont_touch : string;
+attribute dont_touch of sig_next_pc, sig_curr_pc, sig_one_10b: signal is "true";
 
 begin
 
