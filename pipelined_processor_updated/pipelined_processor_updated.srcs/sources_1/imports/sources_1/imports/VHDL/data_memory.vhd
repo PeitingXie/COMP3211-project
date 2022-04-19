@@ -59,7 +59,7 @@ begin
             var_data_mem(6)  := X"00000000"; --63
             var_data_mem(7)  := X"0000003f"; --127
             var_data_mem(8)  := X"000000ff"; --255
-            var_data_mem(9)  := X"00492d3b"; --secret
+            var_data_mem(9)  := X"012ee99c"; --secret
             
             i := 10;
             while i <= 99 loop
