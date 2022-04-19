@@ -61,14 +61,14 @@ begin
             var_data_mem(8)  := X"000000ff"; --255
             var_data_mem(9)  := X"012ee99c"; --secret
             var_data_mem(10)  := X"000000ff";
-            var_data_mem(11)  := X"000000c8"; --count stored start position(200)
+            var_data_mem(11)  := X"000000c8";
             i := 12;
             while i <= 99 loop
                 var_data_mem(i) := X"00000000";
                 i := i + 1;
             end loop;
             var_data_mem(12)  := X"000000ff";
-            var_data_mem(13)  := X"000000c7";
+            var_data_mem(13)  := X"0000000f"; --count stored start position(200)
             var_data_mem(100)  := X"00000000";
             var_data_mem(101)  := X"00000001"; 
             var_data_mem(102)  := X"00000002";

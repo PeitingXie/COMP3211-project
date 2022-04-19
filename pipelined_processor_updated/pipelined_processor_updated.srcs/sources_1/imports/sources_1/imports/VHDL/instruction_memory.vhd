@@ -214,7 +214,7 @@ begin
               var_insn_mem(143)  := X"00000000";
               var_insn_mem(144)  := X"00000000";
               var_insn_mem(145)  := X"1a00000d";--lw $0, $10, 13      get next position, store in $0
-              var_insn_mem(145)  := X"1a10000e";--lw $1, $10, 14      get total votes for last candicate, store in $1
+              var_insn_mem(146)  := X"1a10000e";--lw $1, $10, 14      get total votes for last candicate, store in $1
               var_insn_mem(147)  := X"80100000";--add $0, $0, 1       add position by 1
               var_insn_mem(148)  := X"30100000";--sw $1, $0, 0        store total count
               var_insn_mem(149)  := X"80100000";--add $0, $0, 1       add position by 1
@@ -223,7 +223,7 @@ begin
               var_insn_mem(152)  := X"3aF0000E";--sw $15, $10, 14
               var_insn_mem(153)  := X"3a00000D";--sw $0, $10, 13          store next position back
               -- Put mips code here
-              i := 154;
+              i := 147;
               while i <= 1023 loop
                 var_insn_mem(i) := X"00000000";
                 i := i + 1;
