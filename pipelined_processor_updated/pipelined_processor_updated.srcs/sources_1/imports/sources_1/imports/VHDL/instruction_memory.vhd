@@ -47,6 +47,8 @@ begin
     begin
         if (reset = '1') then
            
+
+              
               var_insn_mem(0)  := X"3a000014"; -- sw $10, $0, 20
               var_insn_mem(1)  := X"3a100015"; -- sw $10. $1, 21
               var_insn_mem(2)  := X"3a200016"; -- sw $10. $2, 22
@@ -184,15 +186,19 @@ begin
               var_insn_mem(120)  := X"1a10001a";--lw $1, $10, 26      D2 all bits, store in $1
               var_insn_mem(121)  := X"1a20001b";--lw $2, $10, 27      D3 all bits, store in $2
               var_insn_mem(122)  := X"1a300074";--lw $3, $10, 116     get 16, store in $3
-              var_insn_mem(123)  := X"60300000";--srl $0, $0, $3
-              var_insn_mem(124)  := X"1a40006c";--lw $4, $10, 108
-              var_insn_mem(125)  := X"61400001";--srl $1, $1, $4
-              var_insn_mem(126)  := X"8010000F";--add $15, $0, $1
-              var_insn_mem(127)  := X"8F20000F";--add $15, $15, $2
+              var_insn_mem(123)  := X"00000000";
+              var_insn_mem(124)  := X"00000000";
+              var_insn_mem(125)  := X"c0300000";--srl $0, $0, $3
+--              var_insn_mem(124)  := X"1a40006c";--lw $4, $10, 108
+--              var_insn_mem(125)  := X"61400001";--srl $1, $1, $4
+--              var_insn_mem(126)  := X"8010000F";--add $15, $0, $1
+--              var_insn_mem(127)  := X"8F20000F";--add $15, $15, $2
               
-       
+              
+             
+              
               -- Put mips code here
-              i := 119;
+              i := 126;
               while i <= 1023 loop
                 var_insn_mem(i) := X"00000000";
                 i := i + 1;
