@@ -4,8 +4,8 @@ Nov 18 2020
 09:47:47
 F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sim_1/new/Testbench.vhd,1650343832,vhdl,,,,testbench,,,,,,,,
 F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/control_unit.vhd,1650343832,vhdl,,,,control_unit,,,,,,,,
-F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/data_memory.vhd,1650345514,vhdl,,,,data_memory,,,,,,,,
-F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd,1650348646,vhdl,,,,instruction_memory,,,,,,,,
+F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/data_memory.vhd,1650350565,vhdl,,,,data_memory,,,,,,,,
+F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/instruction_memory.vhd,1650354141,vhdl,,,,instruction_memory,,,,,,,,
 F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/mux_2to1_4b.vhd,1650343693,vhdl,,,,mux_2to1_4b,,,,,,,,
 F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/program_counter.vhd,1650343832,vhdl,,,,program_counter,,,,,,,,
 F:/COMP3211/project/debug/COMP3211-project/pipelined_processor_updated/pipelined_processor_updated.srcs/sources_1/imports/sources_1/imports/VHDL/register_file.vhd,1650343832,vhdl,,,,register_file,,,,,,,,
