@@ -59,7 +59,7 @@ architecture Behavioral of hazard_detection_unit is
 
 
 begin
-    hazard_detection_proc : process(ifid_reg_a, ifid_reg_b, idex_reg_b, idex_mem_read, ifid_beq, idex_reg_d)
+    hazard_detection_proc : process(ifid_reg_a, ifid_reg_b, idex_reg_b, idex_mem_read, ifid_beq, idex_reg_d, idex_op)
     begin
         if (idex_mem_read = '1' and (idex_reg_b = ifid_reg_a or idex_reg_b = ifid_reg_b)) or (ifid_beq = '1' and idex_op = '1' and (idex_reg_d = ifid_reg_a or idex_reg_d = ifid_reg_b)) then
             ctr_sig_sel <= '1';

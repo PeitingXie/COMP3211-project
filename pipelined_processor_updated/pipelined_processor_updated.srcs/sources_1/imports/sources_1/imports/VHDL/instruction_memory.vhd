@@ -28,6 +28,7 @@ entity instruction_memory is
     port ( reset    : in  std_logic;
            clk      : in  std_logic;
            addr_in  : in  std_logic_vector(9 downto 0);
+           is_flush : in std_logic;
            pc_write : in std_logic;
            insn_out : out std_logic_vector(31 downto 0));
 end instruction_memory;
@@ -39,7 +40,7 @@ signal sig_insn_mem : mem_array;
 
 begin
     mem_process: process ( reset, clk,
-                           addr_in, pc_write ) is
+                           addr_in, pc_write, is_flush ) is
   
     variable var_insn_mem : mem_array;
     variable var_addr     : integer;
@@ -161,7 +162,7 @@ begin
               var_insn_mem(99)  := X"A0300000"; --xor $0, $0, $3
              
               var_insn_mem(100)  := X"3a000096"; --sw $0, $10, 150
-              
+              -------- tag generated
               var_insn_mem(101)  := X"B0400001";--beq $0, $4, 1
               var_insn_mem(102)  := X"B0000064";--beq $0, $0, 100
               var_insn_mem(103)  := X"1a000005";--lw $0, $10, 5    get 0b11111, used for get district number, store in $0
@@ -186,19 +187,43 @@ begin
               var_insn_mem(120)  := X"1a10001a";--lw $1, $10, 26      D2 all bits, store in $1
               var_insn_mem(121)  := X"1a20001b";--lw $2, $10, 27      D3 all bits, store in $2
               var_insn_mem(122)  := X"1a300074";--lw $3, $10, 116     get 16, store in $3
-              var_insn_mem(123)  := X"00000000";
-              var_insn_mem(124)  := X"00000000";
-              var_insn_mem(125)  := X"c0300000";--srl $0, $0, $3
---              var_insn_mem(124)  := X"1a40006c";--lw $4, $10, 108
---              var_insn_mem(125)  := X"61400001";--srl $1, $1, $4
---              var_insn_mem(126)  := X"8010000F";--add $15, $0, $1
---              var_insn_mem(127)  := X"8F20000F";--add $15, $15, $2
+              var_insn_mem(123)  := X"c0300000";--sr $0, $0, $3
+              var_insn_mem(124)  := X"1a40006c";--lw $4, $10, 108
+              var_insn_mem(125)  := X"c1400001";--sr $1, $1, $4
+              var_insn_mem(126)  := X"8010000F";--add $15, $0, $1
+              var_insn_mem(127)  := X"8F20000F";--add $15, $15, $2
               
               
-             
+              var_insn_mem(128)  := X"1F00000c";--lw $0, $10, 12
+              var_insn_mem(129)  := X"B0E00004";--beq $0, $14, 4          if same candicate
+              var_insn_mem(130)  := X"00000000";
+              var_insn_mem(131)  := X"00000000";
+              --var_insn_mem(132)  := X"00000000";
               
+              var_insn_mem(132)  := X"B000000B";--beq $0, $0, 11          if not same candicate,
+              var_insn_mem(133)  := X"00000000";
+              var_insn_mem(134)  := X"00000000";
+              var_insn_mem(135)  := X"1a00000D";--lw $0, $10, 13
+              var_insn_mem(136)  := X"1a10000E";--lw $1, $10, 14
+              var_insn_mem(137)  := X"81F00001";--add $1, $1, $15         update total votes
+              var_insn_mem(138)  := X"3a10000E";--sw $1, $10, 14          set new total votes to data memory 14
+              var_insn_mem(139)  := X"80100000";--add $0, $0, 1           add next position by 1
+              var_insn_mem(140)  := X"30F00000";--sw $15, $0, 0           store votes for this district
+              var_insn_mem(141)  := X"3a00000D";--sw $0, $10, 13          store next position back
+              var_insn_mem(142)  := X"b000001e";--beq $0, $0, 30        to be changed
+              var_insn_mem(143)  := X"00000000";
+              var_insn_mem(144)  := X"00000000";
+              var_insn_mem(145)  := X"1a00000d";--lw $0, $10, 13      get next position, store in $0
+              var_insn_mem(145)  := X"1a10000e";--lw $1, $10, 14      get total votes for last candicate, store in $1
+              var_insn_mem(147)  := X"80100000";--add $0, $0, 1       add position by 1
+              var_insn_mem(148)  := X"30100000";--sw $1, $0, 0        store total count
+              var_insn_mem(149)  := X"80100000";--add $0, $0, 1       add position by 1
+              var_insn_mem(150)  := X"30E00000";--sw $14, $0, 0       store new candicate name
+              var_insn_mem(151)  := X"3aE0000C";--sw $14, $10, 12     update curr candicate number
+              var_insn_mem(152)  := X"3aF0000E";--sw $15, $10, 14
+              var_insn_mem(153)  := X"3a00000D";--sw $0, $10, 13          store next position back
               -- Put mips code here
-              i := 126;
+              i := 154;
               while i <= 1023 loop
                 var_insn_mem(i) := X"00000000";
                 i := i + 1;
@@ -206,8 +231,13 @@ begin
        
        elsif (rising_edge(clk) and pc_write = '1') then
            -- read instructions on the rising clock edge
-            var_addr := conv_integer(addr_in);
-            insn_out <= var_insn_mem(var_addr);
+            
+            if is_flush = '1' then
+                insn_out <= x"00000000";
+            else
+                var_addr := conv_integer(addr_in);
+                insn_out <= var_insn_mem(var_addr);
+            end if;
         end if;
 
         -- the following are probe signals (for simulation purpose)
