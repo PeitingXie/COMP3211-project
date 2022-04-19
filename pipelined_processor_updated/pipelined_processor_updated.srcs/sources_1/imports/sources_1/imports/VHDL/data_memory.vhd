@@ -68,7 +68,7 @@ begin
                 i := i + 1;
             end loop;
             var_data_mem(12)  := X"000000ff";
-            var_data_mem(13)  := X"0000000f"; --count stored start position(200)
+            var_data_mem(13)  := X"0000001e"; --count stored start position(200)
             var_data_mem(100)  := X"00000000";
             var_data_mem(101)  := X"00000001"; 
             var_data_mem(102)  := X"00000002";

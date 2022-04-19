@@ -181,7 +181,6 @@ begin
               var_insn_mem(115)  := X"94000004";--and $4, $4, $0      get first bit in D1, store in $4
               var_insn_mem(116)  := X"63000003";--srl $3, $3, $0
               var_insn_mem(117)  := X"8340000E";--add $14, $3, $4     store candicate number in $14 
-              
               var_insn_mem(118)  := X"1a000007";--lw $0, $10, 7
               var_insn_mem(119)  := X"92000000";--and $0, $2, $0
               var_insn_mem(120)  := X"1a10001a";--lw $1, $10, 26      D2 all bits, store in $1
@@ -194,36 +193,44 @@ begin
               var_insn_mem(127)  := X"8F20000F";--add $15, $15, $2
               
               
-              var_insn_mem(128)  := X"1F00000c";--lw $0, $10, 12
-              var_insn_mem(129)  := X"B0E00004";--beq $0, $14, 4          if same candicate
+              var_insn_mem(128)  := X"1a00000c";--lw $0, $10, 12
+              var_insn_mem(129)  := X"00000000";
               var_insn_mem(130)  := X"00000000";
-              var_insn_mem(131)  := X"00000000";
+              var_insn_mem(131)  := X"B0E00004";--beq $0, $14, 4          if same candicate
+              var_insn_mem(132)  := X"00000000";
+              var_insn_mem(133)  := X"00000000";
               --var_insn_mem(132)  := X"00000000";
               
-              var_insn_mem(132)  := X"B000000B";--beq $0, $0, 11          if not same candicate,
-              var_insn_mem(133)  := X"00000000";
-              var_insn_mem(134)  := X"00000000";
-              var_insn_mem(135)  := X"1a00000D";--lw $0, $10, 13
-              var_insn_mem(136)  := X"1a10000E";--lw $1, $10, 14
-              var_insn_mem(137)  := X"81F00001";--add $1, $1, $15         update total votes
-              var_insn_mem(138)  := X"3a10000E";--sw $1, $10, 14          set new total votes to data memory 14
-              var_insn_mem(139)  := X"80100000";--add $0, $0, 1           add next position by 1
-              var_insn_mem(140)  := X"30F00000";--sw $15, $0, 0           store votes for this district
-              var_insn_mem(141)  := X"3a00000D";--sw $0, $10, 13          store next position back
-              var_insn_mem(142)  := X"b000001e";--beq $0, $0, 30        to be changed
-              var_insn_mem(143)  := X"00000000";
-              var_insn_mem(144)  := X"00000000";
-              var_insn_mem(145)  := X"1a00000d";--lw $0, $10, 13      get next position, store in $0
-              var_insn_mem(146)  := X"1a10000e";--lw $1, $10, 14      get total votes for last candicate, store in $1
-              var_insn_mem(147)  := X"80100000";--add $0, $0, 1       add position by 1
-              var_insn_mem(148)  := X"30100000";--sw $1, $0, 0        store total count
-              var_insn_mem(149)  := X"80100000";--add $0, $0, 1       add position by 1
-              var_insn_mem(150)  := X"30E00000";--sw $14, $0, 0       store new candicate name
-              var_insn_mem(151)  := X"3aE0000C";--sw $14, $10, 12     update curr candicate number
-              var_insn_mem(152)  := X"3aF0000E";--sw $15, $10, 14
-              var_insn_mem(153)  := X"3a00000D";--sw $0, $10, 13          store next position back
+              var_insn_mem(134)  := X"B000000D";--beq $0, $0, 11          if not same candicate,
+              var_insn_mem(135)  := X"00000000";
+              var_insn_mem(136)  := X"00000000";
+              var_insn_mem(137)  := X"1a00000D";--lw $0, $10, 13
+              var_insn_mem(138)  := X"1a10000E";--lw $1, $10, 14
+              var_insn_mem(139)  := X"81F00001";--add $1, $1, $15         update total votes
+              var_insn_mem(140)  := X"3a10000E";--sw $1, $10, 14          set new total votes to data memory 14
+              
+              var_insn_mem(141)  := X"1a900065";-- lw $9, $10, 101
+              var_insn_mem(142)  := X"80900000";--add $0, $0, $9       add position by 1
+              var_insn_mem(143)  := X"30F00000";--sw $15, $0, 0           store votes for this district
+              var_insn_mem(144)  := X"3a00000D";--sw $0, $10, 13          store next position back
+              var_insn_mem(145)  := X"b000001e";--beq $0, $0, 30        to be changed
+              var_insn_mem(146)  := X"00000000";
+              var_insn_mem(147)  := X"00000000";
+              var_insn_mem(148)  := X"1a00000d";--lw $0, $10, 13      get next position, store in $0
+              var_insn_mem(149)  := X"1a10000e";--lw $1, $10, 14      get total votes for last candicate, store in $1
+              var_insn_mem(150)  := X"1a900065";-- lw $9, $10, 101
+              var_insn_mem(151)  := X"80900000";--add $0, $0, $9       add position by 1
+
+              var_insn_mem(152)  := X"30100000";--sw $1, $0, 0        store total count
+              var_insn_mem(153)  := X"80900000";--add $0, $0, $9       add position by 1
+              var_insn_mem(154)  := X"30E00000";--sw $14, $0, 0       store new candicate name
+              var_insn_mem(155)  := X"3aE0000C";--sw $14, $10, 12     update curr candicate number
+              var_insn_mem(156)  := X"3aF0000E";--sw $15, $10, 14
+              var_insn_mem(157)  := X"80900000";--add $0, $0, $9       add position by 1
+              var_insn_mem(158)  := X"30F00000";--sw $15, $0, 0
+              var_insn_mem(159)  := X"3a00000D";--sw $0, $10, 13          store next position back
               -- Put mips code here
-              i := 147;
+              i := 160;
               while i <= 1023 loop
                 var_insn_mem(i) := X"00000000";
                 i := i + 1;
