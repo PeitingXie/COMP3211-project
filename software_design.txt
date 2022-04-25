@@ -54,35 +54,6 @@ Tag generation example
             srr $14, $14, $13   
             and $15, $14, $6    get given size of bits in block b2, ready for swap, store in $15
 
-            // now
-            $5 = secret
-            $6 = size
-            $7 = b1
-            $8 = p1
-            $9 = useless
-            $10 = 0
-            $11 = b1 bits to swap
-            $12 = b2
-            $13 = p2
-            $14 = useless
-            $15 = b2 bits to swap
-            //
-
-            // now
-            $5 = secret
-            $6 = size in binary
-            $7 = b1
-            $8 = p1
-            $9 = useless
-            $10 = 0
-            $11 = b1 bits to swap
-            $12 = b2
-            $13 = p2
-            $14 = useless
-            $15 = b2 bits to swap
-            //
-
-            
             lw $14, $10, 110
             srr $14, $5, $14  
             lw $9, $10, 3     get 0b111, store in $9 
@@ -113,7 +84,6 @@ Tag generation example
             add $3, $0, $1
             add $3, $3, $2
             sw $3, $12, 20    get second record after swap, store in related position in data memory
-
 
             ------------
             finished swap, store in 20-23 in data memory
@@ -176,9 +146,6 @@ Tag generation example
             xor $0, $0, $3
             
             sw $0, $10, 150  ----- store generated tag in data memory 150
-
-       
-            
             beq $0, $4, 1       if valid tag, jump next instruction
             beq $0, $0, 100      jump calculation
             lw $0, $10, 5       get 0b11111, used for get district number, store in $0
@@ -349,7 +316,7 @@ Tag generation example
         get candidate number, store in $14
         get Vote number, store in $15
         data memory 12 : 0xff (curr candidate number)
-        data memory 13 : 0 (next store position)
+        data memory 13 : 1e (next store position)
         data memory 14 : 0 : (total votes for curr candidate)
     Pseudocode :
         if tag is true :
